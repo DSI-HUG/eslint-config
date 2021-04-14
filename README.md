@@ -25,9 +25,6 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/DSI-HUG/eslint-config/actions?query=workflow:CI%20tests">
-        <img src="https://github.com/DSI-HUG/eslint-config/workflows/CI%20tests/badge.svg" alt="build status" />
-    </a>
     <a href="https://david-dm.org/DSI-HUG/eslint-config">
         <img src="https://img.shields.io/david/DSI-HUG/eslint-config.svg" alt="dependency status" />
     </a>
