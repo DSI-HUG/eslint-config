@@ -1,0 +1,58 @@
+{
+    "name": "@hug/eslint-config",
+    "version": "1.0.0",
+    "description": "ESLint shareable configuration with great defaults",
+    "homepage": "https://github.com/DSI-HUG/eslint-config",
+    "license": "GPL-3.0-only",
+    "author": "HUG",
+    "contributors": [
+        "badisi (https://github.com/badisi)"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DSI-HUG/eslint-config.git"
+    },
+    "main": "index.js",
+    "files": [
+        "index.js",
+        "recommended.js",
+        "rules"
+    ],
+    "keywords": [
+        "eslint",
+        "eslintconfig",
+        "lint",
+        "linter",
+        "code",
+        "style",
+        "quality",
+        "angular",
+        "rxjs",
+        "javascript",
+        "jslint",
+        "es6",
+        "typescript",
+        "cypress"
+    ],
+    "peerDependencies": {
+        "@angular/core": ">= 7",
+        "eslint": ">= 6",
+        "rxjs": ">= 6",
+        "typescript": ">= 3"
+    },
+    "dependencies": {
+        "@angular-eslint/eslint-plugin": "^2.0.2",
+        "@angular-eslint/eslint-plugin-template": "^2.0.2",
+        "@rushstack/eslint-patch": "^1.0.6",
+        "@typescript-eslint/eslint-plugin": "^4.21.0",
+        "eslint": ">= 6",
+        "eslint-plugin-chai-friendly": "^0.6.0",
+        "eslint-plugin-cypress": "^2.11.2",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-no-loops": "^0.3.0",
+        "eslint-plugin-prefer-arrow": "^1.2.3",
+        "eslint-plugin-rxjs": "^3.1.4",
+        "eslint-plugin-rxjs-angular": "^1.0.6",
+        "eslint-plugin-simple-import-sort": "^7.0.0"
+    }
+}
