@@ -16,10 +16,6 @@ module.exports = {
         // https://github.com/cartant/eslint-plugin-rxjs/blob/main/docs/rules/no-nested-subscribe.md
         "rxjs/no-nested-subscribe": "error",
 
-        // Avoid toPromise
-        // https://github.com/cartant/eslint-plugin-rxjs/blob/main/docs/rules/no-topromise.md
-        "rxjs/no-topromise": "error",
-
         // Avoid using unbound methods as callbacks
         // https://github.com/cartant/eslint-plugin-rxjs/blob/main/docs/rules/no-unbound-methods.md
         "rxjs/no-unbound-methods": "error",
