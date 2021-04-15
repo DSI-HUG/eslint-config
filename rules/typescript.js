@@ -17,15 +17,20 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+        // -- Redundant with es6.js
+        "brace-style": "off",
+        "comma-spacing": "off",
+        "func-call-spacing": "off",
+        "keyword-spacing": "off",
+        "quotes": "off",
+        "semi": "off",
+        "space-before-function-paren": "off",
+        // --
+
+        // ESLint extras
         "max-len": "off",
         "no-shadow": "off",
-        "arrow-parens": [
-            "error",
-            "as-needed"
-        ],
-        "comma-dangle": "error",
         "no-empty": "error",
-        "no-multiple-empty-lines": "error",
 
         // Enforce consistent brace style for blocks
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/brace-style.md
@@ -293,12 +298,27 @@ module.exports = {
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-string-starts-ends-with.md
         "@typescript-eslint/prefer-string-starts-ends-with": "error",
 
+        // Enforce the consistent use of either backticks, double, or single quotes
+        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/quotes.md
+        "@typescript-eslint/quotes": [
+            "error",
+            "single"
+        ],
+
         // Require or disallow semicolons instead of ASI
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/semi.md
         "@typescript-eslint/semi": [
             "error",
             "always"
         ],
+
+        // Enforce consistent spacing before function parenthesis
+        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-before-function-paren.md
+        "@typescript-eslint/space-before-function-paren": ["error", {
+            "anonymous": "never",
+            "named": "never",
+            "asyncArrow": "always"
+        }],
 
         // Exhaustiveness checking in switch with union type
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/switch-exhaustiveness-check.md
