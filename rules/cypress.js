@@ -1,14 +1,14 @@
 module.exports = {
-    env: {
-        'cypress/globals': true
+    "env": {
+        "cypress/globals": true
     },
-    plugins: [
-        'cypress',
-        'chai-friendly'
+    "plugins": [
+        "cypress",
+        "chai-friendly"
     ],
-    rules: {
+    "rules": {
         // Disallow Unused Variables
         // https://eslint.org/docs/rules/no-unused-vars
-        'no-unused-vars': 'off'
+        "no-unused-vars": "off"
     }
 };
