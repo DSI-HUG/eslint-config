@@ -18,10 +18,6 @@ module.exports = {
         // http://codelyzer.com/rules/prefer-output-readonly
         "@angular-eslint/prefer-output-readonly": "error",
 
-        // Enforce component’s change detection to ChangeDetectionStrategy.OnPush
-        // http://codelyzer.com/rules/prefer-on-push-component-change-detection
-        "@angular-eslint/prefer-on-push-component-change-detection": "error",
-
         // Component selector must be declared
         // http://codelyzer.com/rules/use-component-selector
         "@angular-eslint/use-component-selector": "error"
