@@ -51,18 +51,18 @@ $ yarn add @hug/eslint-config --dev
 
 ## Requirements
 
-As of now this configuration is intented to work with **Angular projects** only.
+> As of now this configuration is intented to work with **Angular projects** only.
 
-Projects that are still using `tslint` should first [migrate](#tslint-migration) to `eslint`.
+> Projects running under `Angular 10.x` should use `@hug/eslint-config@1.1.0`.
 
-Projects running under `Angular 10.x` should use `@hug/eslint-config@1.1.0`.
-
-***Optional***: linting against [Cypress][cypress] end-to-end tests are also supported.
+* An **Angular >= 10.x** project with:
+   * only `eslint` installed (see the [migration guide](#tslint-migration) for projects that are still using `tslint`)
+   * [cypress][cypress] (optional) (for friendly linting against end-to-end tests)
 
 
 ## Usage
 
-1. Add a `tsconfig.eslint.json` file at the root of your project
+1. Create a `tsconfig.eslint.json` file at the root of your project
 
 ```json
 {
@@ -81,7 +81,7 @@ Projects running under `Angular 10.x` should use `@hug/eslint-config@1.1.0`.
 }
 ```
 
-2. Add a `.eslintrc.json` file at the root of your project
+2. Create a `.eslintrc.json` file at the root of your project
 
 ```json
 {
@@ -112,7 +112,7 @@ Projects running under `Angular 10.x` should use `@hug/eslint-config@1.1.0`.
 }
 ```
 
-4. Use `ng lint`
+4. Run `ng lint`
 
 
 ## Rules
@@ -129,7 +129,7 @@ The rules applies as follow:
 | src/**/*.html | `angular-template` |
 | e2e/**/*.ts | `es6`, `typescript`, `cypress`, `chai-friendly` |
 
-***Tip***: a stricter set of rules can be used with `@hug/eslint-config/strict`.
+> ***Tip***: a stricter set of rules can be used with `@hug/eslint-config/strict`.
 
 
 ## <a name="tslint-migration"></a> Migrating from tslint
