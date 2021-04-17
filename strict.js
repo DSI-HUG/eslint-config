@@ -5,9 +5,8 @@ module.exports = {
     "overrides": [
         {
             "files": [
-                "*.ts"
+                "src/**/*.ts"
             ],
-            "excludedFiles": "*.spec.ts",
             "extends": [
                 require.resolve("./rules/typescript/strict"),
                 require.resolve("./rules/angular/strict"),

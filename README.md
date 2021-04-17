@@ -84,9 +84,6 @@ An **Angular >= 10.x** project with:
 ```json
 {
     "root": true,
-    "ignorePatterns": [
-        "projects/**/*"
-    ],
     "extends": [
         "@hug/eslint-config/recommended"
     ]

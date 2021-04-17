@@ -10,6 +10,9 @@ module.exports = {
         "node": true,
         "jasmine": true
     },
+    "ignorePatterns": [
+        "projects/**/*"
+    ],
     "overrides": [
         {
             "files": [
