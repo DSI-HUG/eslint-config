@@ -55,9 +55,10 @@ $ yarn add @hug/eslint-config --dev
 
 > Projects running under `Angular 10.x` should use `@hug/eslint-config@1.1.0`.
 
-* An **Angular >= 10.x** project with:
-   * only `eslint` installed (see the [migration guide](#tslint-migration) for projects that are still using `tslint`)
-   * [cypress][cypress] (optional) (for friendly linting against end-to-end tests)
+An **Angular >= 10.x** project with:
+
+* only `eslint` installed (see the [migration guide](#tslint-migration) for projects that are still using `tslint`)
+* [cypress][cypress] (optional) (for friendly linting against end-to-end tests)
 
 
 ## Usage
