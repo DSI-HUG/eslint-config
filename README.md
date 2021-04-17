@@ -49,16 +49,70 @@ $ yarn add @hug/eslint-config --dev
 ```
 
 
+## Requirements
+
+As of now this configuration is intented to work with **Angular projects** only.
+
+Projects that are still using `tslint` should first [migrate](#tslint-migration) to `eslint`.
+
+Projects running under `Angular 10.x` should use `@hug/eslint-config@1.1.0`.
+
+***Optional***: linting against [Cypress][cypress] end-to-end tests are also supported.
+
+
 ## Usage
 
-```js
-// .eslintrc.js
-module.exports = {
+1. Add a `tsconfig.eslint.json` file at the root of your project
+
+```json
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "types": [
+            "jasmine",
+            "cypress",
+            "node"
+        ]
+    },
+    "include": [
+        "src/**/*.ts",
+        "e2e/**/*.ts"
+    ]
+}
+```
+
+2. Add a `.eslintrc.json` file at the root of your project
+
+```json
+{
+    "root": true,
+    "ignorePatterns": [
+        "projects/**/*"
+    ],
     "extends": [
         "@hug/eslint-config/recommended"
     ]
-};
+}
 ```
+
+3. Modify your existing `angular.json`
+
+```json
+"architect": {
+    "lint": {
+        "builder": "@angular-eslint/builder:lint",
+        "options": {
+            "lintFilePatterns": [
+                "src/**/*.ts",
+                "src/**/*.html",
+                "e2e/**/*.ts"
+            ]
+        }
+    }
+}
+```
+
+4. Use `ng lint`
 
 
 ## Rules
@@ -67,13 +121,26 @@ This configuration exports a recommended set of rules that enforces good practic
 
 They may or may not served you well as they are mainly designed to be used by the [HUG organization's team][dsi-hug].
 
-The rules are applied as follow:
+The rules applies as follow:
 
 | Files | Rules |
 | :---- | :---- |
-| *.ts | `es6`, `typescript`, `angular` |
-| *.html | `angular-template` |
-| cypress/**/*.ts | `cypress`, `chai-friendly` |
+| src/**/*.ts | `es6`, `typescript`, `angular`, `rxjs` |
+| src/**/*.html | `angular-template` |
+| e2e/**/*.ts | `es6`, `typescript`, `cypress`, `chai-friendly` |
+
+***Tip***: a stricter set of rules can be used with `@hug/eslint-config/strict`.
+
+
+## <a name="tslint-migration"></a> Migrating from tslint
+
+1. Remove `tslint` and `codelyzer` from your dependencies
+
+2. Remove any `tslint.json` configuration files
+
+3. Add `eslint` as dev dependency
+
+4. Have a look at our [Angular project example][ng-example] and modify all your `tsconfig` files accordingly
 
 
 ## Development
@@ -101,6 +168,9 @@ Please read and follow the [Code of Conduct][codeofconduct], and help us keep th
 
 
 
+[angular-eslint]: https://github.com/angular-eslint/angular-eslint
+[ng-example]: https://github.com/DSI-HUG/eslint-config/blob/master/examples/angular
+[cypress]: https://www.cypress.io/
 [developer]: https://github.com/DSI-HUG/eslint-config/blob/master/DEVELOPER.md
 [contributing]: https://github.com/DSI-HUG/eslint-config/blob/master/CONTRIBUTING.md
 [codeofconduct]: https://github.com/DSI-HUG/eslint-config/blob/master/CODE_OF_CONDUCT.md
