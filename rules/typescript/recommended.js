@@ -17,16 +17,6 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
-        // -- Redundant with es6.js
-        "brace-style": "off",
-        "comma-spacing": "off",
-        "func-call-spacing": "off",
-        "keyword-spacing": "off",
-        "quotes": "off",
-        "semi": "off",
-        "space-before-function-paren": "off",
-        // --
-
         // ESLint extras
         "max-len": "off",
         "no-shadow": "off",
@@ -34,6 +24,7 @@ module.exports = {
 
         // Enforce consistent brace style for blocks
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/brace-style.md
+        "brace-style": "off",
         "@typescript-eslint/brace-style": [
             "error",
             "1tbs"
@@ -41,6 +32,7 @@ module.exports = {
 
         // Enforce consistent spacing before and after commas
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-spacing.md
+        "comma-spacing": "off",
         "@typescript-eslint/comma-spacing": "error",
 
         // Consistent with type definition either interface or type
@@ -49,11 +41,17 @@ module.exports = {
 
         // Enforce default parameters to be last
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/default-param-last.md
+        "default-param-last": "off",
         "@typescript-eslint/default-param-last": "error",
 
         // Require explicit return types on functions and class methods
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-function-return-type.md
-        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/explicit-function-return-type": [
+            "error",
+            {
+                "allowConciseArrowFunctionExpressionsStartingWithVoid": true
+            }
+        ],
 
         // Require explicit accessibility modifiers on class properties and methods
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-member-accessibility.md
@@ -62,6 +60,7 @@ module.exports = {
             {
                 "accessibility": "explicit",
                 "overrides": {
+                    "constructors": "no-public",
                     "accessors": "explicit",
                     "parameterProperties": "explicit"
                 }
@@ -70,14 +69,17 @@ module.exports = {
 
         // Require or disallow spacing between function identifiers and their invocations
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/func-call-spacing.md
+        "func-call-spacing": "off",
         "@typescript-eslint/func-call-spacing": "error",
 
         // Enforce consistent indentation
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md
+        "indent": "off",
         "@typescript-eslint/indent": "error",
 
         // Enforce consistent spacing before and after keywords
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/keyword-spacing.md
+        "keyword-spacing": "off",
         "@typescript-eslint/keyword-spacing": "error",
 
         // Require a specific member delimiter style for interfaces and type literals
@@ -197,6 +199,10 @@ module.exports = {
                 "format": ["UPPER_CASE"]
             },
             {
+                "selector": "classProperty",
+                "format": ["strictCamelCase", "UPPER_CASE"]
+            },
+            {
                 "selector": "typeProperty",
                 "format": ["UPPER_CASE"],
                 "filter": {
@@ -251,16 +257,14 @@ module.exports = {
 
         // Disallow variable declarations from shadowing variables declared in the outer scope
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-shadow.md
+        "no-shadow": "off",
         "@typescript-eslint/no-shadow": ["error"],
 
         // Disallow unused variables
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md
-        "@typescript-eslint/no-unused-vars": [
-            "error",
-            {
-                "argsIgnorePattern": "^_"
-            }
-        ],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars-experimental": "error",
 
         // Flag unnecessary equality comparisons against boolean literals
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-boolean-literal-compare.md
@@ -300,13 +304,19 @@ module.exports = {
 
         // Enforce the consistent use of either backticks, double, or single quotes
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/quotes.md
+        "quotes": "off",
         "@typescript-eslint/quotes": [
             "error",
             "single"
         ],
 
+        // Enforce template literal expressions to be of string type
+        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/restrict-template-expressions.md
+        "@typescript-eslint/restrict-template-expressions": "error",
+
         // Require or disallow semicolons instead of ASI
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/semi.md
+        "semi": "off",
         "@typescript-eslint/semi": [
             "error",
             "always"
@@ -314,11 +324,14 @@ module.exports = {
 
         // Enforce consistent spacing before function parenthesis
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-before-function-paren.md
-        "@typescript-eslint/space-before-function-paren": ["error", {
-            "anonymous": "never",
-            "named": "never",
-            "asyncArrow": "always"
-        }],
+        "space-before-function-paren": "off",
+        "@typescript-eslint/space-before-function-paren": [
+            "error",
+            {
+                "anonymous": "never",
+                "named": "never",
+                "asyncArrow": "always"
+            }],
 
         // Exhaustiveness checking in switch with union type
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/switch-exhaustiveness-check.md
