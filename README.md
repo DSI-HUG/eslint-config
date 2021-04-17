@@ -28,9 +28,6 @@
     <a href="https://david-dm.org/DSI-HUG/eslint-config">
         <img src="https://img.shields.io/david/DSI-HUG/eslint-config.svg" alt="dependency status" />
     </a>
-    <a href="https://david-dm.org/DSI-HUG/eslint-config?type=dev">
-        <img src="https://img.shields.io/david/dev/DSI-HUG/eslint-config.svg" alt="devDependency status" />
-    </a>
     <a href="https://github.com/DSI-HUG/eslint-config/blob/master/CONTRIBUTING.md#-submitting-a-pull-request-pr">
         <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome" />
     </a>
