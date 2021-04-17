@@ -7,16 +7,19 @@ module.exports = {
     "env": {
         "browser": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "jasmine": true
     },
     "overrides": [
         {
             "files": [
-                "*.ts"
+                "src/**/*.ts"
             ],
+            "parser": "@typescript-eslint/parser",
             "parserOptions": {
-                "project": "tsconfig.json",
-                "createDefaultProgram": true
+                "project": [
+                    "tsconfig.eslint.json"
+                ]
             },
             "extends": [
                 "plugin:@angular-eslint/recommended",
@@ -25,15 +28,15 @@ module.exports = {
                 "plugin:@typescript-eslint/recommended",
                 "plugin:@typescript-eslint/recommended-requiring-type-checking",
                 require.resolve("./rules/es6"),
-                require.resolve("./rules/typescript"),
-                require.resolve("./rules/angular"),
-                require.resolve("./rules/rxjs"),
+                require.resolve("./rules/typescript/recommended"),
+                require.resolve("./rules/angular/recommended"),
+                require.resolve("./rules/rxjs/recommended"),
                 require.resolve("./rules/extras")
             ]
         },
         {
             "files": [
-                "*.html"
+                "src/**/*.html"
             ],
             "extends": [
                 "plugin:@angular-eslint/template/recommended",
@@ -42,12 +45,21 @@ module.exports = {
         },
         {
             "files": [
-                "cypress/**/*.ts"
+                "e2e/**/*.ts"
             ],
+            "parser": "@typescript-eslint/parser",
             "parserOptions": {
-                "project": "cypress/tsconfig.json"
+                "project": [
+                    "tsconfig.eslint.json"
+                ]
             },
             "extends": [
+                "eslint:recommended",
+                "plugin:@typescript-eslint/recommended",
+                "plugin:@typescript-eslint/recommended-requiring-type-checking",
+                require.resolve("./rules/es6"),
+                require.resolve("./rules/typescript/recommended"),
+                require.resolve("./rules/extras"),
                 "plugin:cypress/recommended",
                 "plugin:chai-friendly/recommended",
                 require.resolve("./rules/cypress")
