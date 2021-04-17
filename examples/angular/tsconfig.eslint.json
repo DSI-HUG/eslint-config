@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "types": [
+            "jasmine",
+            "cypress",
+            "node"
+        ]
+    },
+    "include": [
+        "src/**/*.ts",
+        "e2e/**/*.ts"
+    ]
+}
