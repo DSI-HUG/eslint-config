@@ -23,12 +23,11 @@ module.exports = {
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
         "@typescript-eslint/naming-convention": [
             "error",
-            ...namingConventions([
-                {
-                    "selector": "classProperty",
-                    "format": ["strictCamelCase", "UPPER_CASE"]
-                }
-            ])
+            ...namingConventions([{
+                "selector": "property",
+                "format": ["strictCamelCase", "UPPER_CASE"],
+                "leadingUnderscore": "allow"
+            }])
         ]
     }
 };

@@ -7,6 +7,7 @@ const UPPER_CASE_REGEXP = [
     "DOCPAGE",
 
     // proxy call
+    "REQUEST",
     "SERVERID",
     "SERVICEID",
     "SUBSERVICEID"
@@ -24,10 +25,6 @@ const NAMING_CONVENTIONS = [
     {
         "selector": "enumMember",
         "format": ["UPPER_CASE"]
-    },
-    {
-        "selector": "classProperty",
-        "format": ["strictCamelCase"]
     },
     {
         "selector": "typeProperty",
@@ -64,8 +61,10 @@ const NAMING_CONVENTIONS = [
 
 const namingConventions = (overrides = []) => {
     const namingConventions = [...NAMING_CONVENTIONS];
-    overrides.forEach(override => {
-        const index = namingConventions.findIndex((item => item.selector === override.selector));
+    overrides.forEach((override) => {
+        const index = namingConventions.findIndex(
+            (item) => item.selector === override.selector
+        );
         if (index !== -1) {
             namingConventions[index] = override;
         } else {
