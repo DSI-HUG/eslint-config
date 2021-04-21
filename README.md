@@ -124,7 +124,7 @@ The rules applies as follow:
 | src/**/*.html | `angular-template` |
 | e2e/**/*.ts | `es6`, `typescript`, `cypress`, `chai-friendly` |
 
-> ***Tip***: a stricter set of rules can be used with `@hug/eslint-config/strict`.
+> ***Tip***: a less stricter set of rules can be used with `@hug/eslint-config/moderate`.
 
 
 ## <a name="tslint-migration"></a> Migrating from tslint
