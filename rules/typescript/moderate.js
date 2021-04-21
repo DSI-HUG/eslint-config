@@ -1,3 +1,5 @@
+const { namingConventions } = require('./utils');
+
 module.exports = {
     "plugins": [
         "@typescript-eslint"
@@ -10,7 +12,7 @@ module.exports = {
             {
                 "accessibility": "explicit",
                 "overrides": {
-                    "constructors": "explicit",
+                    "constructors": "no-public",
                     "accessors": "explicit",
                     "parameterProperties": "explicit"
                 }
@@ -21,10 +23,12 @@ module.exports = {
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
         "@typescript-eslint/naming-convention": [
             "error",
-            {
-                "selector": "classProperty",
-                "format": ["strictCamelCase"]
-            }
+            ...namingConventions([
+                {
+                    "selector": "classProperty",
+                    "format": ["strictCamelCase", "UPPER_CASE"]
+                }
+            ])
         ]
     }
 };

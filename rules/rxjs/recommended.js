@@ -4,6 +4,17 @@ module.exports = {
         "rxjs-angular"
     ],
     "rules": {
+        // Use Finnish notation
+        // https://github.com/cartant/eslint-plugin-rxjs/blob/main/docs/rules/finnish.md
+        "rxjs/finnish": [
+            "error",
+            {
+                "names": {
+                    "^(params|queryParams|stateChanges|canActivate|canActivateChild|canDeactivate|canLoad|intercept|resolve|validate)$": false
+                }
+            }
+        ],
+
         // Avoid unbounded replay buffers
         // https://github.com/cartant/eslint-plugin-rxjs/blob/main/docs/rules/no-ignored-replay-buffer.md
         "rxjs/no-ignored-replay-buffer": "error",
@@ -32,16 +43,12 @@ module.exports = {
         // https://github.com/cartant/eslint-plugin-rxjs/blob/main/docs/rules/no-unsafe-subject-next.md
         "rxjs/no-unsafe-subject-next": "error",
 
-        // Use Finnish notation
-        // https://github.com/cartant/eslint-plugin-rxjs/blob/main/docs/rules/finnish.md
-        "rxjs/finnish": [
+        // Use takeUntil and ngOnDestroy
+        // https://github.com/cartant/eslint-plugin-rxjs-angular/blob/main/docs/rules/prefer-takeuntil.md
+        "rxjs-angular/prefer-takeuntil": [
             "error",
             {
-                "functions": false,
-                "methods": false,
-                "names": {
-                    "^(params|queryParams|stateChanges)$": false
-                }
+                "checkDestroy": false
             }
         ]
     }

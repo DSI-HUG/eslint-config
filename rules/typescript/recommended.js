@@ -1,16 +1,4 @@
-const UPPER_CASE_REGEXP = [
-    // url params
-    "PATIENT_ID",
-    "SCOPEID",
-    "SESSIONID",
-    "EDS_ID",
-    "DOCPAGE",
-
-    // proxy call
-    "SERVERID",
-    "SERVICEID",
-    "SUBSERVICEID"
-];
+const { namingConventions } = require('./utils');
 
 module.exports = {
     "plugins": [
@@ -60,8 +48,9 @@ module.exports = {
             {
                 "accessibility": "explicit",
                 "overrides": {
-                    "constructors": "no-public",
+                    "constructors": "explicit",
                     "accessors": "explicit",
+                    "methods": 'off',
                     "parameterProperties": "explicit"
                 }
             }
@@ -186,53 +175,7 @@ module.exports = {
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
         "@typescript-eslint/naming-convention": [
             "error",
-            {
-                "selector": "default",
-                "format": ["strictCamelCase"]
-            },
-            {
-                "selector": "typeLike",
-                "format": ["PascalCase"]
-            },
-            {
-                "selector": "enumMember",
-                "format": ["UPPER_CASE"]
-            },
-            {
-                "selector": "classProperty",
-                "format": ["strictCamelCase", "UPPER_CASE"]
-            },
-            {
-                "selector": "typeProperty",
-                "format": ["UPPER_CASE"],
-                "filter": {
-                    "regex": `^(${UPPER_CASE_REGEXP.join('|')})$`,
-                    "match": true
-                }
-            },
-            {
-                "selector": "objectLiteralProperty",
-                "format": ["UPPER_CASE"],
-                "filter": {
-                    "regex": `^(${UPPER_CASE_REGEXP.join('|')})$`,
-                    "match": true
-                }
-            },
-            {
-                "selector": "property",
-                "modifiers": ["static"],
-                "format": ["UPPER_CASE"]
-            },
-            {
-                "selector": "property",
-                "format": ["strictCamelCase"],
-                "leadingUnderscore": "allow"
-            },
-            {
-                "selector": "parameter",
-                "format": ["strictCamelCase"],
-                "leadingUnderscore": "allow"
-            }
+            ...namingConventions()
         ],
 
         // Require that .toString() is only called on objects which provide useful information when stringified

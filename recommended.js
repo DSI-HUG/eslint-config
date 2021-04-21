@@ -16,7 +16,7 @@ module.exports = {
     "overrides": [
         {
             "files": [
-                "src/**/*.ts"
+                "**/*.ts"
             ],
             "parser": "@typescript-eslint/parser",
             "parserOptions": {
@@ -39,7 +39,7 @@ module.exports = {
         },
         {
             "files": [
-                "src/**/*.html"
+                "**/*.html"
             ],
             "extends": [
                 "plugin:@angular-eslint/template/recommended",
