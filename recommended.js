@@ -25,11 +25,11 @@ module.exports = {
                 ]
             },
             "extends": [
-                "plugin:@angular-eslint/recommended",
-                "plugin:@angular-eslint/template/process-inline-templates",
                 "eslint:recommended",
                 "plugin:@typescript-eslint/recommended",
                 "plugin:@typescript-eslint/recommended-requiring-type-checking",
+                "plugin:@angular-eslint/recommended",
+                "plugin:@angular-eslint/template/process-inline-templates",
                 require.resolve("./rules/es6"),
                 require.resolve("./rules/typescript/recommended"),
                 require.resolve("./rules/angular/recommended"),
