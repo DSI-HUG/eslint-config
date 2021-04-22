@@ -19,10 +19,17 @@ module.exports = {
             "error",
             {
                 "groups": [
+                    // Side effect imports.
                     ["^\\u0000"],
+                    // Packages.
+                    // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
                     ["^@?\\w"],
+                    //
                     ["^[^(\\.|src/)]"],
+                    //
                     ["^src/"],
+                    // Relative imports.
+                    // Anything that starts with a dot.
                     ["^\\."]
                 ]
             }
