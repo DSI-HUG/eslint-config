@@ -15,8 +15,9 @@
     "main": "index.js",
     "files": [
         "index.js",
+        "_base.js",
         "recommended.js",
-        "strict.js",
+        "moderate.js",
         "rules"
     ],
     "keywords": [
@@ -42,10 +43,10 @@
         "typescript": ">= 3"
     },
     "dependencies": {
-        "@angular-eslint/builder": "3.0.0",
-        "@angular-eslint/eslint-plugin": "3.0.0",
-        "@angular-eslint/eslint-plugin-template": "3.0.0",
-        "@angular-eslint/template-parser": "3.0.0",
+        "@angular-eslint/builder": "^4.0.0",
+        "@angular-eslint/eslint-plugin": "^4.0.0",
+        "@angular-eslint/eslint-plugin-template": "^4.0.0",
+        "@angular-eslint/template-parser": "^4.0.0",
         "@rushstack/eslint-patch": "^1.0.6",
         "@typescript-eslint/eslint-plugin": "^4.22.0",
         "@typescript-eslint/parser": "^4.22.0",

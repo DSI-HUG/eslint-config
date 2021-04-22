@@ -7,6 +7,10 @@ module.exports = {
         "chai-friendly",
         "@typescript-eslint"
     ],
+    "extends": [
+        "plugin:cypress/recommended",
+        "plugin:chai-friendly/recommended"
+    ],
     "rules": {
         // Disallow unused variables
         // https://eslint.org/docs/rules/no-unused-vars

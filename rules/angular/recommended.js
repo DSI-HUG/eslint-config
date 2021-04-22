@@ -2,6 +2,10 @@ module.exports = {
     "plugins": [
         "@angular-eslint"
     ],
+    "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+    ],
     "rules": {
         // Disallow having too many lines in inline template and styles
         // http://codelyzer.com/rules/component-max-inline-declarations
@@ -56,6 +60,9 @@ module.exports = {
         // http://codelyzer.com/rules/relative-url-prefix
         "@angular-eslint/relative-url-prefix": "error",
 
+        /**
+         * TODO: wait for https://github.com/angular-eslint/angular-eslint/issues/406
+         */
         // Enforce sorting of values within NgModule metadata arrays
         // https://github.com/angular-eslint/angular-eslint/blob/master/packages/eslint-plugin/docs/rules/sort-ngmodule-metadata-arrays.md
         // "@angular-eslint/sort-ngmodule-metadata-arrays": "error",

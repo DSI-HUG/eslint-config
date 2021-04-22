@@ -1,7 +1,5 @@
 module.exports = {
-    "plugins": [
-        "@angular-eslint"
-    ],
+    "extends": "./recommended",
     "rules": {
         // Enforce component’s change detection to ChangeDetectionStrategy.OnPush
         // http://codelyzer.com/rules/prefer-on-push-component-change-detection

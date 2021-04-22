@@ -10,6 +10,9 @@ module.exports = {
             "objectLiteralDuplicateProperties": false
         }
     },
+    "extends": [
+        "eslint:recommended"
+    ],
     "rules": {
         // Enforce or disallow the use of braces around arrow function body
         // https://eslint.org/docs/rules/arrow-body-style

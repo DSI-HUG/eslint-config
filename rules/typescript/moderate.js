@@ -1,9 +1,7 @@
 const { namingConventions } = require('./utils');
 
 module.exports = {
-    "plugins": [
-        "@typescript-eslint"
-    ],
+    "extends": "./recommended",
     "rules": {
         // Require explicit accessibility modifiers on class properties and methods
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-member-accessibility.md

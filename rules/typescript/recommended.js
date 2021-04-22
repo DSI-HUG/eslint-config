@@ -4,8 +4,11 @@ module.exports = {
     "plugins": [
         "@typescript-eslint"
     ],
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    ],
     "rules": {
-        // ESLint extras
         "max-len": "off",
         "no-shadow": "off",
         "no-empty": "error",
