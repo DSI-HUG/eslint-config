@@ -50,7 +50,7 @@ $ yarn add @hug/eslint-config --dev
 
 > As of now this configuration is intented to work with **Angular projects** only.
 
-> Projects running under `Angular 10.x` should use `@hug/eslint-config@1.1.0`.
+> Projects running under `Angular 10.x` can safely ignore `@angular-eslint` warnings during installation.
 
 An **Angular >= 10.x** project with:
 
@@ -98,9 +98,10 @@ An **Angular >= 10.x** project with:
         "builder": "@angular-eslint/builder:lint",
         "options": {
             "lintFilePatterns": [
-                "src/**/*.ts",
-                "src/**/*.html",
-                "e2e/**/*.ts"
+                "**/*.js",
+                "**/*.json",
+                "**/*.ts",
+                "**/*.html"
             ]
         }
     }
@@ -120,9 +121,11 @@ The rules applies as follow:
 
 | Files | Rules |
 | :---- | :---- |
-| src/**/*.ts | `es6`, `typescript`, `angular`, `rxjs` |
-| src/**/*.html | `angular-template` |
-| e2e/**/*.ts | `es6`, `typescript`, `cypress`, `chai-friendly` |
+| **/*.ts | `es6`, `typescript`, `angular`, `rxjs`, `no-secrets` |
+| **/*.js | `es6`, `no-secrets` |
+| **/*.html | `angular-template` |
+| **/*.json | `no-secrets` |
+| e2e/**/*.ts | `es6`, `typescript`, `no-secrets`, `cypress`, `chai-friendly` |
 
 > ***Tip***: a less stricter set of rules can be used with `@hug/eslint-config/moderate`.
 
@@ -133,7 +136,7 @@ The rules applies as follow:
 
 2. Remove any `tslint.json` configuration files
 
-3. Add `eslint` as dev dependency
+3. Add `eslint` as a dev dependency
 
 4. Have a look at our [Angular project example][ng-example] and modify all your `tsconfig` files accordingly
 
