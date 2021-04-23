@@ -1,6 +1,7 @@
 module.exports = {
     "plugins": [
         "no-loops",
+        "no-secrets",
         "prefer-arrow",
         "simple-import-sort"
     ],
@@ -8,6 +9,10 @@ module.exports = {
         // Disallow use of loops (for, for-in, while, do-while, for-of)
         // https://github.com/buildo/eslint-plugin-no-loops
         "no-loops/no-loops": "error",
+
+        // Search for potential secrets/keys in code and JSON files
+        // https://github.com/nickdeis/eslint-plugin-no-secrets
+        "no-secrets/no-secrets": "error",
 
         // Prefer arrow functions
         // https://github.com/TristonJ/eslint-plugin-prefer-arrow

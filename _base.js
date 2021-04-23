@@ -57,6 +57,14 @@ module.exports = (mode = 'recommended') => {
             },
             {
                 "files": [
+                    "**/*.json"
+                ],
+                "extends": [
+                    require.resolve("./rules/json")
+                ]
+            },
+            {
+                "files": [
                     "e2e/**/*.ts"
                 ],
                 "parser": "@typescript-eslint/parser",
