@@ -12,7 +12,12 @@ module.exports = {
 
         // Search for potential secrets/keys in code and JSON files
         // https://github.com/nickdeis/eslint-plugin-no-secrets
-        "no-secrets/no-secrets": "error",
+        "no-secrets/no-secrets": [
+            "error",
+            {
+                "tolerance": 5
+            }
+        ],
 
         // Prefer arrow functions
         // https://github.com/TristonJ/eslint-plugin-prefer-arrow
