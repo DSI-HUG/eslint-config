@@ -7,6 +7,15 @@ module.exports = {
         "plugin:@angular-eslint/template/process-inline-templates"
     ],
     "rules": {
+        // Enforce components to have a specified suffix
+        // https://github.com/angular-eslint/angular-eslint/blob/master/packages/eslint-plugin/docs/rules/component-class-suffix.md
+        "@angular-eslint/component-class-suffix": [
+            "error",
+            {
+                "suffixes": ["Component", "Page"]
+            }
+        ],
+
         // Disallow having too many lines in inline template and styles
         // http://codelyzer.com/rules/component-max-inline-declarations
         "@angular-eslint/component-max-inline-declarations": [
