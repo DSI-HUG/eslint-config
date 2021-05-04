@@ -12,6 +12,7 @@ module.exports = (mode = 'recommended') => {
             "jasmine": true
         },
         "ignorePatterns": [
+            "package-lock.json",
             "projects/**/*"
         ],
         "overrides": [
@@ -82,4 +83,4 @@ module.exports = (mode = 'recommended') => {
             }
         ]
     };
-}
+};
