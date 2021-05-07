@@ -184,6 +184,10 @@ module.exports = {
         // https://eslint.org/docs/rules/no-debugger
         "no-debugger": "error",
 
+        // Disallow duplicate imports
+        // https://eslint.org/docs/rules/no-duplicate-imports
+        "no-duplicate-imports": "error",
+
         // Disallow eval()
         // https://eslint.org/docs/rules/no-eval
         "no-eval": "error",
