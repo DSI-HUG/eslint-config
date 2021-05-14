@@ -279,6 +279,16 @@ module.exports = {
                 "asyncArrow": "always"
             }],
 
+        // Ensure there are spaces around infix operators
+        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-infix-ops.md
+        "space-infix-ops": "off",
+        "@typescript-eslint/space-infix-ops": [
+            "error",
+            {
+                "int32Hint": false
+            }
+        ],
+
         // Exhaustiveness checking in switch with union type
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/switch-exhaustiveness-check.md
         "@typescript-eslint/switch-exhaustiveness-check": "error",
