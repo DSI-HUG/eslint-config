@@ -20,6 +20,9 @@ module.exports = (mode = 'recommended') => {
                 "files": [
                     "**/*.ts"
                 ],
+                "excludedFiles": [
+                    "e2e/**/*.ts"
+                ],
                 "parser": "@typescript-eslint/parser",
                 "parserOptions": {
                     "project": [
@@ -36,13 +39,25 @@ module.exports = (mode = 'recommended') => {
             },
             {
                 "files": [
-                    "**/*.js"
+                    "e2e/**/*.ts"
                 ],
+                "parser": "@typescript-eslint/parser",
                 "parserOptions": {
                     "project": [
                         "tsconfig.eslint.json"
                     ]
                 },
+                "extends": [
+                    require.resolve("./rules/es6"),
+                    require.resolve(`./rules/typescript/${mode}`),
+                    require.resolve("./rules/extras"),
+                    require.resolve("./rules/cypress")
+                ]
+            },
+            {
+                "files": [
+                    "**/*.js"
+                ],
                 "extends": [
                     require.resolve("./rules/es6"),
                     require.resolve("./rules/extras")
@@ -62,23 +77,6 @@ module.exports = (mode = 'recommended') => {
                 ],
                 "extends": [
                     require.resolve("./rules/json")
-                ]
-            },
-            {
-                "files": [
-                    "e2e/**/*.ts"
-                ],
-                "parser": "@typescript-eslint/parser",
-                "parserOptions": {
-                    "project": [
-                        "tsconfig.eslint.json"
-                    ]
-                },
-                "extends": [
-                    require.resolve("./rules/es6"),
-                    require.resolve(`./rules/typescript/${mode}`),
-                    require.resolve("./rules/extras"),
-                    require.resolve("./rules/cypress")
                 ]
             }
         ]
