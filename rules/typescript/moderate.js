@@ -25,6 +25,15 @@ module.exports = {
                 "selector": "property",
                 "format": ["strictCamelCase", "UPPER_CASE"],
                 "leadingUnderscore": "allow"
+            }, {
+                "selector": "variable",
+                "modifiers": ["global"],
+                "format": ["UPPER_CASE"],
+                "leadingUnderscore": "allow"
+            }, {
+                "selector": "method",
+                "format": ["strictCamelCase"],
+                "leadingUnderscore": "allow"
             }])
         ]
     }
