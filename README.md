@@ -38,11 +38,15 @@
 ## Installation
 
 ```sh
+# Angular >= 12.x
 $ npm install @hug/eslint-config --save-dev
+$ yarn add @hug/eslint-config --dev
 ```
 
 ```sh
-$ yarn add @hug/eslint-config --dev
+# Angular >= 10.x <= 11.x
+$ npm install @hug/eslint-config@2.x --save-dev
+$ yarn add @hug/eslint-config@2.x --dev
 ```
 
 
