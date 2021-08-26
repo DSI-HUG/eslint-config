@@ -69,12 +69,9 @@ module.exports = {
         // http://codelyzer.com/rules/relative-url-prefix
         "@angular-eslint/relative-url-prefix": "error",
 
-        /**
-         * TODO: wait for https://github.com/angular-eslint/angular-eslint/issues/406
-         */
         // Enforce sorting of values within NgModule metadata arrays
         // https://github.com/angular-eslint/angular-eslint/blob/master/packages/eslint-plugin/docs/rules/sort-ngmodule-metadata-arrays.md
-        // "@angular-eslint/sort-ngmodule-metadata-arrays": "error",
+        "@angular-eslint/sort-ngmodule-metadata-arrays": "error",
 
         // Component selector must be declared
         // http://codelyzer.com/rules/use-component-selector
