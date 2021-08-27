@@ -22,17 +22,17 @@ module.exports = {
         "@typescript-eslint/naming-convention": [
             "error",
             ...namingConventions([{
+                "selector": "default",
+                "format": ["strictCamelCase"],
+                "leadingUnderscore": "allow",
+            }, {
                 "selector": "property",
                 "format": ["strictCamelCase", "UPPER_CASE"],
                 "leadingUnderscore": "allow"
             }, {
                 "selector": "variable",
-                "modifiers": ["global"],
-                "format": ["UPPER_CASE"],
-                "leadingUnderscore": "allow"
-            }, {
-                "selector": "method",
-                "format": ["strictCamelCase"],
+                "format": ["strictCamelCase", "UPPER_CASE"],
+                "types": ["boolean", "string", "number", "array"],
                 "leadingUnderscore": "allow"
             }])
         ]
