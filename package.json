@@ -37,6 +37,7 @@
         "cypress"
     ],
     "peerDependencies": {
+        "@angular-eslint/builder": ">= 10",
         "@angular/core": ">= 10",
         "eslint": ">= 7",
         "rxjs": ">= 6",
