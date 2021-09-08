@@ -1,5 +1,10 @@
 'use strict';
 
+// This is a workaround for vscode not finding tsconfig.eslint.json when a workspace is opened
+// instead of the root folder of the project
+const filename = 'tsconfig.eslint.json';
+const tsconfigEslintJson = require('find-up').sync(filename, { cwd: __dirname }) || filename;
+
 // This is a workaround for https://github.com/eslint/eslint/issues/3458
 require('@rushstack/eslint-patch/modern-module-resolution');
 
@@ -26,7 +31,7 @@ module.exports = (mode = 'recommended') => {
                 "parser": "@typescript-eslint/parser",
                 "parserOptions": {
                     "project": [
-                        "tsconfig.eslint.json"
+                        tsconfigEslintJson
                     ]
                 },
                 "extends": [
@@ -44,7 +49,7 @@ module.exports = (mode = 'recommended') => {
                 "parser": "@typescript-eslint/parser",
                 "parserOptions": {
                     "project": [
-                        "tsconfig.eslint.json"
+                        tsconfigEslintJson
                     ]
                 },
                 "extends": [
