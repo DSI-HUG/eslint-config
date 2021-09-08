@@ -37,7 +37,7 @@
         "cypress"
     ],
     "peerDependencies": {
-        "@angular/core": ">= 10",
+        "@angular/core": ">= 10 && <= 11",
         "eslint": "^7.25.0",
         "rxjs": ">= 6",
         "typescript": ">= 3"
