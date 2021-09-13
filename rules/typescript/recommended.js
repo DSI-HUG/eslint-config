@@ -171,7 +171,7 @@ module.exports = {
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/method-signature-style.md
         "@typescript-eslint/method-signature-style": [
             "error",
-            "method"
+            "property"
         ],
 
         // Enforce naming conventions for everything across a codebase
