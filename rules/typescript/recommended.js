@@ -189,6 +189,10 @@ module.exports = {
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-interface.md
         "@typescript-eslint/no-empty-interface": "error",
 
+        // Disallow usage of the any type
+        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-explicit-any.md
+        "@typescript-eslint/no-explicit-any": "error",
+
         // Disallow extra non-null assertion
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-non-null-assertion.md
         "@typescript-eslint/no-extra-non-null-assertion": "error",
