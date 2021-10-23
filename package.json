@@ -38,7 +38,7 @@
     ],
     "peerDependencies": {
         "@angular/core": ">= 10",
-        "eslint": ">= 7",
+        "eslint": ">= 8",
         "rxjs": ">= 6",
         "typescript": ">= 3"
     },
@@ -48,18 +48,18 @@
         "@angular-eslint/eslint-plugin-template": "^12.5.0",
         "@angular-eslint/template-parser": "^12.5.0",
         "@rushstack/eslint-patch": "^1.0.7",
-        "@typescript-eslint/eslint-plugin": "^4.32.0",
-        "@typescript-eslint/parser": "^4.32.0",
+        "@typescript-eslint/eslint-plugin": "^5.1.0",
+        "@typescript-eslint/parser": "^5.1.0",
         "eslint-plugin-chai-friendly": "^0.7.2",
         "eslint-plugin-cypress": "^2.12.1",
         "eslint-plugin-import": "^2.24.2",
-        "eslint-plugin-jsdoc": "^36.1.0",
+        "eslint-plugin-jsdoc": "^37.0.0",
         "eslint-plugin-jsonc": "^1.7.0",
         "eslint-plugin-no-loops": "^0.3.0",
         "eslint-plugin-no-secrets": "^0.8.9",
         "eslint-plugin-prefer-arrow": "^1.2.3",
-        "eslint-plugin-rxjs": "^3.3.7",
-        "eslint-plugin-rxjs-angular": "^1.0.6",
+        "eslint-plugin-rxjs": "^4.0.0",
+        "eslint-plugin-rxjs-angular": "^2.0.0",
         "eslint-plugin-simple-import-sort": "^7.0.0"
     }
 }
