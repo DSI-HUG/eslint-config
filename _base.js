@@ -1,7 +1,6 @@
 'use strict';
 
-// This is a workaround for vscode not finding tsconfig.eslint.json when a workspace is opened
-// instead of the root folder of the project
+// This is a workaround for vscode not finding tsconfig.eslint.json when a workspace is opened.
 const filename = 'tsconfig.eslint.json';
 const tsconfigEslintJson = require('find-up').sync(filename, { cwd: __dirname }) || filename;
 
