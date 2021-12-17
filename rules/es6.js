@@ -10,6 +10,9 @@ module.exports = {
             "objectLiteralDuplicateProperties": false
         }
     },
+    "plugins": [
+        "unused-imports"
+    ],
     "extends": [
         "eslint:recommended"
     ],
@@ -296,6 +299,20 @@ module.exports = {
         // Disallow Unused Labels
         // https://eslint.org/docs/rules/no-unused-labels
         "no-unused-labels": "error",
+
+        // Find and remove unused es6 module imports
+        // https://github.com/sweepline/eslint-plugin-unused-imports
+        "no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+            "warn",
+            {
+                "vars": "all",
+                "varsIgnorePattern": "^_",
+                "args": "after-used",
+                "argsIgnorePattern": "^_"
+            }
+        ],
 
         // Disallow renaming import, export, and destructured assignments to the same name
         // https://eslint.org/docs/rules/no-useless-rename
