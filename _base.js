@@ -1,11 +1,18 @@
 'use strict';
 
-// This is a workaround for vscode not finding tsconfig.eslint.json when a workspace is opened.
+// This is a workaround for vscode not finding tsconfig.eslint.json when a workspace is opened
+// instead of the root folder of the project
 const filename = 'tsconfig.eslint.json';
 const tsconfigEslintJson = require('find-up').sync(filename, { cwd: __dirname }) || filename;
 
 // This is a workaround for https://github.com/eslint/eslint/issues/3458
 require('@rushstack/eslint-patch/modern-module-resolution');
+
+const isPackageInstalled = (name) => {
+    try { require(name); return true; } catch { return false; }
+};
+
+const needCypress = isPackageInstalled('cypress');
 
 module.exports = (mode = 'recommended') => {
     return {
@@ -55,8 +62,8 @@ module.exports = (mode = 'recommended') => {
                     require.resolve("./rules/es6"),
                     require.resolve(`./rules/typescript/${mode}`),
                     require.resolve("./rules/extras"),
-                    require.resolve("./rules/cypress")
-                ]
+                    (needCypress) ? require.resolve("./rules/cypress") : undefined
+                ].filter(Boolean)
             },
             {
                 "files": [

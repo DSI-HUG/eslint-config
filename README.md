@@ -59,21 +59,31 @@ $ yarn add @hug/eslint-config@2.x --dev
 An **Angular >= 10.x** project with:
 
 * `eslint` installed *(see the [migration guide](#tslint-migration) for projects that are still using `tslint`)*
-* [cypress][cypress] [optional] *(for friendly linting against end-to-end tests)*
 
 
 ## Usage
 
 1. Create a `tsconfig.eslint.json` file at the root of your project
 
-```json
+```jsonc
 {
     "extends": "./tsconfig.json",
     "compilerOptions": {
         "types": [
+            "node",
             "jasmine",
-            "cypress",
-            "node"
+            //
+            // In case you are using WebdriverIO
+            //   "expect-webdriverio",
+            //   "webdriverio/async",
+            //   "@wdio/local-runner",
+            //   "@wdio/jasmine-framework"
+            //
+            // In case you are using Cypress
+            //   "cypress"
+            //
+            // Any other types that are required by your tests
+            //   ...
         ]
     },
     "include": [
@@ -85,10 +95,13 @@ An **Angular >= 10.x** project with:
 
 2. Create a `.eslintrc.json` file at the root of your project
 
-```json
+```jsonc
 {
     "root": true,
     "extends": [
+        /**
+         *  Possible values: 'recommended (strict) | moderate (less stricter)'
+         */
         "@hug/eslint-config/recommended"
     ]
 }
@@ -129,9 +142,7 @@ The rules applies as follow:
 | **/*.js | `es6`, `no-secrets` |
 | **/*.html | `angular-template` |
 | **/*.json | `no-secrets` |
-| e2e/**/*.ts | `es6`, `typescript`, `no-secrets`, `cypress`, `chai-friendly` |
-
-> ***Tip***: a less stricter set of rules can be used with `@hug/eslint-config/moderate`.
+| e2e/**/*.ts | `es6`, `typescript`, `no-secrets`, [`cypress`, `chai-friendly` - in case you are using Cypress] |
 
 
 ## <a name="tslint-migration"></a> Migrating from tslint
