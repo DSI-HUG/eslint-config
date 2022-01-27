@@ -1,6 +1,6 @@
 {
     "name": "@hug/eslint-config",
-    "version": "5.0.0",
+    "version": "5.0.1",
     "description": "ESLint shareable configuration with great defaults",
     "homepage": "https://github.com/DSI-HUG/eslint-config",
     "license": "GPL-3.0-only",
