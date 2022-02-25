@@ -3,13 +3,13 @@
 </h1>
 
 <p align="center">
-    <br>
+    <br/>
     <a href="https://www.hug.ch/">
         <img src="https://www.hug.ch/sites/all/themes/interhug/img/logos/logo-hug.svg" alt="hug-logo" height="54px" />
     </a>
-    <br><br>
+    <br/><br/>
     <i>ESLint shareable configuration with great defaults</i>
-    <br><br>
+    <br/><br/>
 </p>
 
 <p align="center">
@@ -33,7 +33,7 @@
     </a>
 </p>
 
-<hr>
+<hr/>
 
 ## Installation
 
