@@ -140,6 +140,7 @@ The rules applies as follow:
 | :---- | :---- |
 | **/*.ts | `es6`, `typescript`, `angular`, `rxjs`, `no-secrets` |
 | **/*.js | `es6`, `no-secrets` |
+| **/*.mjs | `es6`, `no-secrets` |
 | **/*.html | `angular-template` |
 | **/*.json | `no-secrets` |
 | e2e/**/*.ts | `es6`, `typescript`, `no-secrets`, [`cypress`, `chai-friendly` - in case you are using Cypress] |
