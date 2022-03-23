@@ -75,6 +75,18 @@ module.exports = (mode = 'recommended') => {
             },
             {
                 "files": [
+                    "**/*.mjs"
+                ],
+                "parserOptions": {
+                    "sourceType": "module"
+                },
+                "extends": [
+                    require.resolve("./rules/es6"),
+                    require.resolve("./rules/extras")
+                ]
+            },
+            {
+                "files": [
                     "**/*.html"
                 ],
                 "extends": [
