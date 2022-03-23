@@ -12,14 +12,19 @@
         "type": "git",
         "url": "https://github.com/DSI-HUG/eslint-config.git"
     },
-    "main": "index.js",
+    "main": "./recommended.js",
     "exports": {
         ".": {
-            "require": "./index.js"
+            "require": "./recommended.js"
+        },
+        "./recommended": {
+            "require": "./recommended.js"
+        },
+        "./moderate": {
+            "require": "./moderate.js"
         }
     },
     "files": [
-        "index.js",
         "_base.js",
         "recommended.js",
         "moderate.js",
