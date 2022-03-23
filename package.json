@@ -13,6 +13,11 @@
         "url": "https://github.com/DSI-HUG/eslint-config.git"
     },
     "main": "index.js",
+    "exports": {
+        ".": {
+            "require": "./index.js"
+        }
+    },
     "files": [
         "index.js",
         "_base.js",
@@ -48,12 +53,12 @@
         "@angular-eslint/eslint-plugin-template": "13.1.0",
         "@angular-eslint/template-parser": "13.1.0",
         "@rushstack/eslint-patch": "1.1.1",
-        "@typescript-eslint/eslint-plugin": "5.15.0",
-        "@typescript-eslint/parser": "5.15.0",
+        "@typescript-eslint/eslint-plugin": "5.16.0",
+        "@typescript-eslint/parser": "5.16.0",
         "eslint-plugin-chai-friendly": "0.7.2",
         "eslint-plugin-cypress": "2.12.1",
         "eslint-plugin-import": "2.25.4",
-        "eslint-plugin-jsdoc": "38.0.4",
+        "eslint-plugin-jsdoc": "38.0.6",
         "eslint-plugin-jsonc": "2.2.1",
         "eslint-plugin-no-loops": "0.3.0",
         "eslint-plugin-no-secrets": "0.8.9",
