@@ -78,6 +78,7 @@ module.exports = (mode = 'recommended') => {
                     "**/*.mjs"
                 ],
                 "parserOptions": {
+                    "ecmaVersion": 11,
                     "sourceType": "module"
                 },
                 "extends": [
