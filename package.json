@@ -12,6 +12,9 @@
         "type": "git",
         "url": "https://github.com/DSI-HUG/eslint-config.git"
     },
+    "engines": {
+        "node": ">= 14"
+    },
     "main": "./recommended.js",
     "exports": {
         ".": {
