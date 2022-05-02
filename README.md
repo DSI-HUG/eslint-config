@@ -26,7 +26,7 @@
 
 <p align="center">
     <a href="https://david-dm.org/DSI-HUG/eslint-config">
-        <img src="https://img.shields.io/david/DSI-HUG/eslint-config.svg" alt="dependency status" />
+        <img src="https://img.shields.io/librariesio/release/npm/@hug/eslint-config" alt="dependency status" />
     </a>
     <a href="https://github.com/DSI-HUG/eslint-config/blob/master/CONTRIBUTING.md#-submitting-a-pull-request-pr">
         <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome" />
