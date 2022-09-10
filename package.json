@@ -75,6 +75,6 @@
         "eslint-plugin-rxjs-angular": "2.0.0",
         "eslint-plugin-simple-import-sort": "8.0.0",
         "eslint-plugin-unused-imports": "2.0.0",
-        "find-up": "^6.3.0"
+        "find-up": "5.0.0"
     }
 }
