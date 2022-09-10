@@ -16,14 +16,6 @@ $ cd <library-path>
 $ npm install
 ```
 
-## Building the library
-
-The library will be built in the `./dist/library` directory.
-
-```sh
-$ npm run build
-```
-
 ## Publishing to NPM repository
 
 This project comes with automatic continuous delivery (CD) using *GitHub Actions*.
