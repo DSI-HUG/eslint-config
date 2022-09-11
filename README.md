@@ -40,13 +40,13 @@
 ```sh
 # Angular >= 12.x
 $ npm install @hug/eslint-config --save-dev
-$ yarn add @hug/eslint-config --dev
+$ yarn add eslint@8.x @hug/eslint-config --dev
 ```
 
 ```sh
 # Angular >= 10.x <= 11.x
 $ npm install @hug/eslint-config@2.x --save-dev
-$ yarn add @hug/eslint-config@2.x --dev
+$ yarn add eslint@7.x @hug/eslint-config@2.x --dev
 ```
 
 
@@ -56,9 +56,7 @@ $ yarn add @hug/eslint-config@2.x --dev
 
 > Projects running under `Angular 10.x` can safely ignore `@angular-eslint` warnings during installation.
 
-An **Angular >= 10.x** project with:
-
-* `eslint` installed *(see the [migration guide](#tslint-migration) for projects that are still using `tslint`)*
+* an **Angular >= 10.x** project *(see the [migration guide](#tslint-migration) for projects that are still using `tslint`)*
 
 
 ## Usage
