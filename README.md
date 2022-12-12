@@ -22,6 +22,12 @@
     <a href="https://github.com/DSI-HUG/eslint-config/blob/master/LICENSE">
         <img src="https://img.shields.io/badge/license-GPLv3-ff69b4.svg" alt="license GPLv3" />
     </a>
+</p>
+
+<p align="center">
+    <a href="https://github.com/DSI-HUG/eslint-config/actions/workflows/ci_tests.yml">
+        <img src="https://github.com/DSI-HUG/eslint-config/actions/workflows/ci_tests.yml/badge.svg" alt="build status" />
+    </a>
     <a href="https://github.com/DSI-HUG/eslint-config/blob/master/CONTRIBUTING.md#-submitting-a-pull-request-pr">
         <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome" />
     </a>
