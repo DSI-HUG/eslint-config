@@ -4,8 +4,8 @@
 
 <p align="center">
     <br/>
-    <a href="https://www.hug.ch/">
-        <img src="https://cdn.hug.ch/svgs/logo-hug.svg" alt="hug-logo" height="54px" />
+    <a href="https://www.hug.ch">
+        <img src="https://cdn.hug.ch/svgs/hug/hug-logo-horizontal.svg" alt="hug-logo" height="54px" />
     </a>
     <br/><br/>
     <i>ESLint shareable configuration with great defaults</i>
