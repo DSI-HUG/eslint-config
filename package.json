@@ -2,7 +2,7 @@
     "name": "@hug/eslint-config",
     "version": "12.0.0",
     "description": "ESLint shareable configuration with great defaults",
-    "homepage": "https://github.com/DSI-HUG/eslint-config",
+    "homepage": "https://github.com/dsi-hug/eslint-config",
     "license": "GPL-3.0-only",
     "author": "HUG - Hôpitaux Universitaires Genève",
     "contributors": [
@@ -10,10 +10,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/DSI-HUG/eslint-config.git"
-    },
-    "engines": {
-        "node": ">= 14"
+        "url": "https://github.com/dsi-hug/eslint-config.git"
     },
     "main": "./recommended.js",
     "exports": {
@@ -28,6 +25,8 @@
         }
     },
     "files": [
+        "README.md",
+        "LICENSE",
         "_base.js",
         "recommended.js",
         "moderate.js",
@@ -50,6 +49,7 @@
         "cypress"
     ],
     "scripts": {
+        "prepare": "husky install",
         "ncu": "npx ncu -i --format=group",
         "test": "eslint --config ./tests/moderaterc.json ./tests && eslint --config ./tests/recommendedrc.json ./tests"
     },
@@ -83,8 +83,14 @@
     },
     "devDependencies": {
         "@angular/core": "^15.1.5",
+        "@commitlint/cli": "^17.4.4",
+        "@commitlint/config-conventional": "^17.4.4",
         "eslint": "^8.34.0",
+        "husky": "^8.0.3",
         "rxjs": "^7.8.0",
         "typescript": "^4.9.5"
+    },
+    "engines": {
+        "node": ">= 14.14.0"
     }
 }
