@@ -72,10 +72,7 @@ $ yarn add eslint@7.x @hug/eslint-config@2.x --dev
             "jasmine",
             //
             // In case you are using WebdriverIO
-            //   "expect-webdriverio",
-            //   "webdriverio/async",
-            //   "@wdio/local-runner",
-            //   "@wdio/jasmine-framework"
+            //   "@wdio/globals/types"
             //
             // In case you are using Cypress
             //   "cypress"
