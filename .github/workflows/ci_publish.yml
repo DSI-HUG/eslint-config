@@ -1,8 +1,11 @@
-name: Publish library to NPM
+name: Publish library
 
 on:
   release:
     types: [created]
+
+env:
+  NODE: 18
 
 jobs:
   ci_tests:
@@ -19,13 +22,26 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: ${{ env.NODE }}
           registry-url: https://registry.npmjs.org/
+          cache: npm
 
       - name: Install latest npm
         run: npm install -g npm@latest
 
+      - name: Cache .angular and node_modules
+        uses: actions/cache@v3
+        id: cache-step
+        with:
+          key: cache-ubuntu-latest-node${{ env.NODE }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            cache-ubuntu-latest-node${{ env.NODE }}-
+          path: |
+            .angular/cache
+            node_modules
+
       - name: Install dependencies
+        if: steps.cache-step.outputs.cache-hit != 'true'
         run: npm clean-install --engine-strict
 
       - name: Publish

@@ -19,16 +19,16 @@
     <a href="https://npmcharts.com/compare/@hug/eslint-config?minimal=true">
         <img src="https://img.shields.io/npm/dw/@hug/eslint-config.svg?color=blue&logo=npm" alt="npm donwloads" />
     </a>
-    <a href="https://github.com/DSI-HUG/eslint-config/blob/master/LICENSE">
+    <a href="https://github.com/dsi-hug/eslint-config/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/license-GPLv3-ff69b4.svg" alt="license GPLv3" />
     </a>
 </p>
 
 <p align="center">
-    <a href="https://github.com/DSI-HUG/eslint-config/actions/workflows/ci_tests.yml">
-        <img src="https://github.com/DSI-HUG/eslint-config/actions/workflows/ci_tests.yml/badge.svg" alt="build status" />
+    <a href="https://github.com/dsi-hug/eslint-config/actions/workflows/ci_tests.yml">
+        <img src="https://github.com/dsi-hug/eslint-config/actions/workflows/ci_tests.yml/badge.svg" alt="build status" />
     </a>
-    <a href="https://github.com/DSI-HUG/eslint-config/blob/master/CONTRIBUTING.md#-submitting-a-pull-request-pr">
+    <a href="https://github.com/dsi-hug/eslint-config/blob/main/CONTRIBUTING.md#-submitting-a-pull-request-pr">
         <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome" />
     </a>
 </p>
@@ -162,18 +162,20 @@ See the [developer docs][developer].
 
 ## Contributing
 
-### Want to Help?
+#### > Want to Help?
 
 Want to file a bug, contribute some code or improve documentation? Excellent!
 
 But please read up first on the guidelines for [contributing][contributing], and learn about submission process, coding rules and more.
 
-### Code of Conduct
+#### > Code of Conduct
 
 Please read and follow the [Code of Conduct][codeofconduct], and help us keep this project open and inclusive.
 
 
 ## Credits
+
+Copyright (C) 2023 [HUG - Hôpitaux Universitaires Genève][dsi-hug]
 
 [![love@hug](https://img.shields.io/badge/@hug-%E2%9D%A4%EF%B8%8Flove-magenta)][dsi-hug]
 
@@ -181,9 +183,9 @@ Please read and follow the [Code of Conduct][codeofconduct], and help us keep th
 
 
 [angular-eslint]: https://github.com/angular-eslint/angular-eslint
-[ng-example]: https://github.com/DSI-HUG/eslint-config/blob/master/examples/angular
+[ng-example]: https://github.com/dsi-hug/eslint-config/blob/main/examples/angular
 [cypress]: https://www.cypress.io/
-[developer]: https://github.com/DSI-HUG/eslint-config/blob/master/DEVELOPER.md
-[contributing]: https://github.com/DSI-HUG/eslint-config/blob/master/CONTRIBUTING.md
-[codeofconduct]: https://github.com/DSI-HUG/eslint-config/blob/master/CODE_OF_CONDUCT.md
-[dsi-hug]: https://github.com/DSI-HUG
+[developer]: https://github.com/dsi-hug/eslint-config/blob/main/DEVELOPER.md
+[contributing]: https://github.com/dsi-hug/eslint-config/blob/main/CONTRIBUTING.md
+[codeofconduct]: https://github.com/dsi-hug/eslint-config/blob/main/CODE_OF_CONDUCT.md
+[dsi-hug]: https://github.com/dsi-hug
