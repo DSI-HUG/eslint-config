@@ -50,7 +50,7 @@
     ],
     "scripts": {
         "prepare": "husky install",
-        "ncu": "npx ncu -i --format=group",
+        "ncu": "npx npm-check-updates -i --format=group",
         "test": "eslint --config ./tests/moderaterc.json ./tests && eslint --config ./tests/recommendedrc.json ./tests"
     },
     "peerDependencies": {
