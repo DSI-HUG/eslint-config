@@ -15,14 +15,18 @@
     "main": "./recommended.js",
     "exports": {
         ".": {
+            "default": "./recommended.js",
             "require": "./recommended.js"
         },
         "./recommended": {
+            "default": "./recommended.js",
             "require": "./recommended.js"
         },
         "./moderate": {
+            "default": "./moderate.js",
             "require": "./moderate.js"
-        }
+        },
+        "./package.json": "./package.json"
     },
     "files": [
         "README.md",
