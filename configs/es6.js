@@ -1,22 +1,15 @@
-module.exports = {
-    "env": {
-        "es6": true
+import unusedImports from 'eslint-plugin-unused-imports';
+import js from '@eslint/js';
+
+/** @type { import('eslint').Linter.FlatConfig } */
+const config = {
+    plugins: {
+        "unused-imports": unusedImports
     },
-    "parserOptions": {
-        "ecmaVersion": 9,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "generators": false,
-            "objectLiteralDuplicateProperties": false
-        }
-    },
-    "plugins": [
-        "unused-imports"
-    ],
-    "extends": [
-        "eslint:recommended"
-    ],
-    "rules": {
+    rules: {
+        // Apply default recommended rules from Eslint
+        ...js.configs.recommended.rules,
+
         // Enforce or disallow the use of braces around arrow function body
         // https://eslint.org/docs/rules/arrow-body-style
         "arrow-body-style": "error",
@@ -452,5 +445,13 @@ module.exports = {
         // Require calls to isNaN() when checking for NaN
         // https://eslint.org/docs/rules/use-isnan
         "use-isnan": "error"
+    }
+};
+
+/** @type { import('../index.js').HugConfig } */
+export default {
+    configs: {
+        moderate: config,
+        recommended: config
     }
 };

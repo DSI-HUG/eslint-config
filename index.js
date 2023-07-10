@@ -5,23 +5,70 @@
  * SPDX-License-Identifier: GPL-3.0-only
  * Copyright (C) 2022 HUG
  */
-'use strict';
+import { findUpSync } from 'find-up';
+import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
+import path from 'node:path';
 
-// This is a workaround for vscode not finding tsconfig.eslint.json when a workspace is opened
-// instead of the root folder of the project
-const filename = 'tsconfig.eslint.json';
-const tsconfigEslintJson = require('find-up').sync(filename, { cwd: __dirname }) || filename;
+import typescriptParser from '@typescript-eslint/parser';
+
+import ts from './configs/typescript/index.js';
+import es6 from './configs/es6.js';
+import angular from './configs/angular.js';
+import rxjs from './configs/rxjs.js';
+import extras from './configs/extras.js';
+
+
+const require = createRequire(import.meta.url);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // This is a workaround for https://github.com/eslint/eslint/issues/3458
-require('@rushstack/eslint-patch/modern-module-resolution');
+// require('@rushstack/eslint-patch/levelrn-module-resolution');
 
-const isPackageInstalled = (name) => {
-    try { require(name); return true; } catch { return false; }
+// const isPackageInstalled = (name) => {
+//     try { require(name); return true; } catch { return false; }
+// };
+
+// const needCypress = isPackageInstalled('cypress');
+const needCypress = false;
+
+
+// This is a workaround for vscode not finding the `tsconfig.eslint.json` at the root of a project
+// when the project is opened through a vscode's workspace
+const filename = 'tsconfig.eslint.json';
+const tsconfigEslintJson = findUpSync(filename, { cwd: __dirname }) || filename;
+
+/** @type { (level: 'moderate' | 'recommended') => import('eslint').Linter.FlatConfig[] } */
+const config = (level) => {
+    return [{
+        files: ['**/*.ts'],
+        ignores: ['e2e/**/*.ts'],
+        languageOptions: {
+            // @ts-ignore
+            parser: typescriptParser,
+            parserOptions: {
+                project: [tsconfigEslintJson]
+            }
+        },
+        ...es6.configs[level],
+        ...ts.configs[level],
+        ...angular.configs[level]
+        ...rxjs.configs[level],
+        ...extras.configs[level]
+    }];
 };
 
-const needCypress = isPackageInstalled('cypress');
+/** @type { import('./index.js') } */
+export default {
+    configs: {
+        moderate: config('moderate'),
+        recommended: config('recommended'),
+    },
+    es6,
+    ts
+};
 
-module.exports = (mode = 'recommended') => {
+const base2 = (level = 'recommended') => {
     return {
         "env": {
             "browser": true,
@@ -35,9 +82,6 @@ module.exports = (mode = 'recommended') => {
         "overrides": [
             {
                 "files": [
-                    "**/*.ts"
-                ],
-                "excludedFiles": [
                     "e2e/**/*.ts"
                 ],
                 "parser": "@typescript-eslint/parser",
@@ -48,25 +92,7 @@ module.exports = (mode = 'recommended') => {
                 },
                 "extends": [
                     require.resolve("./rules/es6"),
-                    require.resolve(`./rules/typescript/${mode}`),
-                    require.resolve(`./rules/angular/${mode}`),
-                    require.resolve(`./rules/rxjs/${mode}`),
-                    require.resolve("./rules/extras")
-                ]
-            },
-            {
-                "files": [
-                    "e2e/**/*.ts"
-                ],
-                "parser": "@typescript-eslint/parser",
-                "parserOptions": {
-                    "project": [
-                        tsconfigEslintJson
-                    ]
-                },
-                "extends": [
-                    require.resolve("./rules/es6"),
-                    require.resolve(`./rules/typescript/${mode}`),
+                    require.resolve(`./rules/typescript/${level}`),
                     require.resolve("./rules/extras"),
                     (needCypress) ? require.resolve("./rules/cypress") : undefined
                 ].filter(Boolean)

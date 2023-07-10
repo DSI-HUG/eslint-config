@@ -1,8 +1,11 @@
 const { namingConventions } = require('./utils');
 
-module.exports = {
-    "extends": "./recommended",
-    "rules": {
+import recommended from './recommended.js';
+
+/** @type { import('eslint').Linter.FlatConfig } */
+export default {
+    ...recommended,
+    rules: {
         // Require explicit accessibility modifiers on class properties and methods
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-member-accessibility.md
         "@typescript-eslint/explicit-member-accessibility": [

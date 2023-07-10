@@ -1,4 +1,5 @@
-module.exports = {
+/** @type { import('eslint').Linter.FlatConfig } */
+export default {
     "plugins": [
         "@angular-eslint"
     ],

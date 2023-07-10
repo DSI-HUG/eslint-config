@@ -1,16 +1,21 @@
 const { namingConventions } = require('./utils');
 
-module.exports = {
-    "plugins": [
+import typescriptEslint from '@typescript-eslint';
+
+/** @type { import('eslint').Linter.FlatConfig } */
+export default {
+    /*"plugins": [
         "@typescript-eslint"
     ],
     "extends": [
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking"
-    ],
-    "rules": {
+    ],*/
+    plugins: {
+        typescriptEslint
+    },
+    rules: {
         "max-len": "off",
-        "no-shadow": "off",
         "no-empty": "error",
 
         // Enforce consistent brace style for blocks
