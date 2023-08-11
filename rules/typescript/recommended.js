@@ -5,8 +5,8 @@ module.exports = {
         "@typescript-eslint"
     ],
     "extends": [
-        "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+        "plugin:@typescript-eslint/recommended-type-checked",
+        "plugin:@typescript-eslint/stylistic-type-checked"
     ],
     "rules": {
         "max-len": "off",
