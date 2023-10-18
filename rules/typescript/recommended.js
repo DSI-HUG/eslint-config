@@ -250,6 +250,15 @@ module.exports = {
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-includes.md
         "@typescript-eslint/prefer-includes": "error",
 
+        // Enforce using the nullish coalescing operator instead of logical assignments or chaining
+        // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-nullish-coalescing.md
+        "@typescript-eslint/prefer-nullish-coalescing": [
+            "error",
+            {
+                "ignorePrimitives": true
+            }
+        ],
+
         // Prefer using concise optional chain expressions instead of chained logical ands
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-optional-chain.md
         "@typescript-eslint/prefer-optional-chain": "error",
