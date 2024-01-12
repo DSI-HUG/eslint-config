@@ -64,17 +64,17 @@
         "typescript": ">= 3"
     },
     "dependencies": {
-        "@angular-eslint/builder": "16.2.0",
-        "@angular-eslint/eslint-plugin": "16.2.0",
-        "@angular-eslint/eslint-plugin-template": "16.2.0",
-        "@angular-eslint/template-parser": "16.2.0",
+        "@angular-eslint/builder": "17.2.0",
+        "@angular-eslint/eslint-plugin": "17.2.0",
+        "@angular-eslint/eslint-plugin-template": "17.2.0",
+        "@angular-eslint/template-parser": "17.2.0",
         "@rushstack/eslint-patch": "1.6.1",
         "@typescript-eslint/eslint-plugin": "6.18.1",
         "@typescript-eslint/parser": "6.18.1",
         "eslint-plugin-chai-friendly": "0.7.4",
         "eslint-plugin-cypress": "2.15.1",
         "eslint-plugin-import": "2.29.1",
-        "eslint-plugin-jsdoc": "46.8.2",
+        "eslint-plugin-jsdoc": "48.0.2",
         "eslint-plugin-jsonc": "2.11.2",
         "eslint-plugin-no-loops": "0.3.0",
         "eslint-plugin-no-secrets": "0.8.9",
@@ -86,7 +86,7 @@
         "find-up": "5.0.0"
     },
     "devDependencies": {
-        "@angular/core": "^16.2.9",
+        "@angular/core": "^17.0.9",
         "@commitlint/cli": "^18.4.4",
         "@commitlint/config-conventional": "^18.4.4",
         "eslint": "^8.56.0",
@@ -95,7 +95,7 @@
         "typescript": "^5.3.3"
     },
     "engines": {
-        "node": "^16.14.0 || >=18.10.0"
+        "node": ">=18.13.0"
     },
     "commitlint": {
         "extends": [
