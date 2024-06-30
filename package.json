@@ -55,7 +55,9 @@
     "scripts": {
         "prepare": "husky install",
         "ncu": "npx npm-check-updates -i --format=group",
-        "test": "eslint --config ./tests/moderaterc.json ./tests && eslint --config ./tests/recommendedrc.json ./tests"
+        "test": "eslint --config ./tests/moderaterc.json ./tests && eslint --config ./tests/recommendedrc.json ./tests",
+        "test:ci": "npm run test",
+        "release": "npm publish --access public"
     },
     "peerDependencies": {
         "@angular/core": ">= 10",
