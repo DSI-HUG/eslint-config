@@ -1,18 +1,19 @@
 # Development
 
-This document describes how you can test, build and publish the library.
+This document describes how you can test and publish this project.
 
 ## Prerequisite
 
-Before you can build and test this library you must install and configure the following products on your development machine:
+Before you can start you must install and configure the following products on your development machine:
 
 * [Git][git]
 * [Node.js][nodejs]
 
-You will then need to install the required dependencies:
+You will then need to clone this project and install the required dependencies:
 
 ```sh
-cd <library-path>
+git clone <repository_url> <dir_name>
+cd <dir_name>
 npm install
 ```
 
