@@ -13,9 +13,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  ci_test_core:
-    uses: dsi-hug/action/.github/workflows/action.yml@v1
+  ci_tests:
+    uses: dsi-hug/actions/.github/workflows/action.yml@v2
     with:
       runs-on: '["ubuntu-latest", "macos-latest", "windows-latest"]'
       node-versions: '[18, 20]'
-      lint: false
+      test: true
+      build: true
