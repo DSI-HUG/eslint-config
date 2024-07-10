@@ -8,7 +8,7 @@ jobs:
   ci_release:
     uses: dsi-hug/actions/.github/workflows/action.yml@v2
     secrets:
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      NPM_TOKEN: ${{ secrets.DSI_HUG_NPM_TOKEN }}
     with:
       test: true
       build: false
