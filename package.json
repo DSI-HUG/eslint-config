@@ -15,16 +15,16 @@
     "main": "./recommended.js",
     "exports": {
         ".": {
-            "default": "./recommended.js",
-            "require": "./recommended.js"
+            "require": "./recommended.js",
+            "default": "./recommended.js"
         },
         "./recommended": {
-            "default": "./recommended.js",
-            "require": "./recommended.js"
+            "require": "./recommended.js",
+            "default": "./recommended.js"
         },
         "./moderate": {
-            "default": "./moderate.js",
-            "require": "./moderate.js"
+            "require": "./moderate.js",
+            "default": "./moderate.js"
         },
         "./package.json": "./package.json"
     },
