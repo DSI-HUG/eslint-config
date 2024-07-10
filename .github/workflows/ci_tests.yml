@@ -19,4 +19,3 @@ jobs:
       runs-on: '["ubuntu-latest", "macos-latest", "windows-latest"]'
       node-versions: '[18, 20]'
       test: true
-      build: true
