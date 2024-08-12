@@ -42,9 +42,10 @@ module.exports = (mode = 'recommended') => {
                 ],
                 "parser": "@typescript-eslint/parser",
                 "parserOptions": {
-                    "project": [
-                        tsconfigEslintJson
-                    ]
+                    "projectService": {
+                        "allowDefaultProject": ["*.ts"],
+                        "defaultProject": tsconfigEslintJson
+                    }
                 },
                 "extends": [
                     require.resolve("./rules/es6"),
@@ -60,9 +61,10 @@ module.exports = (mode = 'recommended') => {
                 ],
                 "parser": "@typescript-eslint/parser",
                 "parserOptions": {
-                    "project": [
-                        tsconfigEslintJson
-                    ]
+                    "projectService": {
+                        "allowDefaultProject": ["*.ts"],
+                        "defaultProject": tsconfigEslintJson
+                    }
                 },
                 "extends": [
                     require.resolve("./rules/es6"),
