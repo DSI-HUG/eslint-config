@@ -2,29 +2,24 @@ const { namingConventions } = require('./utils');
 
 module.exports = {
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "@stylistic"
     ],
     "extends": [
         "plugin:@typescript-eslint/recommended-type-checked",
         "plugin:@typescript-eslint/stylistic-type-checked"
     ],
     "rules": {
-        "max-len": "off",
+        /**
+         *  ------ eslint core rules ------
+         */
+
         "no-shadow": "off",
         "no-empty": "error",
 
-        // Enforce consistent brace style for blocks
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/brace-style.md
-        "brace-style": "off",
-        "@typescript-eslint/brace-style": [
-            "error",
-            "1tbs"
-        ],
-
-        // Enforce consistent spacing before and after commas
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-spacing.md
-        "comma-spacing": "off",
-        "@typescript-eslint/comma-spacing": "error",
+        /**
+         *  ------ typescript-eslint rules ------
+         */
 
         // Consistent with type definition either interface or type
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-definitions.md
@@ -60,37 +55,6 @@ module.exports = {
                     "accessors": "explicit",
                     "methods": 'off',
                     "parameterProperties": "explicit"
-                }
-            }
-        ],
-
-        // Require or disallow spacing between function identifiers and their invocations
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/func-call-spacing.md
-        "func-call-spacing": "off",
-        "@typescript-eslint/func-call-spacing": "error",
-
-        // Enforce consistent indentation
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md
-        "indent": "off",
-        "@typescript-eslint/indent": "error",
-
-        // Enforce consistent spacing before and after keywords
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/keyword-spacing.md
-        "keyword-spacing": "off",
-        "@typescript-eslint/keyword-spacing": "error",
-
-        // Require a specific member delimiter style for interfaces and type literals
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-delimiter-style.md
-        "@typescript-eslint/member-delimiter-style": [
-            "error",
-            {
-                "multiline": {
-                    "delimiter": "semi",
-                    "requireLast": true
-                },
-                "singleline": {
-                    "delimiter": "semi",
-                    "requireLast": false
                 }
             }
         ],
@@ -267,54 +231,13 @@ module.exports = {
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-string-starts-ends-with.md
         "@typescript-eslint/prefer-string-starts-ends-with": "error",
 
-        // Enforce the consistent use of either backticks, double, or single quotes
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/quotes.md
-        "quotes": "off",
-        "@typescript-eslint/quotes": [
-            "error",
-            "single"
-        ],
-
         // Enforce template literal expressions to be of string type
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/restrict-template-expressions.md
         "@typescript-eslint/restrict-template-expressions": "error",
 
-        // Require or disallow semicolons instead of ASI
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/semi.md
-        "semi": "off",
-        "@typescript-eslint/semi": [
-            "error",
-            "always"
-        ],
-
-        // Enforce consistent spacing before function parenthesis
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-before-function-paren.md
-        "space-before-function-paren": "off",
-        "@typescript-eslint/space-before-function-paren": [
-            "error",
-            {
-                "anonymous": "never",
-                "named": "never",
-                "asyncArrow": "always"
-            }],
-
-        // Ensure there are spaces around infix operators
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-infix-ops.md
-        "space-infix-ops": "off",
-        "@typescript-eslint/space-infix-ops": [
-            "error",
-            {
-                "int32Hint": false
-            }
-        ],
-
         // Exhaustiveness checking in switch with union type
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/switch-exhaustiveness-check.md
         "@typescript-eslint/switch-exhaustiveness-check": "error",
-
-        // Require consistent spacing around type annotations
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/type-annotation-spacing.md
-        "@typescript-eslint/type-annotation-spacing": "error",
 
         // Enforce unbound methods are called with their expected scope
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unbound-method.md
@@ -327,6 +250,91 @@ module.exports = {
 
         // Warn for any two overloads that could be unified into one by using a union or an optional/rest parameter
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/unified-signatures.md
-        "@typescript-eslint/unified-signatures": "error"
+        "@typescript-eslint/unified-signatures": "error",
+
+        /**
+         *  ------- stylistic rules ------
+         */
+
+        // Enforce a maximum line length to increase code readability and maintainability
+        // https://eslint.style/rules/js/max-len
+        "@stylistic/max-len": "off",
+
+        // Enforce consistent brace style for blocks
+        // https://eslint.style/rules/ts/brace-style
+        "@stylistic/brace-style": [
+            "error",
+            "1tbs"
+        ],
+
+        // Enforce consistent spacing before and after commas
+        // https://eslint.style/rules/ts/comma-spacing
+        "@stylistic/comma-spacing": "error",
+
+        // Require or disallow spacing between function identifiers and their invocations
+        // https://eslint.style/rules/ts/func-call-spacing
+        "@stylistic/func-call-spacing": "error",
+
+        // Enforce consistent indentation
+        // https://eslint.style/rules/ts/indent
+        "@stylistic/indent": "error",
+
+        // Enforce consistent spacing before and after keywords
+        // https://eslint.style/rules/ts/keyword-spacing
+        "@stylistic/keyword-spacing": "error",
+
+        // Require a specific member delimiter style for interfaces and type literals
+        // https://eslint.style/rules/ts/member-delimiter-style
+        "@stylistic/member-delimiter-style": [
+            "error",
+            {
+                "multiline": {
+                    "delimiter": "semi",
+                    "requireLast": true
+                },
+                "singleline": {
+                    "delimiter": "semi",
+                    "requireLast": false
+                }
+            }
+        ],
+
+        // Enforce the consistent use of either backticks, double, or single quotes
+        // https://eslint.style/rules/ts/quotes
+        "@stylistic/quotes": [
+            "error",
+            "single"
+        ],
+
+        // Require or disallow semicolons instead of ASI
+        // https://eslint.style/rules/ts/semi
+        "@stylistic/semi": [
+            "error",
+            "always"
+        ],
+
+        // Enforce consistent spacing before function parenthesis
+        // https://eslint.style/rules/ts/space-before-function-paren
+        "@stylistic/space-before-function-paren": [
+            "error",
+            {
+                "anonymous": "never",
+                "named": "never",
+                "asyncArrow": "always"
+            }
+        ],
+
+        // Ensure there are spaces around infix operators
+        // https://eslint.style/rules/ts/space-infix-ops
+        "@stylistic/space-infix-ops": [
+            "error",
+            {
+                "int32Hint": false
+            }
+        ],
+
+        // Require consistent spacing around type annotations
+        // https://eslint.style/rules/ts/type-annotation-spacing
+        "@stylistic/type-annotation-spacing": "error"
     }
 };

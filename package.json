@@ -71,6 +71,7 @@
         "@angular-eslint/eslint-plugin-template": "18.2.0",
         "@angular-eslint/template-parser": "18.2.0",
         "@rushstack/eslint-patch": "1.10.4",
+        "@stylistic/eslint-plugin": "^2.6.2",
         "@typescript-eslint/eslint-plugin": "8.0.1",
         "@typescript-eslint/parser": "8.0.1",
         "eslint-plugin-chai-friendly": "1.0.1",
