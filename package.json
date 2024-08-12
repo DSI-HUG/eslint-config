@@ -66,15 +66,15 @@
         "typescript": ">= 3"
     },
     "dependencies": {
-        "@angular-eslint/builder": "18.1.0",
-        "@angular-eslint/eslint-plugin": "18.1.0",
-        "@angular-eslint/eslint-plugin-template": "18.1.0",
-        "@angular-eslint/template-parser": "18.1.0",
-        "@rushstack/eslint-patch": "1.10.3",
+        "@angular-eslint/builder": "18.2.0",
+        "@angular-eslint/eslint-plugin": "18.2.0",
+        "@angular-eslint/eslint-plugin-template": "18.2.0",
+        "@angular-eslint/template-parser": "18.2.0",
+        "@rushstack/eslint-patch": "1.10.4",
         "@typescript-eslint/eslint-plugin": "7.16.0",
         "@typescript-eslint/parser": "7.16.0",
-        "eslint-plugin-chai-friendly": "1.0.0",
-        "eslint-plugin-cypress": "3.3.0",
+        "eslint-plugin-chai-friendly": "1.0.1",
+        "eslint-plugin-cypress": "3.4.0",
         "eslint-plugin-import": "2.29.1",
         "eslint-plugin-jsdoc": "48.6.0",
         "eslint-plugin-jsonc": "2.16.0",
@@ -88,13 +88,13 @@
         "find-up": "5.0.0"
     },
     "devDependencies": {
-        "@angular/core": "^18.1.0",
-        "@commitlint/cli": "^19.3.0",
+        "@angular/core": "^18.1.4",
+        "@commitlint/cli": "^19.4.0",
         "@commitlint/config-conventional": "^19.2.2",
         "eslint": "^8.56.0",
-        "husky": "^9.0.11",
+        "husky": "^9.1.4",
         "rxjs": "^7.8.1",
-        "typescript": "^5.5.3"
+        "typescript": "^5.5.4"
     },
     "engines": {
         "node": ">=18.13.0"
