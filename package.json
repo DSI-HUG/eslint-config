@@ -34,7 +34,8 @@
         "_base.js",
         "recommended.js",
         "moderate.js",
-        "rules"
+        "rules",
+        "scripts/deprecated.mjs"
     ],
     "keywords": [
         "eslint",
