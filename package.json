@@ -55,7 +55,7 @@
     "scripts": {
         "ncu": "npx npm-check-updates -i --format=group",
         "prepare": "husky || true",
-        "test": "cd tests && eslint --config moderaterc.json . && eslint --config recommendedrc.json .",
+        "test": "cd tests && eslint --config moderaterc.json *.{ts,js,html,json} && eslint --config recommendedrc.json *.{ts,js,html,json}",
         "test:ci": "npm run test",
         "release": "npm publish --access public"
     },
