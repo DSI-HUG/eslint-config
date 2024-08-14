@@ -33,17 +33,71 @@
 ## Installation
 
 ```sh
-# Angular >= 12.x
-$ npm install @hug/eslint-config --save-dev
-$ yarn add eslint@8.x @hug/eslint-config --dev
+npm install @hug/eslint-config --save-dev
 ```
-
 ```sh
-# Angular >= 10.x <= 11.x
-$ npm install @hug/eslint-config@2.x --save-dev
-$ yarn add eslint@7.x @hug/eslint-config@2.x --dev
+yarn add eslint@8.x @hug/eslint-config --dev
 ```
 
+<details>
+    <summary><i>Prior to version 20.2.0</i></summary>
+
+> <br/>
+>
+> Create a `tsconfig.eslint.json` file at the root of your project
+>
+> ```jsonc
+> {
+>     "extends": "./tsconfig.json",
+>     "compilerOptions": {
+>         "types": [
+>             "node",
+>             "jasmine",
+>             //
+>             // In case you are using WebdriverIO
+>             //   "@wdio/globals/types"
+>             //
+>             // In case you are using Cypress
+>             //   "cypress"
+>             //
+>             // Any other types that are required by your tests
+>             //   ...
+>         ]
+>     },
+>     "include": [
+>         "src/**/*.ts",
+>         "e2e/**/*.ts"
+>     ]
+> }
+> ```
+
+</details>
+<details>
+    <summary><i>For Angular >= 10.x <= 11.x</i></summary>
+
+> <br/>
+>
+> ```sh
+> npm install @hug/eslint-config@2.x --save-dev
+> ```
+> ```sh
+> yarn add eslint@7.x @hug/eslint-config@2.x --dev
+> ```
+
+</details>
+<details>
+    <summary><i>Migrating from tslint</i></summary>
+
+> <br/>
+>
+> 1. Remove `tslint` and `codelyzer` from your dependencies
+> 2. Remove any `tslint.json` configuration files
+> 3. Add `eslint` as a dev dependency
+> 4. Have a look at our [Angular project example][ng-example] and modify all your `tsconfig` files accordingly
+
+</details>
+
+<hr/>
 
 ## Requirements
 
@@ -51,39 +105,12 @@ $ yarn add eslint@7.x @hug/eslint-config@2.x --dev
 
 > Projects running under `Angular 10.x` can safely ignore `@angular-eslint` warnings during installation.
 
-* an **Angular >= 10.x** project *(see the [migration guide](#tslint-migration) for projects that are still using `tslint`)*
+* an **Angular >= 10.x** project
 
 
 ## Usage
 
-1. Create a `tsconfig.eslint.json` file at the root of your project
-
-```jsonc
-{
-    "extends": "./tsconfig.json",
-    "compilerOptions": {
-        "types": [
-            "node",
-            "jasmine",
-            //
-            // In case you are using WebdriverIO
-            //   "@wdio/globals/types"
-            //
-            // In case you are using Cypress
-            //   "cypress"
-            //
-            // Any other types that are required by your tests
-            //   ...
-        ]
-    },
-    "include": [
-        "src/**/*.ts",
-        "e2e/**/*.ts"
-    ]
-}
-```
-
-2. Create a `.eslintrc.json` file at the root of your project
+1. Create an `.eslintrc.json` file at the root of your project
 
 ```jsonc
 {
@@ -97,7 +124,7 @@ $ yarn add eslint@7.x @hug/eslint-config@2.x --dev
 }
 ```
 
-3. Modify your existing `angular.json`
+2. Modify your existing `angular.json`
 
 ```json
 "architect": {
@@ -115,7 +142,15 @@ $ yarn add eslint@7.x @hug/eslint-config@2.x --dev
 }
 ```
 
-4. Run `ng lint`
+3. Run `ng lint`
+
+<br/>
+
+*You can also skip steps `2` and `3` and simply run:*
+
+```
+eslint *.{js,json,ts,html}
+```
 
 
 ## Rules
@@ -134,18 +169,6 @@ The rules applies as follow:
 | **/*.html | `angular-template` |
 | **/*.json | `no-secrets` |
 | e2e/**/*.ts | `es6`, `typescript`, `no-secrets`, [`cypress`, `chai-friendly` - in case you are using Cypress] |
-
-
-## <a name="tslint-migration"></a> Migrating from tslint
-
-1. Remove `tslint` and `codelyzer` from your dependencies
-
-2. Remove any `tslint.json` configuration files
-
-3. Add `eslint` as a dev dependency
-
-4. Have a look at our [Angular project example][ng-example] and modify all your `tsconfig` files accordingly
-
 
 ## Development
 
