@@ -1,18 +1,18 @@
 module.exports = {
-    "plugins": [
-        "jsonc",
-        "no-secrets"
+    'plugins': [
+        'jsonc',
+        'no-secrets'
     ],
-    "extends": [
-        "plugin:jsonc/base"
+    'extends': [
+        'plugin:jsonc/base'
     ],
-    "rules": {
+    'rules': {
         // Search for potential secrets/keys in code and JSON files
         // https://github.com/nickdeis/eslint-plugin-no-secrets
-        "no-secrets/no-secrets": [
-            "error",
+        'no-secrets/no-secrets': [
+            'error',
             {
-                "tolerance": 5
+                'tolerance': 5
             }
         ]
     }

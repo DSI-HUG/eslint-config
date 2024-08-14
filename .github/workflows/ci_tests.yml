@@ -18,4 +18,5 @@ jobs:
     with:
       runs-on: '["ubuntu-latest", "macos-latest", "windows-latest"]'
       node-versions: '[18, 20]'
+      lint: true
       test: true
