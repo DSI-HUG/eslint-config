@@ -1,11 +1,16 @@
 module.exports = {
     'plugins': [
+        'deprecation',
         'no-loops',
         'no-secrets',
         'prefer-arrow',
         'simple-import-sort'
     ],
     'rules': {
+        // Report usage of deprecated code
+        // https://github.com/gund/eslint-plugin-deprecation
+        'deprecation/deprecation': 'warn',
+
         // Disallow use of loops (for, for-in, while, do-while, for-of)
         // https://github.com/buildo/eslint-plugin-no-loops
         'no-loops/no-loops': 'error',
