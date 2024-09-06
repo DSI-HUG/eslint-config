@@ -8,7 +8,7 @@ module.exports = {
     ],
     'rules': {
         // Enforce components to have a specified suffix
-        // https://github.com/angular-eslint/angular-eslint/blob/master/packages/eslint-plugin/docs/rules/component-class-suffix.md
+        // https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md
         '@angular-eslint/component-class-suffix': [
             'error',
             {
@@ -70,7 +70,7 @@ module.exports = {
         '@angular-eslint/relative-url-prefix': 'error',
 
         // Enforce sorting of values within NgModule metadata arrays
-        // https://github.com/angular-eslint/angular-eslint/blob/master/packages/eslint-plugin/docs/rules/sort-ngmodule-metadata-arrays.md
+        // https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-ngmodule-metadata-arrays.md
         '@angular-eslint/sort-ngmodule-metadata-arrays': 'error',
 
         // Component selector must be declared

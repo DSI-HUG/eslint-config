@@ -17,19 +17,19 @@ module.exports = {
         'no-unused-vars': 'off',
 
         // Disallow assigning any to variables and properties
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-assignment.md
+        // https://typescript-eslint.io/rules/no-unsafe-assignment
         '@typescript-eslint/no-unsafe-assignment': 'off',
 
         // Disallow calling an any type value
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-call.md
+        // https://typescript-eslint.io/rules/no-unsafe-call
         '@typescript-eslint/no-unsafe-call': 'off',
 
         // Disallow member access on any typed variables
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-member-access.md
+        // https://typescript-eslint.io/rules/no-unsafe-member-access
         '@typescript-eslint/no-unsafe-member-access': 'off',
 
         // Enforce template literal expressions to be of string type
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/restrict-template-expressions.md
+        // https://typescript-eslint.io/rules/restrict-template-expressions
         '@typescript-eslint/restrict-template-expressions': 'off'
     }
 };

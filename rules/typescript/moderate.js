@@ -4,7 +4,7 @@ module.exports = {
     'extends': './recommended',
     'rules': {
         // Require explicit accessibility modifiers on class properties and methods
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-member-accessibility.md
+        // https://typescript-eslint.io/rules/explicit-member-accessibility
         '@typescript-eslint/explicit-member-accessibility': [
             'error',
             {
@@ -18,7 +18,7 @@ module.exports = {
         ],
 
         // Enforce naming conventions for everything across a codebase
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
+        // https://typescript-eslint.io/rules/naming-convention
         '@typescript-eslint/naming-convention': [
             'error',
             ...namingConventions([{
