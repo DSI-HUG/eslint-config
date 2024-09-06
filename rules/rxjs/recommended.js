@@ -48,6 +48,16 @@ module.exports = {
         'rxjs-angular/prefer-takeuntil': [
             'error',
             {
+                'alias': [
+                    'takeUntilDestroyed'
+                ],
+                'checkDecorators': [
+                    'Component',
+                    'Directive',
+                    'Pipe',
+                    'Service'
+                ],
+                'checkComplete': false, // Until https://github.com/cartant/eslint-plugin-rxjs-angular/issues/16 is implemented
                 'checkDestroy': false
             }
         ]
