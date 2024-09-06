@@ -6,15 +6,31 @@ module.exports = {
         '@stylistic'
     ],
     'extends': [
+        'plugin:import/recommended',
+        'plugin:import/typescript',
         'plugin:@typescript-eslint/recommended-type-checked',
         'plugin:@typescript-eslint/stylistic-type-checked'
     ],
+    'settings': {
+        'import/resolver': {
+            'typescript': true,
+            'node': true
+        }
+    },
     'rules': {
         /**
          *  ------ eslint core rules ------
          */
 
         'no-empty': 'error',
+
+        /**
+         *  ------ plugin import rules ------
+         */
+
+        // Reports use of a deprecated name, as indicated by a JSDoc block with a @deprecated tag
+        // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-deprecated.md
+        'import/no-deprecated': 'warn',
 
         /**
          *  ------ typescript-eslint rules ------
@@ -150,6 +166,10 @@ module.exports = {
         // Require that .toString() is only called on objects which provide useful information when stringified
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-base-to-string.md
         '@typescript-eslint/no-base-to-string': 'error',
+
+        // Disallow using code marked as @deprecated
+        // https://typescript-eslint.io/rules/no-deprecated
+        '@typescript-eslint/no-deprecated': 'warn',
 
         // Disallow the declaration of empty interfaces
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-interface.md
