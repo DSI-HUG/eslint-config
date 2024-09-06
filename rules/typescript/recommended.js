@@ -2,21 +2,14 @@ const { namingConventions } = require('./utils');
 
 module.exports = {
     'plugins': [
+        'deprecation',
         '@typescript-eslint',
         '@stylistic'
     ],
     'extends': [
-        'plugin:import/recommended',
-        'plugin:import/typescript',
         'plugin:@typescript-eslint/recommended-type-checked',
         'plugin:@typescript-eslint/stylistic-type-checked'
     ],
-    'settings': {
-        'import/resolver': {
-            'typescript': true,
-            'node': true
-        }
-    },
     'rules': {
         /**
          *  ------ eslint core rules ------
@@ -25,15 +18,15 @@ module.exports = {
         'no-empty': 'error',
 
         /**
-         *  ------ plugin import rules ------
+         *  ------ plugin deprecation rules ------
          */
 
-        // Reports use of a deprecated name, as indicated by a JSDoc block with a @deprecated tag
-        // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-deprecated.md
-        'import/no-deprecated': 'warn',
+        // Report usage of deprecated code
+        // https://github.com/gund/eslint-plugin-deprecation
+        'deprecation/deprecation': 'warn',
 
         /**
-         *  ------ typescript-eslint rules ------
+         *  ------ plugin typescript-eslint rules ------
          */
 
         // Consistent with type definition either interface or type
@@ -166,10 +159,6 @@ module.exports = {
         // Require that .toString() is only called on objects which provide useful information when stringified
         // https://typescript-eslint.io/rules/no-base-to-string
         '@typescript-eslint/no-base-to-string': 'error',
-
-        // Disallow using code marked as @deprecated
-        // https://typescript-eslint.io/rules/no-deprecated
-        '@typescript-eslint/no-deprecated': 'warn',
 
         // Disallow the declaration of empty interfaces
         // https://typescript-eslint.io/rules/no-empty-interface
