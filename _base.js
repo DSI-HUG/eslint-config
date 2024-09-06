@@ -38,7 +38,7 @@ module.exports = (mode = 'recommended') => {
                 "parser": "@typescript-eslint/parser",
                 "parserOptions": {
                     "projectService": true,
-                    tsconfigRootDir: __dirname
+                    "tsconfigRootDir": __dirname
                 },
                 "extends": [
                     require.resolve("./rules/es6"),
@@ -55,7 +55,7 @@ module.exports = (mode = 'recommended') => {
                 "parser": "@typescript-eslint/parser",
                 "parserOptions": {
                     "projectService": true,
-                    tsconfigRootDir: __dirname
+                    "tsconfigRootDir": __dirname
                 },
                 "extends": [
                     require.resolve("./rules/es6"),
