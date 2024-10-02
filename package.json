@@ -69,18 +69,18 @@
         "typescript": ">= 3"
     },
     "dependencies": {
-        "@angular-eslint/builder": "18.3.0",
-        "@angular-eslint/eslint-plugin": "18.3.0",
-        "@angular-eslint/eslint-plugin-template": "18.3.0",
-        "@angular-eslint/template-parser": "18.3.0",
+        "@angular-eslint/builder": "18.3.1",
+        "@angular-eslint/eslint-plugin": "18.3.1",
+        "@angular-eslint/eslint-plugin-template": "18.3.1",
+        "@angular-eslint/template-parser": "18.3.1",
         "@rushstack/eslint-patch": "1.10.4",
-        "@stylistic/eslint-plugin": "2.7.2",
-        "@typescript-eslint/eslint-plugin": "8.4.0",
-        "@typescript-eslint/parser": "8.4.0",
-        "eslint-import-resolver-typescript": "^3.6.3",
+        "@stylistic/eslint-plugin": "2.8.0",
+        "@typescript-eslint/eslint-plugin": "8.8.0",
+        "@typescript-eslint/parser": "8.8.0",
+        "eslint-import-resolver-typescript": "3.6.3",
         "eslint-plugin-chai-friendly": "1.0.1",
         "eslint-plugin-cypress": "3.5.0",
-        "eslint-plugin-deprecation": "^3.0.0",
+        "eslint-plugin-deprecation": "3.0.0",
         "eslint-plugin-jsonc": "2.16.0",
         "eslint-plugin-no-loops": "0.3.0",
         "eslint-plugin-no-secrets": "1.0.2",
@@ -88,17 +88,17 @@
         "eslint-plugin-rxjs": "5.0.3",
         "eslint-plugin-rxjs-angular": "2.0.1",
         "eslint-plugin-simple-import-sort": "12.1.1",
-        "eslint-plugin-unused-imports": "4.1.3",
+        "eslint-plugin-unused-imports": "4.1.4",
         "find-up": "^7.0.0"
     },
     "devDependencies": {
-        "@angular/core": "^18.2.3",
-        "@commitlint/cli": "^19.4.1",
-        "@commitlint/config-conventional": "^19.4.1",
         "eslint": "^8.57.0",
-        "husky": "^9.1.5",
+        "@angular/core": "^18.2.7",
+        "@commitlint/cli": "^19.5.0",
+        "@commitlint/config-conventional": "^19.5.0",
+        "husky": "^9.1.6",
         "rxjs": "^7.8.1",
-        "typescript": "^5.5.4"
+        "typescript": "^5.6.2"
     },
     "engines": {
         "node": ">=18.13.0"
