@@ -1,6 +1,6 @@
 {
     "name": "@hug/eslint-config",
-    "version": "15.0.1",
+    "version": "20.3.3",
     "description": "ESLint shareable configuration with great defaults",
     "homepage": "https://github.com/dsi-hug/eslint-config",
     "license": "GPL-3.0-only",
@@ -10,26 +10,26 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/dsi-hug/eslint-config.git"
+        "url": "git+https://github.com/dsi-hug/eslint-config.git"
     },
+    "type": "module",
     "main": "./index.js",
     "typings": "./index.d.ts",
-    "type": "module",
     "exports": {
         ".": {
-            "default": "./index.js",
             "require": "./index.js",
-            "types": "./index.d.ts"
+            "types": "./index.d.ts",
+            "default": "./index.js"
         },
         "./package.json": "./package.json"
     },
     "files": [
         "README.md",
         "LICENSE",
-        "_base.js",
-        "recommended.js",
-        "moderate.js",
-        "rules"
+        "index.js",
+        "index.d.ts",
+        "configs",
+        "scripts/deprecated.mjs"
     ],
     "keywords": [
         "eslint",
@@ -48,52 +48,52 @@
         "cypress"
     ],
     "scripts": {
-        "prepare": "husky install",
+        "postinstall": "node scripts/deprecated.mjs",
         "ncu": "npx npm-check-updates -i --format=group",
-        "test:recommended": "ESLINT_USE_FLAT_CONFIG=true eslint -c ./tests/eslint.config-recommended.js ./rules/**/*.js",
-        "test:moderate": "ESLINT_USE_FLAT_CONFIG=true eslint -c ./tests/eslint.config-moderate.js ./rules/**/*.js",
-        "test": "npm run test:moderate && npm run test:recommended"
+        "inspect": "npx @eslint/config-inspector",
+        "prepare": "husky || true",
+        "lint": "eslint .",
+        "test": "CONFIG=MODERATE eslint tests && CONFIG=RECOMMENDED eslint tests",
+        "test:ci": "npm run test",
+        "release": "npm publish --access public"
     },
     "peerDependencies": {
         "@angular/core": ">= 10",
-        "eslint": ">= 8",
+        "eslint": ">= 9",
         "rxjs": ">= 6",
         "typescript": ">= 3"
     },
     "dependencies": {
-        "@angular-eslint/builder": "16.0.3",
-        "@angular-eslint/eslint-plugin": "16.0.3",
-        "@angular-eslint/eslint-plugin-template": "16.0.3",
-        "@angular-eslint/template-parser": "16.0.3",
-        "@eslint/js": "^8.44.0",
-        "@rushstack/eslint-patch": "1.3.2",
-        "@typescript-eslint/eslint-plugin": "5.61.0",
-        "@typescript-eslint/parser": "5.61.0",
-        "eslint-plugin-chai-friendly": "0.7.2",
-        "eslint-plugin-cypress": "2.13.3",
-        "eslint-plugin-import": "2.27.5",
-        "eslint-plugin-jsdoc": "46.4.3",
-        "eslint-plugin-jsonc": "2.9.0",
-        "eslint-plugin-no-loops": "0.3.0",
-        "eslint-plugin-no-secrets": "0.8.9",
+        "angular-eslint": "18.4.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-chai-friendly": "1.0.1",
+        "eslint-plugin-cypress": "4.0.0",
+        "eslint-plugin-jsdoc": "50.4.3",
+        "eslint-plugin-jsonc": "2.16.0",
+        "eslint-plugin-no-loops": "0.4.0",
+        "eslint-plugin-no-secrets": "1.0.2",
         "eslint-plugin-prefer-arrow": "1.2.3",
-        "eslint-plugin-rxjs": "5.0.3",
-        "eslint-plugin-rxjs-angular": "2.0.1",
-        "eslint-plugin-simple-import-sort": "10.0.0",
-        "eslint-plugin-unused-imports": "2.0.0",
-        "find-up": "6.3.0"
+        "eslint-plugin-rxjs-angular-updated": "^1.0.12",
+        "eslint-plugin-rxjs-updated": "^1.0.12",
+        "eslint-plugin-simple-import-sort": "12.1.1",
+        "eslint-plugin-unused-imports": "4.1.4",
+        "globals": "^15.11.0",
+        "typescript-eslint": "8.11.0"
     },
     "devDependencies": {
-        "@angular/core": "^16.1.3",
-        "@commitlint/cli": "^17.6.6",
-        "@commitlint/config-conventional": "^17.6.6",
-        "eslint": "^8.44.0",
-        "husky": "^8.0.3",
+        "@angular/core": "^18.2.9",
+        "@commitlint/cli": "^19.5.0",
+        "@commitlint/config-conventional": "^19.5.0",
+        "@types/eslint__js": "^8.42.3",
+        "eslint": "^9.13.0",
+        "husky": "^9.1.6",
+        "prettier": "^3.3.3",
+        "prettier-plugin-multiline-arrays": "^3.0.6",
         "rxjs": "^7.8.1",
-        "typescript": "^5.1.6"
+        "typescript": "^5.6.3"
     },
     "engines": {
-        "node": "^16.14.0 || >=18.10.0"
+        "node": ">=18.13.0"
     },
     "commitlint": {
         "extends": [
