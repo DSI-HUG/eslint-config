@@ -53,7 +53,7 @@
         "inspect": "npx @eslint/config-inspector",
         "prepare": "husky || true",
         "lint": "eslint .",
-        "test": "CONFIG=MODERATE eslint tests && CONFIG=RECOMMENDED eslint tests",
+        "test": "cross-env CONFIG=MODERATE eslint tests && cross-env CONFIG=RECOMMENDED eslint tests",
         "test:ci": "npm run test",
         "release": "npm publish --access public"
     },
@@ -85,6 +85,7 @@
         "@commitlint/cli": "^19.5.0",
         "@commitlint/config-conventional": "^19.5.0",
         "@types/eslint__js": "^8.42.3",
+        "cross-env": "^7.0.3",
         "eslint": "^9.13.0",
         "husky": "^9.1.6",
         "prettier": "^3.3.3",
