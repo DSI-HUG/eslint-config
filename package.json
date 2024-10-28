@@ -12,29 +12,23 @@
         "type": "git",
         "url": "git+https://github.com/dsi-hug/eslint-config.git"
     },
-    "main": "./recommended.js",
+    "type": "module",
+    "main": "./index.js",
+    "typings": "./index.d.ts",
     "exports": {
         ".": {
-            "require": "./recommended.js",
-            "default": "./recommended.js"
-        },
-        "./recommended": {
-            "require": "./recommended.js",
-            "default": "./recommended.js"
-        },
-        "./moderate": {
-            "require": "./moderate.js",
-            "default": "./moderate.js"
+            "require": "./index.js",
+            "types": "./index.d.ts",
+            "default": "./index.js"
         },
         "./package.json": "./package.json"
     },
     "files": [
         "README.md",
         "LICENSE",
-        "_base.js",
-        "recommended.js",
-        "moderate.js",
-        "rules",
+        "index.js",
+        "index.d.ts",
+        "configs",
         "scripts/deprecated.mjs"
     ],
     "keywords": [
@@ -56,47 +50,45 @@
     "scripts": {
         "postinstall": "node scripts/deprecated.mjs",
         "ncu": "npx npm-check-updates -i --format=group",
+        "inspect": "npx @eslint/config-inspector",
         "prepare": "husky || true",
-        "lint": "eslint ./rules",
-        "test": "cd tests && eslint --config moderaterc.json *.{ts,js,html,json} && eslint --config recommendedrc.json *.{ts,js,html,json}",
+        "lint": "eslint .",
+        "test": "CONFIG=MODERATE eslint tests && CONFIG=RECOMMENDED eslint tests",
         "test:ci": "npm run test",
         "release": "npm publish --access public"
     },
     "peerDependencies": {
         "@angular/core": ">= 10",
-        "eslint": ">= 8",
+        "eslint": ">= 9",
         "rxjs": ">= 6",
         "typescript": ">= 3"
     },
     "dependencies": {
-        "@angular-eslint/builder": "18.4.0",
-        "@angular-eslint/eslint-plugin": "18.4.0",
-        "@angular-eslint/eslint-plugin-template": "18.4.0",
-        "@angular-eslint/template-parser": "18.4.0",
-        "@rushstack/eslint-patch": "1.10.4",
-        "@stylistic/eslint-plugin": "2.9.0",
-        "@typescript-eslint/eslint-plugin": "8.11.0",
-        "@typescript-eslint/parser": "8.11.0",
-        "eslint-import-resolver-typescript": "3.6.3",
+        "angular-eslint": "18.4.0",
+        "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-chai-friendly": "1.0.1",
-        "eslint-plugin-cypress": "3.5.0",
-        "eslint-plugin-deprecation": "3.0.0",
+        "eslint-plugin-cypress": "4.0.0",
+        "eslint-plugin-jsdoc": "50.4.3",
         "eslint-plugin-jsonc": "2.16.0",
-        "eslint-plugin-no-loops": "0.3.0",
+        "eslint-plugin-no-loops": "0.4.0",
         "eslint-plugin-no-secrets": "1.0.2",
         "eslint-plugin-prefer-arrow": "1.2.3",
-        "eslint-plugin-rxjs": "5.0.3",
-        "eslint-plugin-rxjs-angular": "2.0.1",
+        "eslint-plugin-rxjs-angular-updated": "^1.0.12",
+        "eslint-plugin-rxjs-updated": "^1.0.12",
         "eslint-plugin-simple-import-sort": "12.1.1",
         "eslint-plugin-unused-imports": "4.1.4",
-        "find-up": "^7.0.0"
+        "globals": "^15.11.0",
+        "typescript-eslint": "8.11.0"
     },
     "devDependencies": {
-        "eslint": "^8.57.0",
         "@angular/core": "^18.2.9",
         "@commitlint/cli": "^19.5.0",
         "@commitlint/config-conventional": "^19.5.0",
+        "@types/eslint__js": "^8.42.3",
+        "eslint": "^9.13.0",
         "husky": "^9.1.6",
+        "prettier": "^3.3.3",
+        "prettier-plugin-multiline-arrays": "^3.0.6",
         "rxjs": "^7.8.1",
         "typescript": "^5.6.3"
     },

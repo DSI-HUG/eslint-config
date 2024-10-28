@@ -12,24 +12,12 @@
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.folders.theme": "none",
     "material-icon-theme.opacity": 0.6,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
     },
-    "editor.formatOnSave": true,
     "eslint.format.enable": true,
-    "[typescript]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-    },
-    "html.format.wrapAttributes": "force-aligned",
-    "html.format.wrapLineLength": 120,
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "[scss]": {
-        "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
-    },
     "npm.exclude": "**/{dist,tmp}{,/**}",
-    "npm.scriptExplorerExclude": [
-        "install"
-    ]
+    "npm.scriptExplorerExclude": ["install"]
 }
