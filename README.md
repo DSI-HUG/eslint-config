@@ -35,6 +35,7 @@
 ```sh
 npm install @hug/eslint-config --save-dev
 ```
+
 ```sh
 yarn add eslint@8.x @hug/eslint-config --dev
 ```
@@ -52,7 +53,7 @@ yarn add eslint@8.x @hug/eslint-config --dev
 >     "compilerOptions": {
 >         "types": [
 >             "node",
->             "jasmine",
+>             "jasmine"
 >             //
 >             // In case you are using WebdriverIO
 >             //   "@wdio/globals/types"
@@ -64,10 +65,7 @@ yarn add eslint@8.x @hug/eslint-config --dev
 >             //   ...
 >         ]
 >     },
->     "include": [
->         "src/**/*.ts",
->         "e2e/**/*.ts"
->     ]
+>     "include": ["src/**/*.ts", "e2e/**/*.ts"]
 > }
 > ```
 
@@ -80,6 +78,7 @@ yarn add eslint@8.x @hug/eslint-config --dev
 > ```sh
 > npm install @hug/eslint-config@2.x --save-dev
 > ```
+>
 > ```sh
 > yarn add eslint@7.x @hug/eslint-config@2.x --dev
 > ```
@@ -105,8 +104,7 @@ yarn add eslint@8.x @hug/eslint-config --dev
 
 > Projects running under `Angular 10.x` can safely ignore `@angular-eslint` warnings during installation.
 
-* an **Angular >= 10.x** project
-
+-   an **Angular >= 10.x** project
 
 ## Usage
 
@@ -146,12 +144,11 @@ yarn add eslint@8.x @hug/eslint-config --dev
 
 <br/>
 
-*You can also skip steps `2` and `3` and simply run:*
+_You can also skip steps `2` and `3` and simply run:_
 
 ```
 eslint *.{js,json,ts,html}
 ```
-
 
 ## Rules
 
@@ -161,19 +158,18 @@ They may or may not served you well as they are mainly designed to be used by th
 
 The rules applies as follow:
 
-| Files | Rules |
-| :---- | :---- |
-| **/*.ts | `es6`, `typescript`, `angular`, `rxjs`, `no-secrets` |
-| **/*.js | `es6`, `no-secrets` |
-| **/*.mjs | `es6`, `no-secrets` |
-| **/*.html | `angular-template` |
-| **/*.json | `no-secrets` |
-| e2e/**/*.ts | `es6`, `typescript`, `no-secrets`, [`cypress`, `chai-friendly` - in case you are using Cypress] |
+| Files        | Rules                                                                                           |
+| :----------- | :---------------------------------------------------------------------------------------------- |
+| \*_/_.ts     | `es6`, `typescript`, `angular`, `rxjs`, `no-secrets`                                            |
+| \*_/_.js     | `es6`, `no-secrets`                                                                             |
+| \*_/_.mjs    | `es6`, `no-secrets`                                                                             |
+| \*_/_.html   | `angular-template`                                                                              |
+| \*_/_.json   | `no-secrets`                                                                                    |
+| e2e/\*_/_.ts | `es6`, `typescript`, `no-secrets`, [`cypress`, `chai-friendly` - in case you are using Cypress] |
 
 ## Development
 
 See the [developer docs][developer].
-
 
 ## Contributing
 
@@ -187,15 +183,11 @@ But please read up first on the guidelines for [contributing][contributing], and
 
 Please read and follow the [Code of Conduct][codeofconduct], and help us keep this project open and inclusive.
 
-
 ## Credits
 
 Copyright (C) 2021 [HUG - Hôpitaux Universitaires Genève][dsi-hug]
 
 [![love@hug](https://img.shields.io/badge/@hug-%E2%9D%A4%EF%B8%8Flove-magenta)][dsi-hug]
-
-
-
 
 [angular-eslint]: https://github.com/angular-eslint/angular-eslint
 [ng-example]: https://github.com/dsi-hug/eslint-config/blob/main/examples/angular
