@@ -1,6 +1,19 @@
 import tsPlugin from 'typescript-eslint';
 
-import { namingConventions } from './utils.mjs';
+const UPPER_CASE_REGEXP = [
+    // url params
+    'PATIENT_ID',
+    'SCOPEID',
+    'SESSIONID',
+    'EDS_ID',
+    'DOCPAGE',
+
+    // proxy call
+    'REQUEST',
+    'SERVERID',
+    'SERVICEID',
+    'SUBSERVICEID'
+];
 
 /** @type {(files?: Array<string | string[]>) => (import('eslint').Linter.Config)[]} */
 export default files =>
@@ -40,9 +53,8 @@ export default files =>
                 {
                     accessibility: 'explicit',
                     overrides: {
-                        constructors: 'explicit',
+                        constructors: 'no-public',
                         accessors: 'explicit',
-                        methods: 'off',
                         parameterProperties: 'explicit'
                     }
                 }
@@ -134,7 +146,68 @@ export default files =>
             // https://typescript-eslint.io/rules/naming-convention
             '@typescript-eslint/naming-convention': [
                 'error',
-                ...namingConventions()
+                {
+                    selector: 'default',
+                    format: ['strictCamelCase'],
+                    leadingUnderscore: 'allow'
+                },
+                {
+                    selector: 'typeLike',
+                    format: ['PascalCase']
+                },
+                {
+                    selector: 'enumMember',
+                    format: ['UPPER_CASE']
+                },
+                {
+                    selector: 'typeProperty',
+                    format: ['UPPER_CASE'],
+                    filter: {
+                        regex: `^(${UPPER_CASE_REGEXP.join('|')})$`,
+                        match: true
+                    }
+                },
+                {
+                    selector: 'objectLiteralProperty',
+                    format: ['UPPER_CASE'],
+                    filter: {
+                        regex: `^(${UPPER_CASE_REGEXP.join('|')})$`,
+                        match: true
+                    }
+                },
+                {
+                    selector: 'property',
+                    modifiers: ['static'],
+                    format: ['UPPER_CASE'],
+                    leadingUnderscore: 'allow'
+                },
+                {
+                    selector: 'property',
+                    format: [
+                        'strictCamelCase',
+                        'UPPER_CASE'
+                    ],
+                    leadingUnderscore: 'allow'
+                },
+                {
+                    selector: 'parameter',
+                    format: ['strictCamelCase'],
+                    leadingUnderscore: 'allow'
+                },
+                {
+                    selector: 'variable',
+                    format: [
+                        'strictCamelCase',
+                        'UPPER_CASE'
+                    ],
+                    types: [
+                        'boolean',
+                        'string',
+                        'number',
+                        'array'
+                    ],
+                    leadingUnderscore: 'allow'
+                }
             ],
 
             // Disallow variable declarations from shadowing variables declared in the outer scope

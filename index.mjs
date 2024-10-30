@@ -19,7 +19,7 @@ import preferArrow from './configs/prefer-arrow.mjs';
 import prettier from './configs/prettier.mjs';
 import rxjs from './configs/rxjs/index.mjs';
 import simpleImportSort from './configs/simple-import-sort.mjs';
-import ts from './configs/typescript/index.mjs';
+import typescript from './configs/typescript.mjs';
 import unusedImports from './configs/unused-imports.mjs';
 
 /** @type {(name: string) => Promise<boolean>} */
@@ -35,7 +35,7 @@ const isPackageInstalled = async name => {
 /** @type { (level: 'moderate' | 'recommended') => Promise<import('eslint').Linter.Config[]> } */
 const getConfig = async level => [
     eslint(['**/*.{ts,js,mjs,cjs}']),
-    ...((await isPackageInstalled('typescript')) ? ts[level](['**/*.ts']) : []),
+    ...((await isPackageInstalled('typescript')) ? typescript(['**/*.ts']) : []),
     (await isPackageInstalled('rxjs')) ? rxjs[level].ts(['**/*.ts']) : {},
     ...((await isPackageInstalled('@angular/core')) ? [
               ...angular[level].ts(['**/*.ts']),
