@@ -19,7 +19,7 @@ const UPPER_CASE_REGEXP = [
 export default files =>
     // @ts-ignore
     tsPlugin.config({
-        name: 'hug/recommended/typescript',
+        name: 'hug/typescript',
         ...(files ? { files } : {}), // files cannot be empty nor undefined
         extends: [
             ...tsPlugin.configs.strictTypeChecked,
@@ -199,12 +199,6 @@ export default files =>
                     format: [
                         'strictCamelCase',
                         'UPPER_CASE'
-                    ],
-                    types: [
-                        'boolean',
-                        'string',
-                        'number',
-                        'array'
                     ],
                     leadingUnderscore: 'allow'
                 }
