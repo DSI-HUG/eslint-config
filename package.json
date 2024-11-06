@@ -65,7 +65,8 @@
     },
     "dependencies": {
         "angular-eslint": "18.4.0",
-        "eslint-config-prettier": "^9.1.0",
+        "chalk": "^5.3.0",
+        "eslint-config-prettier": "9.1.0",
         "eslint-plugin-chai-friendly": "1.0.1",
         "eslint-plugin-cypress": "4.0.0",
         "eslint-plugin-jsdoc": "50.4.3",
@@ -73,10 +74,11 @@
         "eslint-plugin-no-loops": "0.4.0",
         "eslint-plugin-no-secrets": "1.0.2",
         "eslint-plugin-prefer-arrow": "1.2.3",
-        "eslint-plugin-rxjs-angular-updated": "^1.0.12",
-        "eslint-plugin-rxjs-updated": "^1.0.12",
+        "eslint-plugin-rxjs-angular-updated": "1.0.12",
+        "eslint-plugin-rxjs-updated": "1.0.12",
         "eslint-plugin-simple-import-sort": "12.1.1",
         "eslint-plugin-unused-imports": "4.1.4",
+        "find-up": "^7.0.0",
         "globals": "^15.11.0",
         "typescript-eslint": "8.11.0"
     },
