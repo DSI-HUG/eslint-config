@@ -37,6 +37,10 @@ export default files =>
             }
         },
         rules: {
+            // Enforce consistent usage of type imports
+            // https://typescript-eslint.io/rules/consistent-type-imports
+            '@typescript-eslint/consistent-type-imports': 'error',
+
             // Enforce default parameters to be last
             // https://typescript-eslint.io/rules/default-param-last
             'default-param-last': 'off',
@@ -207,6 +211,10 @@ export default files =>
                     allowWithDecorator: true
                 }
             ],
+
+            // Enforce the use of top-level import type qualifier when an import only has specifiers with inline type qualifiers
+            // https://typescript-eslint.io/rules/no-import-type-side-effects
+            '@typescript-eslint/no-import-type-side-effects': 'error',
 
             // Disallow variable declarations from shadowing variables declared in the outer scope
             // https://typescript-eslint.io/rules/no-shadow
