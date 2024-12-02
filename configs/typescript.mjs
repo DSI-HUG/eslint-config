@@ -199,6 +199,15 @@ export default files =>
                 }
             ],
 
+            // Disallow classes used as namespaces
+            // https://typescript-eslint.io/rules/no-extraneous-class
+            '@typescript-eslint/no-extraneous-class': [
+                'error',
+                {
+                    allowWithDecorator: true
+                }
+            ],
+
             // Disallow variable declarations from shadowing variables declared in the outer scope
             // https://typescript-eslint.io/rules/no-shadow
             'no-shadow': 'off',
