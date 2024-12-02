@@ -1,6 +1,11 @@
 import tsPlugin from 'typescript-eslint';
 
-const UPPER_CASE_REGEXP = [
+const ALLOWED_PROPERTIES = [
+    // angular
+    '^\\[attr\\..*\\]$',
+    '^\\[class\\..*\\]$',
+    '^\\[style\\..*\\]$',
+
     // url params
     'PATIENT_ID',
     'SCOPEID',
@@ -160,20 +165,9 @@ export default files =>
                     format: ['UPPER_CASE']
                 },
                 {
-                    selector: 'typeProperty',
-                    format: ['UPPER_CASE'],
-                    filter: {
-                        regex: `^(${UPPER_CASE_REGEXP.join('|')})$`,
-                        match: true
-                    }
-                },
-                {
-                    selector: 'objectLiteralProperty',
-                    format: ['UPPER_CASE'],
-                    filter: {
-                        regex: `^(${UPPER_CASE_REGEXP.join('|')})$`,
-                        match: true
-                    }
+                    selector: 'property',
+                    format: ['strictCamelCase'],
+                    leadingUnderscore: 'allow'
                 },
                 {
                     selector: 'property',
@@ -183,10 +177,11 @@ export default files =>
                 },
                 {
                     selector: 'property',
-                    format: [
-                        'strictCamelCase',
-                        'UPPER_CASE'
-                    ],
+                    format: null,
+                    filter: {
+                        regex: `^(${ALLOWED_PROPERTIES.join('|')})$`,
+                        match: true
+                    },
                     leadingUnderscore: 'allow'
                 },
                 {
