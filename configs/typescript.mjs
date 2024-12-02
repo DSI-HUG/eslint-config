@@ -219,7 +219,7 @@ export default files =>
             // Disallow variable declarations from shadowing variables declared in the outer scope
             // https://typescript-eslint.io/rules/no-shadow
             'no-shadow': 'off',
-            '@typescript-eslint/no-shadow': ['error'],
+            '@typescript-eslint/no-shadow': 'error',
 
             // Disallow unused variables
             // https://typescript-eslint.io/rules/no-unused-vars
