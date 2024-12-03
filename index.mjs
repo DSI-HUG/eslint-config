@@ -95,6 +95,8 @@ const getConfig = async level => [
             '**/.git/',
             '**/.angular/',
             '**/.sass-cache/',
+            '**/.nx',
+            '**/.docusaurus',
 
             // System files
             '**/.DS_Store',
