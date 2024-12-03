@@ -240,7 +240,14 @@ export default files =>
 
             // Exhaustiveness checking in switch with union type
             // https://typescript-eslint.io/rules/switch-exhaustiveness-check
-            '@typescript-eslint/switch-exhaustiveness-check': 'error',
+            '@typescript-eslint/switch-exhaustiveness-check': [
+                'error',
+                {
+                    allowDefaultCaseForExhaustiveSwitch: true,
+                    considerDefaultExhaustiveForUnions: true,
+                    requireDefaultForNonUnion: true
+                }
+            ],
 
             // Enforce unbound methods are called with their expected scope
             // https://typescript-eslint.io/rules/unbound-method
