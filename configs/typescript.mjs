@@ -39,7 +39,12 @@ export default files =>
         rules: {
             // Enforce consistent usage of type imports
             // https://typescript-eslint.io/rules/consistent-type-imports
-            '@typescript-eslint/consistent-type-imports': 'error',
+            '@typescript-eslint/consistent-type-imports': [
+                'error',
+                {
+                    fixStyle: 'inline-type-imports'
+                }
+            ],
 
             // Enforce default parameters to be last
             // https://typescript-eslint.io/rules/default-param-last
