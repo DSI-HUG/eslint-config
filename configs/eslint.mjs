@@ -89,7 +89,12 @@ export default files => ({
 
         // Disallow duplicate imports
         // https://eslint.org/docs/rules/no-duplicate-imports
-        'no-duplicate-imports': 'error',
+        'no-duplicate-imports': [
+            'error',
+            {
+                includeExports: true
+            }
+        ],
 
         // Disallow eval()
         // https://eslint.org/docs/rules/no-eval
