@@ -74,13 +74,13 @@
         "eslint-plugin-no-loops": "0.4.0",
         "eslint-plugin-no-secrets": "1.1.2",
         "eslint-plugin-prefer-arrow": "1.2.3",
-        "eslint-plugin-rxjs-angular-updated": "1.0.19",
-        "eslint-plugin-rxjs-updated": "1.0.19",
+        "eslint-plugin-rxjs-angular-updated": "1.0.21",
+        "eslint-plugin-rxjs-updated": "1.0.21",
         "eslint-plugin-simple-import-sort": "12.1.1",
         "eslint-plugin-unused-imports": "4.1.4",
         "find-up": "^7.0.0",
         "globals": "^15.13.0",
-        "typescript-eslint": "8.16.0"
+        "typescript-eslint": "8.17.0"
     },
     "devDependencies": {
         "@angular/core": "^18.2.9",
