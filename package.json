@@ -64,36 +64,36 @@
         "typescript": ">= 3"
     },
     "dependencies": {
-        "angular-eslint": "18.4.0",
-        "chalk": "^5.3.0",
+        "angular-eslint": "19.0.2",
+        "chalk": "^5.4.1",
         "eslint-config-prettier": "9.1.0",
         "eslint-plugin-chai-friendly": "1.0.1",
         "eslint-plugin-cypress": "4.1.0",
-        "eslint-plugin-jsdoc": "50.6.0",
+        "eslint-plugin-jsdoc": "50.6.1",
         "eslint-plugin-jsonc": "2.18.2",
         "eslint-plugin-no-loops": "0.4.0",
-        "eslint-plugin-no-secrets": "1.1.2",
+        "eslint-plugin-no-secrets": "2.1.1",
         "eslint-plugin-prefer-arrow": "1.2.3",
-        "eslint-plugin-rxjs-angular-updated": "1.0.21",
-        "eslint-plugin-rxjs-updated": "1.0.21",
+        "eslint-plugin-rxjs-angular-updated": "1.0.26",
+        "eslint-plugin-rxjs-updated": "1.0.26",
         "eslint-plugin-simple-import-sort": "12.1.1",
         "eslint-plugin-unused-imports": "4.1.4",
         "find-up": "^7.0.0",
-        "globals": "^15.13.0",
-        "typescript-eslint": "8.17.0"
+        "globals": "^15.14.0",
+        "typescript-eslint": "8.19.1"
     },
     "devDependencies": {
-        "@angular/core": "^18.2.9",
-        "@commitlint/cli": "^19.6.0",
+        "@angular/core": "^19.0.6",
+        "@commitlint/cli": "^19.6.1",
         "@commitlint/config-conventional": "^19.6.0",
         "@types/eslint__js": "^8.42.3",
         "cross-env": "^7.0.3",
-        "eslint": "^9.16.0",
+        "eslint": "^9.17.0",
         "husky": "^9.1.7",
-        "prettier": "^3.4.1",
-        "prettier-plugin-multiline-arrays": "^3.0.6",
+        "prettier": "^3.4.2",
+        "prettier-plugin-multiline-arrays": "^4.0.2",
         "rxjs": "^7.8.1",
-        "typescript": "^5.7.2"
+        "typescript": "^5.7.3"
     },
     "engines": {
         "node": ">=18.13.0"
