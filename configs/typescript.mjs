@@ -245,6 +245,19 @@ export default files =>
                 }
             ],
 
+            // Enforce template literal expressions to be of string type
+            // https://typescript-eslint.io/rules/restrict-template-expressions
+            '@typescript-eslint/restrict-template-expressions': [
+                'error',
+                {
+                    allowAny: false,
+                    allowBoolean: false,
+                    allowNullish: false,
+                    allowNumber: true,
+                    allowRegExp: false
+                }
+            ],
+
             // Exhaustiveness checking in switch with union type
             // https://typescript-eslint.io/rules/switch-exhaustiveness-check
             '@typescript-eslint/switch-exhaustiveness-check': [
