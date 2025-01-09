@@ -67,9 +67,11 @@ export default files =>
                 {
                     accessibility: 'explicit',
                     overrides: {
-                        constructors: 'no-public',
                         accessors: 'explicit',
-                        parameterProperties: 'explicit'
+                        constructors: 'explicit',
+                        methods: 'off',
+                        parameterProperties: 'explicit',
+                        properties: 'explicit'
                     }
                 }
             ],
