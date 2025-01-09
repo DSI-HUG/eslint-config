@@ -1,9 +1,5 @@
 {
     "$schema": "https://json.schemastore.org/prettierrc.json",
-    "plugins": [
-        "prettier-plugin-multiline-arrays"
-    ],
-    "multilineArraysWrapThreshold": 1,
     "singleQuote": true,
     "bracketSameLine": true,
     "tabWidth": 4,
