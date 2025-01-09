@@ -1,6 +1,27 @@
 import angularPlugin from 'angular-eslint';
 import tsPlugin from 'typescript-eslint';
 
+const angularPluginTsBaseConfig = (plugin, parser) => ({
+    name: 'angular-eslint/ts-base',
+    languageOptions: {
+        parser,
+        sourceType: 'module'
+    },
+    plugins: {
+        '@angular-eslint': plugin
+    }
+});
+
+const angularPluginTemplateBaseConfig = (plugin, parser) => ({
+    name: 'angular-eslint/template-base',
+    languageOptions: {
+        parser
+    },
+    plugins: {
+        '@angular-eslint/template': plugin
+    }
+});
+
 /**
  * @typedef {import('@typescript-eslint/utils').TSESLint.FlatConfig.Rules} Rules
  * @typedef {import('eslint').Linter.Config} Config
@@ -95,10 +116,9 @@ const html = (name, files, rules) =>
     tsPlugin.config({
         name,
         ...(files ? { files } : {}), // files cannot be empty nor undefined
-        extends: [
-            ...angularPlugin.configs.templateRecommended,
-            ...angularPlugin.configs.templateAccessibility
-        ],
+        extends: rules
+            ? [angularPluginTemplateBaseConfig(angularPlugin.templatePlugin, angularPlugin.templateParser)]
+            : [...angularPlugin.configs.templateRecommended, ...angularPlugin.configs.templateAccessibility],
         rules: rules ?? {}
     });
 
@@ -108,9 +128,10 @@ const ts = (name, files, rules) =>
     tsPlugin.config({
         name,
         ...(files ? { files } : {}), // files cannot be empty nor undefined
-        extends: [
-            ...angularPlugin.configs.tsRecommended
-        ],
+        // @ts-ignore
+        extends: rules
+            ? [angularPluginTsBaseConfig(angularPlugin.tsPlugin, tsPlugin.parser)]
+            : [...angularPlugin.configs.tsRecommended],
         processor: angularPlugin.processInlineTemplates,
         rules: rules ?? {}
     });

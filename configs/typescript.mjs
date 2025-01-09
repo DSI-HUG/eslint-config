@@ -30,10 +30,9 @@ export default (files, rules) =>
     tsPlugin.config({
         name: `hug/typescript${rules ? ' (overrides)' : ''}`,
         ...(files ? { files } : {}), // files cannot be empty nor undefined
-        extends: [
-            ...tsPlugin.configs.strictTypeChecked,
-            ...tsPlugin.configs.stylisticTypeChecked
-        ],
+        extends: rules
+            ? [tsPlugin.configs.base]
+            : [...tsPlugin.configs.strictTypeChecked, ...tsPlugin.configs.stylisticTypeChecked],
         languageOptions: {
             parserOptions: {
                 projectService: true,
