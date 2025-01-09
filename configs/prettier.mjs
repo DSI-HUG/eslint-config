@@ -1,6 +1,9 @@
 import prettierPlugin from 'eslint-config-prettier';
 
-/** @type {(files?: Array<string | string[]>) => import('eslint').Linter.Config} */
+/**
+ * @typedef {import('eslint').Linter.Config} Config
+ * @type {(files?: (string | string[])[],) => Config}
+ */
 export default files => ({
     name: 'hug/defaults/prettier',
     ...(files ? { files } : {}), // files cannot be empty nor undefined

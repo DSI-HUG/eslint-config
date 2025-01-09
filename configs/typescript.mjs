@@ -20,11 +20,15 @@ const ALLOWED_PROPERTIES = [
     'SUBSERVICEID'
 ];
 
-/** @type {(files?: Array<string | string[]>) => (import('eslint').Linter.Config)[]} */
-export default files =>
+/**
+ * @typedef {import('@typescript-eslint/utils').TSESLint.FlatConfig.Rules} Rules
+ * @typedef {import('eslint').Linter.Config} Config
+ * @type {(files?: (string | string[])[], rules?: Rules) => Config[]}
+ */
+export default (files, rules) =>
     // @ts-ignore
     tsPlugin.config({
-        name: 'hug/typescript',
+        name: `hug/typescript${rules ? ' (overrides)' : ''}`,
         ...(files ? { files } : {}), // files cannot be empty nor undefined
         extends: [
             ...tsPlugin.configs.strictTypeChecked,
@@ -36,7 +40,7 @@ export default files =>
                 tsconfigRootDir: process.cwd()
             }
         },
-        rules: {
+        rules: rules ?? {
             // Enforce consistent usage of type imports
             // https://typescript-eslint.io/rules/consistent-type-imports
             '@typescript-eslint/consistent-type-imports': [

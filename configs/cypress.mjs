@@ -2,9 +2,13 @@
 import chaiFriendlyPlugin from 'eslint-plugin-chai-friendly';
 import cypressPlugin from 'eslint-plugin-cypress/flat';
 
-/** @type {(files?: Array<string | string[]>) => import('eslint').Linter.Config} */
-export default files => ({
-    name: 'hug/defaults/cypress',
+/**
+ * @typedef {import('@typescript-eslint/utils').TSESLint.FlatConfig.Rules} Rules
+ * @typedef {import('eslint').Linter.Config} Config
+ * @type {(files?: (string | string[])[], rules?: Rules) => Config}
+ */
+export default (files, rules) => ({
+    name: `hug/defaults/cypress${rules ? ' (overrides)' : ''}`,
     ...(files ? { files } : {}), // files cannot be empty nor undefined
     plugins: {
         cypress: cypressPlugin,
@@ -12,7 +16,7 @@ export default files => ({
         'chai-friendly': chaiFriendlyPlugin
     },
     languageOptions: cypressPlugin.configs.globals.languageOptions,
-    rules: {
+    rules: rules ?? {
         ...cypressPlugin.configs.recommended.rules,
         ...chaiFriendlyPlugin.configs.recommendedFlat.rules,
 
@@ -30,10 +34,6 @@ export default files => ({
 
         // Disallow member access on any typed variables
         // https://typescript-eslint.io/rules/no-unsafe-member-access
-        '@typescript-eslint/no-unsafe-member-access': 'off',
-
-        // Enforce template literal expressions to be of string type
-        // https://typescript-eslint.io/rules/restrict-template-expressions
-        '@typescript-eslint/restrict-template-expressions': 'off'
+        '@typescript-eslint/no-unsafe-member-access': 'off'
     }
 });

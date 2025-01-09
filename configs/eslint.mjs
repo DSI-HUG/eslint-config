@@ -1,10 +1,14 @@
 import jsPlugin from '@eslint/js';
 
-/** @type {(files?: Array<string | string[]>) => import('eslint').Linter.Config} */
-export default files => ({
-    name: 'hug/defaults/eslint',
+/**
+ * @typedef {import('@typescript-eslint/utils').TSESLint.FlatConfig.Rules} Rules
+ * @typedef {import('eslint').Linter.Config} Config
+ * @type {(files?: (string | string[])[], rules?: Rules) => Config}
+ */
+export default (files, rules) => ({
+    name: `hug/defaults/eslint${rules ? ' (overrides)' : ''}`,
     ...(files ? { files } : {}), // files cannot be empty nor undefined
-    rules: {
+    rules: rules ?? {
         ...jsPlugin.configs.recommended.rules,
 
         // Enforce or disallow the use of braces around arrow function body

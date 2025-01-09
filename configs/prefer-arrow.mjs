@@ -1,14 +1,18 @@
 import preferArrowPlugin from 'eslint-plugin-prefer-arrow';
 
-/** @type {(files?: Array<string | string[]>) => import('eslint').Linter.Config} */
-export default files => ({
-    name: 'hug/defaults/prefer-arrow',
+/**
+ * @typedef {import('@typescript-eslint/utils').TSESLint.FlatConfig.Rules} Rules
+ * @typedef {import('eslint').Linter.Config} Config
+ * @type {(files?: (string | string[])[], rules?: Rules) => Config}
+ */
+export default (files, rules) => ({
+    name: `hug/defaults/prefer-arrow${rules ? ' (overrides)' : ''}`,
     ...(files ? { files } : {}), // files cannot be empty nor undefined
     plugins: {
         // @ts-ignore
         'prefer-arrow': preferArrowPlugin
     },
-    rules: {
+    rules: rules ?? {
         // Prefer arrow functions
         // https://github.com/TristonJ/eslint-plugin-prefer-arrow
         'prefer-arrow/prefer-arrow-functions': 'error'

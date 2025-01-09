@@ -1,6 +1,9 @@
 import jsdocPlugin from 'eslint-plugin-jsdoc';
 
-/** @type {Record<'js' | 'ts', (files?: Array<string | string[]>) => import('eslint').Linter.Config>} */
+/**
+ * @typedef {import('eslint').Linter.Config} Config
+ * @type {Record<'js' | 'ts', (files?: (string | string[])[]) => Config>}
+ */
 export default {
     js: files => ({
         ...(files ? { files } : {}), // files cannot be empty nor undefined
