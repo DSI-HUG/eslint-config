@@ -12,6 +12,10 @@
         "type": "git",
         "url": "git+https://github.com/dsi-hug/eslint-config.git"
     },
+    "publishConfig": {
+        "access": "public",
+        "tag": "beta"
+    },
     "type": "module",
     "main": "./index.mjs",
     "typings": "./index.d.ts",
@@ -55,7 +59,7 @@
         "lint": "eslint .",
         "test": "cross-env CONFIG=MODERATE eslint tests && cross-env CONFIG=RECOMMENDED eslint tests",
         "test:ci": "npm run test",
-        "release": "npm publish --access public"
+        "release": "npm publish"
     },
     "peerDependencies": {
         "@angular/core": ">= 10",
