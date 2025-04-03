@@ -144,6 +144,10 @@ export default {
         json: (rules, files = [DEFAULT_FILES.JSON]) => jsonc.json(files, rules),
         jsonc: (rules, files = [DEFAULT_FILES.JSONC]) => jsonc.jsonc(files, rules),
         json5: (rules, files = [DEFAULT_FILES.JSON5]) => jsonc.json5(files, rules),
+        jsdoc: {
+            js: (rules, files = [DEFAULT_FILES.JS_MJS_CJS]) => jsdoc.js(files, rules),
+            ts: (rules, files = [DEFAULT_FILES.TS]) => jsdoc.ts(files, rules)
+        },
         noLoops: (rules, files = [DEFAULT_FILES.TS_JS_MJS_CJS]) => noLoops(files, rules),
         preferArrow: (rules, files = [DEFAULT_FILES.TS_JS_MJS_CJS]) => preferArrow(files, rules),
         simpleImportSort: (rules, files = [DEFAULT_FILES.TS_MJS]) => simpleImportSort(files, rules),

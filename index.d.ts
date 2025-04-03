@@ -22,6 +22,10 @@ export interface HugConfig<T = Linter.Config[]> {
         json: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
         jsonc: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
         json5: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
+        jsdoc: {
+            js: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
+            ts: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
+        },
         noLoops: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
         preferArrow: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
         simpleImportSort: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
