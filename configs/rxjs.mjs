@@ -94,8 +94,8 @@ export default {
     },
 
     /** @type {(files?: (string | string[])[], rules?: Rules) => Config} */
-    ts: (files, rules) => ts('hug/rxjs (overrides)', files, rules),
+    ts: (files, rules) => ts('hug/defaults/rxjs (overrides)', files, rules),
 
     /** @type {(files?: (string | string[])[], rules?: Rules) => Config} */
-    angular: (files, rules) => angular('hug/rxjs-angular (overrides)', files, rules)
+    angular: (files, rules) => angular('hug/defaults/rxjs-angular (overrides)', files, rules)
 };

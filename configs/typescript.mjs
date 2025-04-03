@@ -28,7 +28,7 @@ const ALLOWED_PROPERTIES = [
 export default (files, rules) =>
     // @ts-ignore
     tsPlugin.config({
-        name: `hug/typescript${rules ? ' (overrides)' : ''}`,
+        name: `hug/defaults/typescript${rules ? ' (overrides)' : ''}`,
         ...(files ? { files } : {}), // files cannot be empty nor undefined
         extends: rules
             ? [tsPlugin.configs.base]

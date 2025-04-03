@@ -157,8 +157,8 @@ export default {
     },
 
     /** @type {(files?: (string | string[])[], rules?: Rules) => Config[]} */
-    ts: (files, rules) => ts('hug/angular (overrides)', files, rules),
+    ts: (files, rules) => ts('hug/defaults/angular (overrides)', files, rules),
 
     /** @type {(files?: (string | string[])[], rules?: Rules) => Config[]} */
-    html: (files, rules) => html('hug/angular-html (overrides)', files, rules)
+    html: (files, rules) => html('hug/defaults/angular-html (overrides)', files, rules)
 };
