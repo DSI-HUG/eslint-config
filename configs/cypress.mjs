@@ -1,6 +1,6 @@
 // @ts-ignore
 import chaiFriendlyPlugin from 'eslint-plugin-chai-friendly';
-import cypressPlugin from 'eslint-plugin-cypress/flat';
+import cypressPlugin from 'eslint-plugin-cypress';
 
 /**
  * @typedef {import('@typescript-eslint/utils').TSESLint.FlatConfig.Rules} Rules
