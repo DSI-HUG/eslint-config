@@ -5,9 +5,11 @@ export interface HugConfig<T = Linter.Config[]> {
     readonly configs: {
         readonly recommended: Promise<T>;
         readonly moderate: Promise<T>;
+        readonly stylistic: Linter.Config;
     };
     overrides: {
         eslint: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
+        stylistic: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
         typescript: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config[];
         rxjs: {
             ts: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;

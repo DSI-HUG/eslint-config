@@ -12,7 +12,9 @@ if (process.env.CONFIG === 'MODERATE') {
 
 export default [
     ...config,
+    hug.configs.stylistic,
     {
+        name: '@hug/eslint-config/ignores',
         ignores: [
             'examples/'
         ]

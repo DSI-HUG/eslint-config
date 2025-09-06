@@ -40,8 +40,146 @@ npm install @hug/eslint-config --save-dev
 yarn add eslint@8.x @hug/eslint-config --dev
 ```
 
+See previous installations [section](#previous-installations) for older requirements.
+
+<hr/>
+
+## Usage
+
+1. Create an `eslint.config.mjs` file at the root of your project
+
+    #### Example 1: linter + formatter
+
+    ```mjs
+    import hug from "@hug/eslint-config";
+
+    export default [
+        ...(await hug.configs.recommended), // 'recommended (strict) | moderate (less stricter)'
+        hug.config.stylistic,
+    ];
+    ```
+
+    #### Example 2: linter only
+
+    ```mjs
+    import hug from "@hug/eslint-config";
+
+    export default await hug.configs.moderate;
+    ```
+
+    #### Example 3: with overrides
+
+    ```mjs
+    import hug from "@hug/eslint-config";
+
+    export default [
+        ...(await hug.configs.recommended),
+        hug.configs.stylistic,
+
+        // will add or override rules for the current typescript configuration
+        ...hug.overrides.typescript({
+            "@typescript-eslint/prefer-nullish-coalescing": "off",
+        }),
+
+        // will add a completely new set of rules
+        {
+            name: "my-project/defaults/e2e",
+            files: ["e2e/**/*.js"],
+            plugins: e2ePlugin,
+            rules: {
+                "e2e-rule": "error",
+            },
+        },
+
+        // will add new ignored files (should always comes last)
+        {
+            name: "my-project/defaults/ignores",
+            ignores: ["**/capacitor.config.ts"],
+        },
+    ];
+    ```
+
+2. Modify your existing `angular.json`
+
+    ```json
+    "architect": {
+        "lint": {
+            "builder": "@angular-eslint/builder:lint",
+            "options": {
+                "lintFilePatterns": [
+                    "**/*.js",
+                    "**/*.json",
+                    "**/*.ts",
+                    "**/*.html"
+                ]
+            }
+        }
+    }
+    ```
+
+3. Run `ng lint`
+
+<br/>
+
+ℹ️ _You can also skip steps `2` and `3` and simply run:_
+
+```sh
+eslint *.{js,json,ts,html}
+```
+
+## Visual inspector
+
+Eslint has made available a great tool to visually inspect and understand your current configurations.
+
+Go to the project root that contains `eslint.config.js` and run:
+
+```sh
+npx @eslint/config-inspector
+```
+
+## Rules
+
+This configuration exports a recommended set of rules that enforces good practices.
+
+They may or may not served you well as they are mainly designed to be used by the [HUG organization's team][dsi-hug].
+
+The rules applies as follow:
+
+| Files                     | Plugins or rules                                    |
+| :------------------------ | :-------------------------------------------------- |
+| `**/*.{ts,js,mjs,cjs}`    | `eslint`, `jsdoc`, `no-loop`, `prefer-arrow`, `hug` |
+| `**/*.{ts,mjs}`           | `simple-import-sort`, `unused-imports`              |
+| `**/*.{json,jsonc,json5}` | `json`                                              |
+| `*`                       | `no-secrets`                                        |
+| If applicable:            |
+| `**/*.ts`                 | `typescript`, `rxjs`, `hug`                         |
+| `**/*.{ts,html}`          | `angular`, `hug`                                    |
+| `e2e/**/*.ts`             | `cypress`, `chai-friendly`, `hug`                   |
+
+## Previous installations
+
 <details>
-    <summary><i>Prior to version 20.2.0</i></summary>
+    <summary><i>Prior to version v21.x</i></summary>
+
+> <br/>
+>
+> Create an `.eslintrc.json` file at the root of your project
+>
+> ```jsonc
+> {
+>     "root": true,
+>     "extends": [
+>         /**
+>          *  Possible values: 'recommended (strict) | moderate (less stricter)'
+>          */
+>         "@hug/eslint-config/recommended"
+>     ]
+> }
+> ```
+
+</details>
+<details>
+    <summary><i>Prior to version v20.2.0</i></summary>
 
 > <br/>
 >
@@ -95,77 +233,6 @@ yarn add eslint@8.x @hug/eslint-config --dev
 > 4. Have a look at our [Angular project example][ng-example] and modify all your `tsconfig` files accordingly
 
 </details>
-
-<hr/>
-
-## Requirements
-
-> As of now this configuration is intented to work with **Angular projects** only.
-
-> Projects running under `Angular 10.x` can safely ignore `@angular-eslint` warnings during installation.
-
--   an **Angular >= 10.x** project
-
-## Usage
-
-1. Create an `.eslintrc.json` file at the root of your project
-
-```jsonc
-{
-    "root": true,
-    "extends": [
-        /**
-         *  Possible values: 'recommended (strict) | moderate (less stricter)'
-         */
-        "@hug/eslint-config/recommended"
-    ]
-}
-```
-
-2. Modify your existing `angular.json`
-
-```json
-"architect": {
-    "lint": {
-        "builder": "@angular-eslint/builder:lint",
-        "options": {
-            "lintFilePatterns": [
-                "**/*.js",
-                "**/*.json",
-                "**/*.ts",
-                "**/*.html"
-            ]
-        }
-    }
-}
-```
-
-3. Run `ng lint`
-
-<br/>
-
-_You can also skip steps `2` and `3` and simply run:_
-
-```
-eslint *.{js,json,ts,html}
-```
-
-## Rules
-
-This configuration exports a recommended set of rules that enforces good practices.
-
-They may or may not served you well as they are mainly designed to be used by the [HUG organization's team][dsi-hug].
-
-The rules applies as follow:
-
-| Files        | Rules                                                                                           |
-| :----------- | :---------------------------------------------------------------------------------------------- |
-| \*_/_.ts     | `es6`, `typescript`, `angular`, `rxjs`, `no-secrets`                                            |
-| \*_/_.js     | `es6`, `no-secrets`                                                                             |
-| \*_/_.mjs    | `es6`, `no-secrets`                                                                             |
-| \*_/_.html   | `angular-template`                                                                              |
-| \*_/_.json   | `no-secrets`                                                                                    |
-| e2e/\*_/_.ts | `es6`, `typescript`, `no-secrets`, [`cypress`, `chai-friendly` - in case you are using Cypress] |
 
 ## Development
 

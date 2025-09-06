@@ -19,6 +19,7 @@ import preferArrow from './configs/prefer-arrow.mjs';
 import prettier from './configs/prettier.mjs';
 import rxjs from './configs/rxjs.mjs';
 import simpleImportSort from './configs/simple-import-sort.mjs';
+import stylistic from './configs/stylistic.mjs';
 import typescript from './configs/typescript.mjs';
 import unusedImports from './configs/unused-imports.mjs';
 
@@ -48,14 +49,22 @@ const isPackageInstalled = async name => {
 /** @type { (level: 'moderate' | 'recommended') => Promise<import('eslint').Linter.Config[]> } */
 const getConfig = async level => [
     eslint([DEFAULT_FILES.TS_JS_MJS_CJS]),
-    ...((await isPackageInstalled('typescript')) ? typescript([DEFAULT_FILES.TS]) : []),
-    (await isPackageInstalled('rxjs')) ? rxjs[level].ts([DEFAULT_FILES.TS]) : {},
-    ...((await isPackageInstalled('@angular/core')) ? [
-              ...angular[level].ts([DEFAULT_FILES.TS]),
-              ...angular[level].html([DEFAULT_FILES.HTML]),
-              rxjs[level].angular([DEFAULT_FILES.TS])
-          ] : []),
-    (await isPackageInstalled('cypress')) ? cypress([DEFAULT_FILES.E2E]) : {},
+    ...((await isPackageInstalled('typescript'))
+        ? typescript([DEFAULT_FILES.TS])
+        : [{ name: 'hug/typescript (not applicable)' }]),
+    (await isPackageInstalled('rxjs'))
+        ? rxjs[level].ts([DEFAULT_FILES.TS])
+        : { name: 'hug/rxjs (not applicable)' },
+    ...((await isPackageInstalled('@angular/core'))
+        ? [
+            ...angular[level].ts([DEFAULT_FILES.TS]),
+            ...angular[level].html([DEFAULT_FILES.HTML]),
+            rxjs[level].angular([DEFAULT_FILES.TS])
+        ]
+        : [{ name: 'hug/angular (not applicable)' }]),
+    (await isPackageInstalled('cypress'))
+        ? cypress([DEFAULT_FILES.E2E])
+        : { name: 'hug/cypress (not applicable)' },
     noSecrets(),
     jsonc.json([DEFAULT_FILES.JSON]),
     jsonc.jsonc([DEFAULT_FILES.JSONC]),
@@ -126,10 +135,12 @@ const getConfig = async level => [
 export default {
     configs: {
         recommended: getConfig('recommended'),
-        moderate: getConfig('moderate')
+        moderate: getConfig('moderate'),
+        stylistic: stylistic([DEFAULT_FILES.TS_JS_MJS_CJS])
     },
     overrides: {
         eslint: (rules, files = [DEFAULT_FILES.TS_JS_MJS_CJS]) => eslint(files, rules),
+        stylistic: (rules, files = [DEFAULT_FILES.TS_JS_MJS_CJS]) => stylistic(files, rules),
         typescript: (rules, files = [DEFAULT_FILES.TS]) => typescript(files, rules),
         rxjs: {
             ts: (rules, files = [DEFAULT_FILES.TS]) => rxjs.ts(files, rules),
