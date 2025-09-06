@@ -94,7 +94,6 @@
         "cross-env": "^7.0.3",
         "eslint": "^9.30.0",
         "husky": "^9.1.7",
-        "prettier": "^3.6.2",
         "rxjs": "^7.8.2",
         "typescript": "^5.8.3"
     },
