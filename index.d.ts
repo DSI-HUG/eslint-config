@@ -14,11 +14,11 @@ export interface HugConfig<T = Linter.Config[]> {
         rxjs: {
             ts: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
             angular: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
-        },
+        };
         angular: {
             ts: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config[];
             html: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config[];
-        },
+        };
         cypress: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
         noSecrets: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
         json: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
@@ -27,7 +27,7 @@ export interface HugConfig<T = Linter.Config[]> {
         jsdoc: {
             js: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
             ts: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
-        },
+        };
         noLoops: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
         preferArrow: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;
         simpleImportSort: (rules: FlatConfig.Rules, files?: (string | string[])[]) => Linter.Config;

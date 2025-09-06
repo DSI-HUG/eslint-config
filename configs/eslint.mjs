@@ -121,15 +121,15 @@ export default (files, rules) => ({
             },
             {
                 name: 'fdescribe',
-                message: "Do not commit 'fdescribe'. Use 'describe' instead."
+                message: 'Do not commit \'fdescribe\'. Use \'describe\' instead.'
             },
             {
                 name: 'fit',
-                message: "Do not commit 'fit'. Use 'it' instead."
+                message: 'Do not commit \'fit\'. Use \'it\' instead.'
             },
             {
                 name: 'only',
-                message: "Do not commit 'only'."
+                message: 'Do not commit \'only\'.'
             }
         ],
 
