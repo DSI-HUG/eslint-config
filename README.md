@@ -37,7 +37,7 @@ npm install @hug/eslint-config --save-dev
 ```
 
 ```sh
-yarn add eslint@8.x @hug/eslint-config --dev
+yarn add eslint @hug/eslint-config --dev
 ```
 
 See previous installations [section](#previous-installations) for older requirements.
