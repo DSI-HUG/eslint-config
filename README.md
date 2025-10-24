@@ -55,7 +55,7 @@ See previous installations [section](#previous-installations) for older requirem
 
     export default [
         ...(await hug.configs.recommended), // 'recommended (strict) | moderate (less stricter)'
-        hug.config.stylistic,
+        hug.configs.stylistic,
     ];
     ```
 
