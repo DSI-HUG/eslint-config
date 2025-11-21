@@ -9,12 +9,12 @@ export default (files, rules) => ({
     name: `hug/defaults/prefer-arrow${rules ? ' (overrides)' : ''}`,
     ...(files ? { files } : {}), // files cannot be empty nor undefined
     plugins: {
-        // @ts-ignore
-        'prefer-arrow': preferArrowPlugin
+        // @ts-expect-error
+        'prefer-arrow': preferArrowPlugin,
     },
     rules: rules ?? {
         // Prefer arrow functions
         // https://github.com/TristonJ/eslint-plugin-prefer-arrow
-        'prefer-arrow/prefer-arrow-functions': 'error'
-    }
+        'prefer-arrow/prefer-arrow-functions': 'error',
+    },
 });

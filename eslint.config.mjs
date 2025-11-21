@@ -16,7 +16,7 @@ export default [
     {
         name: '@hug/eslint-config/ignores',
         ignores: [
-            'examples/'
-        ]
-    }
+            'examples/',
+        ],
+    },
 ];

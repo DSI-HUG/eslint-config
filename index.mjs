@@ -33,7 +33,7 @@ const DEFAULT_FILES = {
     JSON: '**/*.json',
     JSONC: '**/*.jsonc',
     JSON5: '**/*.json5',
-    E2E: 'e2e/**/*.ts'
+    E2E: 'e2e/**/*.ts',
 };
 
 /** @type {(name: string) => Promise<boolean>} */
@@ -59,7 +59,7 @@ const getConfig = async level => [
         ? [
             ...angular[level].ts([DEFAULT_FILES.TS]),
             ...angular[level].html([DEFAULT_FILES.HTML]),
-            rxjs[level].angular([DEFAULT_FILES.TS])
+            rxjs[level].angular([DEFAULT_FILES.TS]),
         ]
         : [{ name: 'hug/angular (not applicable)' }]),
     (await isPackageInstalled('cypress'))
@@ -82,12 +82,12 @@ const getConfig = async level => [
             globals: {
                 ...globals.browser,
                 ...globals.node,
-                ...globals.jasmine
-            }
+                ...globals.jasmine,
+            },
         },
         linterOptions: {
-            reportUnusedDisableDirectives: 'error'
-        }
+            reportUnusedDisableDirectives: 'error',
+        },
     },
     {
         name: 'hug/defaults/ignores',
@@ -126,9 +126,9 @@ const getConfig = async level => [
 
             // Capacitor/Cordova
             '**/android/',
-            '**/ios/'
-        ]
-    }
+            '**/ios/',
+        ],
+    },
 ];
 
 /** @type { import('./index').HugConfig } */
@@ -136,7 +136,7 @@ export default {
     configs: {
         recommended: getConfig('recommended'),
         moderate: getConfig('moderate'),
-        stylistic: stylistic([DEFAULT_FILES.TS_JS_MJS_CJS])
+        stylistic: stylistic([DEFAULT_FILES.TS_JS_MJS_CJS]),
     },
     overrides: {
         eslint: (rules, files = [DEFAULT_FILES.TS_JS_MJS_CJS]) => eslint(files, rules),
@@ -144,11 +144,11 @@ export default {
         typescript: (rules, files = [DEFAULT_FILES.TS]) => typescript(files, rules),
         rxjs: {
             ts: (rules, files = [DEFAULT_FILES.TS]) => rxjs.ts(files, rules),
-            angular: (rules, files = [DEFAULT_FILES.TS]) => rxjs.angular(files, rules)
+            angular: (rules, files = [DEFAULT_FILES.TS]) => rxjs.angular(files, rules),
         },
         angular: {
             ts: (rules, files = [DEFAULT_FILES.TS]) => angular.ts(files, rules),
-            html: (rules, files = [DEFAULT_FILES.HTML]) => angular.html(files, rules)
+            html: (rules, files = [DEFAULT_FILES.HTML]) => angular.html(files, rules),
         },
         cypress: (rules, files = [DEFAULT_FILES.E2E]) => cypress(files, rules),
         noSecrets: (rules, files = []) => noSecrets(files, rules),
@@ -157,11 +157,11 @@ export default {
         json5: (rules, files = [DEFAULT_FILES.JSON5]) => jsonc.json5(files, rules),
         jsdoc: {
             js: (rules, files = [DEFAULT_FILES.JS_MJS_CJS]) => jsdoc.js(files, rules),
-            ts: (rules, files = [DEFAULT_FILES.TS]) => jsdoc.ts(files, rules)
+            ts: (rules, files = [DEFAULT_FILES.TS]) => jsdoc.ts(files, rules),
         },
         noLoops: (rules, files = [DEFAULT_FILES.TS_JS_MJS_CJS]) => noLoops(files, rules),
         preferArrow: (rules, files = [DEFAULT_FILES.TS_JS_MJS_CJS]) => preferArrow(files, rules),
         simpleImportSort: (rules, files = [DEFAULT_FILES.TS_MJS]) => simpleImportSort(files, rules),
-        unusedImports: (rules, files = [DEFAULT_FILES.TS_MJS]) => unusedImports(files, rules)
-    }
+        unusedImports: (rules, files = [DEFAULT_FILES.TS_MJS]) => unusedImports(files, rules),
+    },
 };

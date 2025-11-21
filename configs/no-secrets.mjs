@@ -9,8 +9,7 @@ export default (files, rules) => ({
     name: `hug/defaults/no-secrets${rules ? ' (overrides)' : ''}`,
     ...(files ? { files } : {}), // files cannot be empty nor undefined
     plugins: {
-        // @ts-ignore
-        'no-secrets': noSecretsPlugin
+        'no-secrets': noSecretsPlugin,
     },
     rules: rules ?? {
         // Search for potential secrets/keys in code and JSON files
@@ -18,8 +17,8 @@ export default (files, rules) => ({
         'no-secrets/no-secrets': [
             'error',
             {
-                tolerance: 5
-            }
-        ]
-    }
+                tolerance: 5,
+            },
+        ],
+    },
 });

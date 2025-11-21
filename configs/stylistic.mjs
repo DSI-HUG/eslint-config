@@ -9,7 +9,7 @@ export default (files, rules) => ({
     name: `hug/defaults/stylistic${rules ? ' (overrides)' : ''}`,
     ...(files ? { files } : {}), // files cannot be empty nor undefined
     plugins: {
-        '@stylistic': stylisticPlugin
+        '@stylistic': stylisticPlugin,
     },
     rules: rules ?? {
         // Enforce line breaks after opening and before closing array brackets
@@ -42,7 +42,7 @@ export default (files, rules) => ({
 
         // Require or disallow trailing commas
         // https://eslint.style/rules/js/comma-dangle
-        '@stylistic/comma-dangle': 'error',
+        '@stylistic/comma-dangle': ['error', 'always-multiline'],
 
         // Enforce spacing around commas
         // https://eslint.style/rules/js/comma-spacing
@@ -82,8 +82,8 @@ export default (files, rules) => ({
             'error',
             'always',
             {
-                exceptAfterSingleLine: true
-            }
+                exceptAfterSingleLine: true,
+            },
         ],
 
         // Enforce a maximum line length to increase code readability and maintainability
@@ -101,13 +101,13 @@ export default (files, rules) => ({
             {
                 multiline: {
                     delimiter: 'semi',
-                    requireLast: true
+                    requireLast: true,
                 },
                 singleline: {
                     delimiter: 'semi',
-                    requireLast: false
-                }
-            }
+                    requireLast: false,
+                },
+            },
         ],
 
         // Disallow Floating Decimals
@@ -136,8 +136,8 @@ export default (files, rules) => ({
             'error',
             {
                 multiline: true,
-                consistent: true
-            }
+                consistent: true,
+            },
         ],
 
         // Enforce consistent spacing inside braces
@@ -149,8 +149,8 @@ export default (files, rules) => ({
         '@stylistic/object-property-newline': [
             'error',
             {
-                allowAllPropertiesOnSameLine: true
-            }
+                allowAllPropertiesOnSameLine: true,
+            },
         ],
 
         // Enforce the consistent use of either backticks, double, or single quotes
@@ -184,8 +184,8 @@ export default (files, rules) => ({
             {
                 anonymous: 'never',
                 named: 'never',
-                asyncArrow: 'always'
-            }
+                asyncArrow: 'always',
+            },
         ],
 
         // Disallow or enforce spaces inside of parentheses
@@ -197,8 +197,8 @@ export default (files, rules) => ({
         '@stylistic/space-infix-ops': [
             'error',
             {
-                int32Hint: false
-            }
+                int32Hint: false,
+            },
         ],
 
         // Require or disallow spaces before/after unary operators
@@ -211,8 +211,8 @@ export default (files, rules) => ({
             'error',
             'always',
             {
-                markers: ['/']
-            }
+                markers: ['/'],
+            },
         ],
 
         // Enforce spacing around colons of switch statements
@@ -225,6 +225,6 @@ export default (files, rules) => ({
 
         // Require consistent spacing around type annotations
         // https://eslint.style/rules/ts/type-annotation-spacing
-        '@stylistic/type-annotation-spacing': 'error'
-    }
+        '@stylistic/type-annotation-spacing': 'error',
+    },
 });

@@ -9,7 +9,7 @@ export default (files, rules) => ({
     name: `hug/defaults/unused-imports${rules ? ' (overrides)' : ''}`,
     ...(files ? { files } : {}), // files cannot be empty nor undefined
     plugins: {
-        'unused-imports': unusedImportsPlugin
+        'unused-imports': unusedImportsPlugin,
     },
     rules: rules ?? {
         // Find and remove unused es6 module imports
@@ -22,8 +22,8 @@ export default (files, rules) => ({
                 vars: 'all',
                 varsIgnorePattern: '^_',
                 args: 'after-used',
-                argsIgnorePattern: '^_'
-            }
-        ]
-    }
+                argsIgnorePattern: '^_',
+            },
+        ],
+    },
 });

@@ -9,7 +9,7 @@ export default (files, rules) => ({
     name: `hug/defaults/simple-import-sort${rules ? ' (overrides)' : ''}`,
     ...(files ? { files } : {}), // files cannot be empty nor undefined
     plugins: {
-        'simple-import-sort': simpleImportSortPlugin
+        'simple-import-sort': simpleImportSortPlugin,
     },
     rules: rules ?? {
         // Easy autofixable import sorting
@@ -30,9 +30,9 @@ export default (files, rules) => ({
                     ['^src/'],
                     // Relative imports.
                     // Anything that starts with a dot.
-                    ['^\\.']
-                ]
-            }
-        ]
-    }
+                    ['^\\.'],
+                ],
+            },
+        ],
+    },
 });

@@ -9,11 +9,11 @@ export default (files, rules) => ({
     name: `hug/defaults/no-loops${rules ? ' (overrides)' : ''}`,
     ...(files ? { files } : {}), // files cannot be empty nor undefined
     plugins: {
-        'no-loops': noLoopsPlugin
+        'no-loops': noLoopsPlugin,
     },
     rules: rules ?? {
         // Disallow use of loops (for, for-in, while, do-while, for-of)
         // https://github.com/buildo/eslint-plugin-no-loops
-        'no-loops/no-loops': 'error'
-    }
+        'no-loops/no-loops': 'error',
+    },
 });

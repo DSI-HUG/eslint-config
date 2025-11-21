@@ -10,13 +10,13 @@ export default {
         ...(files ? { files } : {}), // files cannot be empty nor undefined
         ...jsdocPlugin.configs['flat/recommended'],
         ...(rules ? { rules } : {}),
-        name: `hug/defaults/jsdoc/javascript${rules ? ' (overrides)' : ''}` // keep last to override jsdocPlugin's name
+        name: `hug/defaults/jsdoc/javascript${rules ? ' (overrides)' : ''}`, // keep last to override jsdocPlugin's name
     }),
 
     ts: (files, rules) => ({
         ...(files ? { files } : {}), // files cannot be empty nor undefined
         ...jsdocPlugin.configs['flat/recommended-typescript'],
         ...(rules ? { rules } : {}),
-        name: `hug/defaults/jsdoc/typescript${rules ? ' (overrides)' : ''}` // keep last to override jsdocPlugin's name
-    })
+        name: `hug/defaults/jsdoc/typescript${rules ? ' (overrides)' : ''}`, // keep last to override jsdocPlugin's name
+    }),
 };

@@ -1,4 +1,3 @@
-// @ts-ignore
 import chaiFriendlyPlugin from 'eslint-plugin-chai-friendly';
 import cypressPlugin from 'eslint-plugin-cypress';
 
@@ -12,8 +11,8 @@ export default (files, rules) => ({
     ...(files ? { files } : {}), // files cannot be empty nor undefined
     plugins: {
         cypress: cypressPlugin,
-        // @ts-ignore
-        'chai-friendly': chaiFriendlyPlugin
+        // @ts-expect-error
+        'chai-friendly': chaiFriendlyPlugin,
     },
     languageOptions: cypressPlugin.configs.globals.languageOptions,
     rules: rules ?? {
@@ -34,6 +33,6 @@ export default (files, rules) => ({
 
         // Disallow member access on any typed variables
         // https://typescript-eslint.io/rules/no-unsafe-member-access
-        '@typescript-eslint/no-unsafe-member-access': 'off'
-    }
+        '@typescript-eslint/no-unsafe-member-access': 'off',
+    },
 });

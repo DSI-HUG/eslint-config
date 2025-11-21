@@ -7,5 +7,5 @@ import prettierPlugin from 'eslint-config-prettier/flat';
 export default files => ({
     name: 'hug/defaults/prettier',
     ...(files ? { files } : {}), // files cannot be empty nor undefined
-    ...prettierPlugin
+    ...prettierPlugin,
 });

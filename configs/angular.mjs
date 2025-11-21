@@ -5,21 +5,21 @@ const angularPluginTsBaseConfig = (plugin, parser) => ({
     name: 'angular-eslint/ts-base',
     languageOptions: {
         parser,
-        sourceType: 'module'
+        sourceType: 'module',
     },
     plugins: {
-        '@angular-eslint': plugin
-    }
+        '@angular-eslint': plugin,
+    },
 });
 
 const angularPluginTemplateBaseConfig = (plugin, parser) => ({
     name: 'angular-eslint/template-base',
     languageOptions: {
-        parser
+        parser,
     },
     plugins: {
-        '@angular-eslint/template': plugin
-    }
+        '@angular-eslint/template': plugin,
+    },
 });
 
 /**
@@ -35,11 +35,8 @@ const RECOMMENDED_RULES = {
         '@angular-eslint/component-class-suffix': [
             'error',
             {
-                suffixes: [
-                    'Component',
-                    'Page'
-                ]
-            }
+                suffixes: ['Component', 'Page'],
+            },
         ],
 
         // Disallow having too many lines in inline template and styles
@@ -49,8 +46,8 @@ const RECOMMENDED_RULES = {
             {
                 template: 3,
                 styles: 3,
-                animations: 30
-            }
+                animations: 30,
+            },
         ],
 
         // Component selectors should follow given naming rules
@@ -60,8 +57,8 @@ const RECOMMENDED_RULES = {
             {
                 type: 'element',
                 prefix: '',
-                style: 'kebab-case'
-            }
+                style: 'kebab-case',
+            },
         ],
 
         // Ensure that classes use contextual decorators in its body
@@ -75,8 +72,8 @@ const RECOMMENDED_RULES = {
             {
                 type: 'attribute',
                 prefix: '',
-                style: 'camelCase'
-            }
+                style: 'camelCase',
+            },
         ],
 
         // Disallow the declaration of impure pipes
@@ -97,7 +94,7 @@ const RECOMMENDED_RULES = {
 
         // Component selector must be declared
         // http://codelyzer.com/rules/use-component-selector
-        '@angular-eslint/use-component-selector': 'error'
+        '@angular-eslint/use-component-selector': 'error',
     },
     HTML: {
         // The condition complexity shouldn’t exceed a rational limit in a template
@@ -106,41 +103,41 @@ const RECOMMENDED_RULES = {
 
         // Disallow using ‘$any’ in templates.
         // http://codelyzer.com/rules/template-no-any
-        '@angular-eslint/template/no-any': 'error'
-    }
+        '@angular-eslint/template/no-any': 'error',
+    },
 };
 
 /** @type {(name: string, files?: (string | string[])[], rules?: Rules) => Config[]} */
 const html = (name, files, rules) =>
-    // @ts-ignore
+    // @ts-expect-error
     tsPlugin.config({
         name,
         ...(files ? { files } : {}), // files cannot be empty nor undefined
         extends: rules
             ? [angularPluginTemplateBaseConfig(angularPlugin.templatePlugin, angularPlugin.templateParser)]
             : [...angularPlugin.configs.templateRecommended, ...angularPlugin.configs.templateAccessibility],
-        rules: rules ?? {}
+        rules: rules ?? {},
     });
 
 /** @type {(name: string, files?: (string | string[])[], rules?: Rules) => Config[]} */
 const ts = (name, files, rules) =>
-    // @ts-ignore
+    // @ts-expect-error
     tsPlugin.config({
         name,
         ...(files ? { files } : {}), // files cannot be empty nor undefined
-        // @ts-ignore
+        // @ts-expect-error
         extends: rules
             ? [angularPluginTsBaseConfig(angularPlugin.tsPlugin, tsPlugin.parser)]
             : [...angularPlugin.configs.tsRecommended],
         processor: angularPlugin.processInlineTemplates,
-        rules: rules ?? {}
+        rules: rules ?? {},
     });
 
 export default {
     /** @type {Record<'ts' | 'html', (files?: (string | string[])[]) => Config[]>} */
     recommended: {
         ts: files => ts('hug/recommended/angular', files, RECOMMENDED_RULES.TS),
-        html: files => html('hug/recommended/angular-html', files, RECOMMENDED_RULES.HTML)
+        html: files => html('hug/recommended/angular-html', files, RECOMMENDED_RULES.HTML),
     },
 
     /** @type {Record<'ts' | 'html', (files?: (string | string[])[]) => Config[]>} */
@@ -151,14 +148,14 @@ export default {
 
                 // Enforce component’s change detection to ChangeDetectionStrategy.OnPush
                 // http://codelyzer.com/rules/prefer-on-push-component-change-detection
-                '@angular-eslint/prefer-on-push-component-change-detection': 'off'
+                '@angular-eslint/prefer-on-push-component-change-detection': 'off',
             }),
-        html: files => html('hug/moderate/angular-html', files, RECOMMENDED_RULES.HTML)
+        html: files => html('hug/moderate/angular-html', files, RECOMMENDED_RULES.HTML),
     },
 
     /** @type {(files?: (string | string[])[], rules?: Rules) => Config[]} */
     ts: (files, rules) => ts('hug/defaults/angular (overrides)', files, rules),
 
     /** @type {(files?: (string | string[])[], rules?: Rules) => Config[]} */
-    html: (files, rules) => html('hug/defaults/angular-html (overrides)', files, rules)
+    html: (files, rules) => html('hug/defaults/angular-html (overrides)', files, rules),
 };

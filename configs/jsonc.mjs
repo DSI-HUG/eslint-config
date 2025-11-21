@@ -14,8 +14,8 @@ export default {
         ...(files ? { files } : {}), // files cannot be empty nor undefined
         rules: rules ?? {
             ...base.rules,
-            ...jsoncPlugin.configs['recommended-with-json'].rules
-        }
+            ...jsoncPlugin.configs['recommended-with-json'].rules,
+        },
     }),
 
     jsonc: (files, rules) => ({
@@ -24,8 +24,8 @@ export default {
         ...(files ? { files } : {}), // files cannot be empty nor undefined
         rules: rules ?? {
             ...base.rules,
-            ...jsoncPlugin.configs['recommended-with-jsonc'].rules
-        }
+            ...jsoncPlugin.configs['recommended-with-jsonc'].rules,
+        },
     }),
 
     json5: (files, rules) => ({
@@ -34,7 +34,7 @@ export default {
         ...(files ? { files } : {}), // files cannot be empty nor undefined
         rules: rules ?? {
             ...base.rules,
-            ...jsoncPlugin.configs['recommended-with-json5'].rules
-        }
-    })
+            ...jsoncPlugin.configs['recommended-with-json5'].rules,
+        },
+    }),
 };

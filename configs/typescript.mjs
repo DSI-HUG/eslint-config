@@ -17,7 +17,7 @@ const ALLOWED_PROPERTIES = [
     'REQUEST',
     'SERVERID',
     'SERVICEID',
-    'SUBSERVICEID'
+    'SUBSERVICEID',
 ];
 
 /**
@@ -26,7 +26,7 @@ const ALLOWED_PROPERTIES = [
  * @type {(files?: (string | string[])[], rules?: Rules) => Config[]}
  */
 export default (files, rules) =>
-    // @ts-ignore
+    // @ts-expect-error
     tsPlugin.config({
         name: `hug/defaults/typescript${rules ? ' (overrides)' : ''}`,
         ...(files ? { files } : {}), // files cannot be empty nor undefined
@@ -36,8 +36,8 @@ export default (files, rules) =>
         languageOptions: {
             parserOptions: {
                 projectService: true,
-                tsconfigRootDir: process.cwd()
-            }
+                tsconfigRootDir: process.cwd(),
+            },
         },
         rules: rules ?? {
             // Enforce consistent usage of type imports
@@ -45,8 +45,8 @@ export default (files, rules) =>
             '@typescript-eslint/consistent-type-imports': [
                 'error',
                 {
-                    fixStyle: 'inline-type-imports'
-                }
+                    fixStyle: 'inline-type-imports',
+                },
             ],
 
             // Enforce default parameters to be last
@@ -59,8 +59,8 @@ export default (files, rules) =>
             '@typescript-eslint/explicit-function-return-type': [
                 'error',
                 {
-                    allowConciseArrowFunctionExpressionsStartingWithVoid: true
-                }
+                    allowConciseArrowFunctionExpressionsStartingWithVoid: true,
+                },
             ],
 
             // Require explicit accessibility modifiers on class properties and methods
@@ -74,9 +74,9 @@ export default (files, rules) =>
                         constructors: 'explicit',
                         methods: 'off',
                         parameterProperties: 'explicit',
-                        properties: 'explicit'
-                    }
-                }
+                        properties: 'explicit',
+                    },
+                },
             ],
 
             // Require a consistent member declaration order
@@ -149,17 +149,14 @@ export default (files, rules) =>
 
                         'decorated-method',
 
-                        'method'
-                    ]
-                }
+                        'method',
+                    ],
+                },
             ],
 
             // Enforce using a particular method signature syntax
             // https://typescript-eslint.io/rules/method-signature-style
-            '@typescript-eslint/method-signature-style': [
-                'error',
-                'property'
-            ],
+            '@typescript-eslint/method-signature-style': ['error', 'property'],
 
             // Enforce naming conventions for everything across a codebase
             // https://typescript-eslint.io/rules/naming-convention
@@ -168,49 +165,46 @@ export default (files, rules) =>
                 {
                     selector: 'default',
                     format: ['strictCamelCase'],
-                    leadingUnderscore: 'allow'
+                    leadingUnderscore: 'allow',
                 },
                 {
                     selector: 'typeLike',
-                    format: ['PascalCase']
+                    format: ['PascalCase'],
                 },
                 {
                     selector: 'enumMember',
-                    format: ['UPPER_CASE']
+                    format: ['UPPER_CASE'],
                 },
                 {
                     selector: 'property',
                     format: ['strictCamelCase'],
-                    leadingUnderscore: 'allow'
+                    leadingUnderscore: 'allow',
                 },
                 {
                     selector: 'property',
                     modifiers: ['static'],
                     format: ['UPPER_CASE'],
-                    leadingUnderscore: 'allow'
+                    leadingUnderscore: 'allow',
                 },
                 {
                     selector: 'property',
                     format: null,
                     filter: {
                         regex: `^(${ALLOWED_PROPERTIES.join('|')})$`,
-                        match: true
+                        match: true,
                     },
-                    leadingUnderscore: 'allow'
+                    leadingUnderscore: 'allow',
                 },
                 {
                     selector: 'parameter',
                     format: ['strictCamelCase'],
-                    leadingUnderscore: 'allow'
+                    leadingUnderscore: 'allow',
                 },
                 {
                     selector: 'variable',
-                    format: [
-                        'strictCamelCase',
-                        'UPPER_CASE'
-                    ],
-                    leadingUnderscore: 'allow'
-                }
+                    format: ['strictCamelCase', 'UPPER_CASE'],
+                    leadingUnderscore: 'allow',
+                },
             ],
 
             // Disallow classes used as namespaces
@@ -218,8 +212,8 @@ export default (files, rules) =>
             '@typescript-eslint/no-extraneous-class': [
                 'error',
                 {
-                    allowWithDecorator: true
-                }
+                    allowWithDecorator: true,
+                },
             ],
 
             // Enforce the use of top-level import type qualifier when an import only has specifiers with inline type qualifiers
@@ -244,8 +238,8 @@ export default (files, rules) =>
             '@typescript-eslint/prefer-nullish-coalescing': [
                 'error',
                 {
-                    ignorePrimitives: true
-                }
+                    ignorePrimitives: true,
+                },
             ],
 
             // Enforce template literal expressions to be of string type
@@ -257,8 +251,8 @@ export default (files, rules) =>
                     allowBoolean: false,
                     allowNullish: false,
                     allowNumber: true,
-                    allowRegExp: false
-                }
+                    allowRegExp: false,
+                },
             ],
 
             // Exhaustiveness checking in switch with union type
@@ -268,8 +262,8 @@ export default (files, rules) =>
                 {
                     allowDefaultCaseForExhaustiveSwitch: true,
                     considerDefaultExhaustiveForUnions: true,
-                    requireDefaultForNonUnion: true
-                }
+                    requireDefaultForNonUnion: true,
+                },
             ],
 
             // Enforce unbound methods are called with their expected scope
@@ -277,8 +271,8 @@ export default (files, rules) =>
             '@typescript-eslint/unbound-method': [
                 'error',
                 {
-                    ignoreStatic: true
-                }
-            ]
-        }
+                    ignoreStatic: true,
+                },
+            ],
+        },
     });

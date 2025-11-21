@@ -47,7 +47,7 @@ export default (files, rules) => ({
         // https://eslint.org/docs/rules/eqeqeq
         eqeqeq: [
             'error',
-            'always'
+            'always',
         ],
 
         // Require Guarding for-in
@@ -86,9 +86,9 @@ export default (files, rules) => ({
                     'profile',
                     'profileEnd',
                     'timeStamp',
-                    'context'
-                ]
-            }
+                    'context',
+                ],
+            },
         ],
 
         // Disallow duplicate imports
@@ -117,20 +117,20 @@ export default (files, rules) => ({
             'error',
             {
                 name: 'event',
-                message: 'Use local parameter instead.'
+                message: 'Use local parameter instead.',
             },
             {
                 name: 'fdescribe',
-                message: 'Do not commit \'fdescribe\'. Use \'describe\' instead.'
+                message: 'Do not commit \'fdescribe\'. Use \'describe\' instead.',
             },
             {
                 name: 'fit',
-                message: 'Do not commit \'fit\'. Use \'it\' instead.'
+                message: 'Do not commit \'fit\'. Use \'it\' instead.',
             },
             {
                 name: 'only',
-                message: 'Do not commit \'only\'.'
-            }
+                message: 'Do not commit \'only\'.',
+            },
         ],
 
         // Disallow specific imports
@@ -140,7 +140,7 @@ export default (files, rules) => ({
             'rxjs/Rx',
             'rxjs/internal/.*$',
             '@angular/material',
-            'lodash'
+            'lodash',
         ],
 
         // Disallow variable declarations from shadowing variables declared in the outer scope
@@ -148,8 +148,8 @@ export default (files, rules) => ({
         'no-shadow': [
             'error',
             {
-                hoist: 'all'
-            }
+                hoist: 'all',
+            },
         ],
 
         // Disallow template literal placeholder syntax in regular strings
@@ -184,7 +184,7 @@ export default (files, rules) => ({
         // https://eslint.org/docs/rules/one-var
         'one-var': [
             'error',
-            'never'
+            'never',
         ],
 
         // Require using arrow functions for callbacks
@@ -205,6 +205,6 @@ export default (files, rules) => ({
 
         // Require Radix Parameter
         // https://eslint.org/docs/rules/radix
-        radix: 'error'
-    }
+        radix: 'error',
+    },
 });
