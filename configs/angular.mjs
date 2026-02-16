@@ -30,15 +30,6 @@ const angularPluginTemplateBaseConfig = (plugin, parser) => ({
 /** @type {Record<'TS' | 'HTML', Rules>} */
 const RECOMMENDED_RULES = {
     TS: {
-        // Enforce components to have a specified suffix
-        // https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md
-        '@angular-eslint/component-class-suffix': [
-            'error',
-            {
-                suffixes: ['Component', 'Page'],
-            },
-        ],
-
         // Disallow having too many lines in inline template and styles
         // http://codelyzer.com/rules/component-max-inline-declarations
         '@angular-eslint/component-max-inline-declarations': [
