@@ -1,3 +1,4 @@
+import { defineConfig } from 'eslint/config';
 import tsPlugin from 'typescript-eslint';
 
 const ALLOWED_PROPERTIES = [
@@ -26,8 +27,7 @@ const ALLOWED_PROPERTIES = [
  * @type {(files?: (string | string[])[], rules?: Rules) => Config[]}
  */
 export default (files, rules) =>
-    // @ts-expect-error
-    tsPlugin.config({
+    defineConfig({
         name: `hug/defaults/typescript${rules ? ' (overrides)' : ''}`,
         ...(files ? { files } : {}), // files cannot be empty nor undefined
         extends: rules
