@@ -1,5 +1,5 @@
-import rxjsAngularPlugin from 'eslint-plugin-rxjs-angular-updated';
-import rxjsPlugin from 'eslint-plugin-rxjs-updated';
+import rxjsAngularPlugin from 'eslint-plugin-rxjs-angular-x';
+import rxjsPlugin from 'eslint-plugin-rxjs-x';
 
 /**
  * @typedef {import('@typescript-eslint/utils').TSESLint.FlatConfig.Rules} Rules
@@ -9,12 +9,11 @@ import rxjsPlugin from 'eslint-plugin-rxjs-updated';
 /** @type {Record<'TS' | 'ANGULAR', Rules>} */
 const RECOMMENDED_RULES = {
     TS: {
-        // @ts-expect-error
         ...rxjsPlugin.configs.recommended.rules,
 
         // Use Finnish notation
-        // https://github.com/cartant/eslint-plugin-rxjs/blob/main/docs/rules/finnish.md
-        'rxjs/finnish': [
+        // https://github.com/JasonWeinzierl/eslint-plugin-rxjs-x/blob/main/docs/rules/finnish.md
+        'rxjs-x/finnish': [
             'error',
             {
                 names: {
@@ -24,17 +23,17 @@ const RECOMMENDED_RULES = {
         ],
 
         // Use returned observables
-        // https://github.com/cartant/eslint-plugin-rxjs/blob/main/docs/rules/no-ignored-observable.md
-        'rxjs/no-ignored-observable': 'error',
+        // https://github.com/JasonWeinzierl/eslint-plugin-rxjs-x/blob/main/docs/rules/no-floating-observables.md
+        'rxjs-x/no-floating-observables': 'error',
 
         // Avoid using a behavior subject"s value
-        // https://github.com/cartant/eslint-plugin-rxjs/blob/main/docs/rules/no-subject-value.md
-        'rxjs/no-subject-value': 'error',
+        // https://github.com/JasonWeinzierl/eslint-plugin-rxjs-x/blob/main/docs/rules/no-subject-value.md
+        'rxjs-x/no-subject-value': 'error',
     },
     ANGULAR: {
         // Use takeUntil and ngOnDestroy
-        // https://github.com/cartant/eslint-plugin-rxjs-angular/blob/main/docs/rules/prefer-takeuntil.md
-        'rxjs-angular/prefer-takeuntil': [
+        // https://github.com/JasonWeinzierl/eslint-plugin-rxjs-angular-x/blob/main/docs/rules/prefer-takeuntil.md
+        'rxjs-angular-x/prefer-takeuntil': [
             'error',
             {
                 alias: ['takeUntilDestroyed'],
@@ -51,7 +50,7 @@ const angular = (name, files, rules) => ({
     name,
     ...(files ? { files } : {}), // files cannot be empty nor undefined
     plugins: {
-        'rxjs-angular': rxjsAngularPlugin,
+        'rxjs-angular-x': rxjsAngularPlugin,
     },
     rules: rules ?? {},
 });
@@ -61,7 +60,7 @@ const ts = (name, files, rules) => ({
     name,
     ...(files ? { files } : {}), // files cannot be empty nor undefined
     plugins: {
-        rxjs: rxjsPlugin,
+        'rxjs-x': rxjsPlugin,
     },
     rules: rules ?? {},
 });
@@ -81,8 +80,8 @@ export default {
                 ...RECOMMENDED_RULES.ANGULAR,
 
                 // Use takeUntil and ngOnDestroy
-                // https://github.com/cartant/eslint-plugin-rxjs-angular/blob/main/docs/rules/prefer-takeuntil.md
-                'rxjs-angular/prefer-takeuntil': 'off',
+                // https://github.com/JasonWeinzierl/eslint-plugin-rxjs-angular-x/blob/main/docs/rules/prefer-takeuntil.md
+                'rxjs-angular-x/prefer-takeuntil': 'off',
             }),
     },
 
