@@ -63,12 +63,12 @@
     },
     "peerDependencies": {
         "@angular/core": ">= 10",
-        "eslint": ">= 9",
+        "eslint": ">= 10",
         "rxjs": ">= 6",
         "typescript": ">= 3"
     },
     "dependencies": {
-        "@eslint/js": "^10.0.1",
+        "@eslint/js": "10.0.1",
         "@stylistic/eslint-plugin": "5.10.0",
         "angular-eslint": "21.3.1",
         "eslint-config-prettier": "10.1.8",
@@ -83,9 +83,9 @@
         "eslint-plugin-rxjs-x": "1.0.2",
         "eslint-plugin-simple-import-sort": "13.0.0",
         "eslint-plugin-unused-imports": "4.4.1",
+        "typescript-eslint": "8.58.2",
         "find-up": "^8.0.0",
-        "globals": "^17.5.0",
-        "typescript-eslint": "8.58.2"
+        "globals": "^17.5.0"
     },
     "devDependencies": {
         "@angular/core": "^21.2.8",
