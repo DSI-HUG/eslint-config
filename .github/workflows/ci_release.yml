@@ -12,5 +12,5 @@ jobs:
         with:
             lint: true
             test: true
-            build: false
+            build: true
             release: true

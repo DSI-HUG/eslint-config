@@ -1,6 +1,6 @@
 {
     "name": "@hug/eslint-config",
-    "version": "24.0.1",
+    "version": "25.0.0",
     "description": "ESLint shareable configuration with great defaults",
     "homepage": "https://github.com/dsi-hug/eslint-config",
     "license": "GPL-3.0-only",
@@ -12,27 +12,22 @@
         "type": "git",
         "url": "git+https://github.com/dsi-hug/eslint-config.git"
     },
-    "publishConfig": {
-        "access": "public",
-        "tag": "latest"
-    },
     "type": "module",
-    "main": "./index.mjs",
-    "typings": "./index.d.ts",
+    "main": "./dist/index.mjs",
+    "typings": "./dist/index.d.mts",
     "exports": {
         ".": {
-            "require": "./index.mjs",
-            "types": "./index.d.ts",
-            "default": "./index.mjs"
+            "import": "./dist/index.mjs",
+            "types": "./dist/index.d.mts",
+            "default": "./dist/index.mjs"
         },
         "./package.json": "./package.json"
     },
     "files": [
+        "dist/index.mjs",
+        "dist/index.d.mts",
         "README.md",
         "LICENSE",
-        "index.mjs",
-        "index.d.ts",
-        "configs",
         "scripts/deprecated.mjs"
     ],
     "keywords": [
@@ -59,7 +54,8 @@
         "lint": "eslint .",
         "test": "cross-env CONFIG=MODERATE eslint tests && cross-env CONFIG=RECOMMENDED eslint tests",
         "test:ci": "npm run test",
-        "release": "npm publish"
+        "build": "tsc --noEmit && tsdown index.ts --dts",
+        "release": "npm publish ./dist --access public"
     },
     "peerDependencies": {
         "@angular/core": ">= 10",
@@ -71,7 +67,6 @@
         "@eslint/js": "10.0.1",
         "@stylistic/eslint-plugin": "5.10.0",
         "angular-eslint": "21.3.1",
-        "eslint-config-prettier": "10.1.8",
         "eslint-plugin-chai-friendly": "1.2.0",
         "eslint-plugin-cypress": "6.3.0",
         "eslint-plugin-jsdoc": "62.9.0",
@@ -83,9 +78,9 @@
         "eslint-plugin-rxjs-x": "1.0.2",
         "eslint-plugin-simple-import-sort": "13.0.0",
         "eslint-plugin-unused-imports": "4.4.1",
-        "typescript-eslint": "8.58.2",
         "find-up": "^8.0.0",
-        "globals": "^17.5.0"
+        "globals": "^17.5.0",
+        "typescript-eslint": "8.58.2"
     },
     "devDependencies": {
         "@angular/core": "^21.2.8",
@@ -95,6 +90,7 @@
         "eslint": "^10.2.0",
         "husky": "^9.1.7",
         "rxjs": "^7.8.2",
+        "tsdown": "^0.21.10",
         "typescript": "^6.0.2"
     },
     "engines": {
