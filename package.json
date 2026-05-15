@@ -66,9 +66,9 @@
     "dependencies": {
         "@eslint/js": "10.0.1",
         "@stylistic/eslint-plugin": "5.10.0",
-        "angular-eslint": "21.3.1",
+        "angular-eslint": "21.4.0",
         "eslint-plugin-chai-friendly": "1.2.0",
-        "eslint-plugin-cypress": "6.4.0",
+        "eslint-plugin-cypress": "6.4.1",
         "eslint-plugin-jsdoc": "62.9.0",
         "eslint-plugin-jsonc": "3.1.2",
         "eslint-plugin-no-loops": "0.4.0",
@@ -80,17 +80,17 @@
         "eslint-plugin-unused-imports": "4.4.1",
         "find-up": "^8.0.0",
         "globals": "^17.6.0",
-        "typescript-eslint": "8.59.2"
+        "typescript-eslint": "8.59.3"
     },
     "devDependencies": {
-        "@angular/core": "^21.2.11",
-        "@commitlint/cli": "^20.5.3",
-        "@commitlint/config-conventional": "^20.5.3",
+        "@angular/core": "^21.2.13",
+        "@commitlint/cli": "^21.0.1",
+        "@commitlint/config-conventional": "^21.0.1",
         "cross-env": "^10.1.0",
-        "eslint": "^10.3.0",
+        "eslint": "^10.4.0",
         "husky": "^9.1.7",
         "rxjs": "^7.8.2",
-        "tsdown": "^0.21.10",
+        "tsdown": "^0.22.0",
         "typescript": "^6.0.3"
     },
     "engines": {
