@@ -72,6 +72,14 @@ const createRecommended = (options?: CreateOptions | false): Config[] =>
                     // https://eslint.style/rules/js/max-len
                     '@stylistic/max-len': 'off',
 
+                    // Enforce a maximum number of statements allowed per line
+                    // https://eslint.style/rules/max-statements-per-line
+                    '@stylistic/max-statements-per-line': [
+                        'error', {
+                            max: 2,
+                        },
+                    ],
+
                     // Require a specific member delimiter style for interfaces and type literals
                     // https://eslint.style/rules/ts/member-delimiter-style
                     '@stylistic/member-delimiter-style': [
