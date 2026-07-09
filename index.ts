@@ -105,6 +105,7 @@ const configs: Configs = {
 export type {
     Config,
     Configs,
+    CreateOptions,
     Options,
 } from './configs/common/configs.model';
 export { Files } from './configs/common/files';
