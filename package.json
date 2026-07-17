@@ -12,24 +12,18 @@
         "type": "git",
         "url": "git+https://github.com/dsi-hug/eslint-config.git"
     },
+    "sideEffects": true,
     "type": "module",
-    "main": "./dist/index.mjs",
-    "module": "./dist/index.mjs",
-    "types": "./dist/index.d.mts",
+    "main": "./index.mjs",
+    "module": "./index.mjs",
+    "types": "./index.d.mts",
     "exports": {
         ".": {
-            "types": "./dist/index.d.mts",
-            "default": "./dist/index.mjs"
+            "types": "./index.d.mts",
+            "default": "./index.mjs"
         },
         "./package.json": "./package.json"
     },
-    "files": [
-        "dist/index.mjs",
-        "dist/index.d.mts",
-        "README.md",
-        "LICENSE",
-        "scripts/deprecated.mjs"
-    ],
     "keywords": [
         "eslint",
         "eslintconfig",
@@ -53,7 +47,7 @@
         "lint": "eslint .",
         "test": "cross-env CONFIG=MODERATE eslint tests && cross-env CONFIG=RECOMMENDED eslint tests",
         "test:ci": "npm run test",
-        "build": "tsc --noEmit && tsdown index.ts --dts",
+        "build": "tsc --noEmit && tsdown",
         "release": "npm publish --access public"
     },
     "peerDependencies": {

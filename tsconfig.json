@@ -1,27 +1,23 @@
 {
+    "extends": "./tsconfig.hug.json",
     "compilerOptions": {
-        "forceConsistentCasingInFileNames": true,
-        "noImplicitAny": true,
-        "noImplicitThis": true,
-        "noImplicitOverride": true,
-        "noImplicitReturns": true,
-        "noFallthroughCasesInSwitch": true,
-        "noPropertyAccessFromIndexSignature": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noUncheckedIndexedAccess": true,
-        "strict": true,
-        "strictBindCallApply": true,
-        "strictFunctionTypes": true,
-        "strictNullChecks": true,
+        "target": "ESNext",
+        "lib": [
+            "ESNext"
+        ],
         "types": [
             "node"
-        ]
+        ],
+        "noEmit": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "noUncheckedIndexedAccess": true
     },
-    "angularCompilerOptions": {
-        "enableI18nLegacyMessageIdFormat": false,
-        "strictInjectionParameters": true,
-        "strictInputAccessModifiers": true,
-        "strictTemplates": true
-    }
+    "include": [
+        "tsdown.config.mts",
+        "**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }
