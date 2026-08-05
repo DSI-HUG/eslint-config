@@ -48,7 +48,7 @@
         "test": "cross-env CONFIG=MODERATE eslint tests && cross-env CONFIG=RECOMMENDED eslint tests",
         "test:ci": "npm run test",
         "build": "tsc --noEmit && tsdown",
-        "release": "npm publish --access public"
+        "release": "npm publish ./dist --access public"
     },
     "peerDependencies": {
         "@angular/core": ">= 10",
