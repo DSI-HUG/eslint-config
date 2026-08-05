@@ -51,10 +51,18 @@
         "release": "npm publish ./dist --access public"
     },
     "peerDependencies": {
-        "@angular/core": ">= 10",
         "eslint": ">= 10",
-        "rxjs": ">= 6",
-        "typescript": ">= 3"
+        "typescript": ">= 3",
+        "@angular/core": ">= 10",
+        "rxjs": ">= 6"
+    },
+    "peerDependenciesMeta": {
+        "@angular/core": {
+            "optional": true
+        },
+        "rxjs": {
+            "optional": true
+        }
     },
     "dependencies": {
         "@eslint/js": "10.0.1",
