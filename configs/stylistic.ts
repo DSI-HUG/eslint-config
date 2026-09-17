@@ -165,7 +165,9 @@ const createRecommended = (options?: CreateOptions | false): Config[] =>
             },
         );
 
-export default {
+const configs: Configs['configs']['stylistic'] = {
     recommended: createRecommended(),
     createRecommended,
-} satisfies Configs['configs']['stylistic'];
+};
+
+export default configs;

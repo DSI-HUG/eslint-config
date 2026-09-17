@@ -73,9 +73,11 @@ const createModerate = (options?: CreateOptions | false): Config[] => {
     }
 };
 
-export default {
+const configs: Configs['configs']['rxjsAngular'] = {
     recommended: createRecommended(),
     createRecommended,
     moderate: createModerate(),
     createModerate,
-} satisfies Configs['configs']['rxjsAngular'];
+};
+
+export default configs;

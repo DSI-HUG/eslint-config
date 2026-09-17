@@ -30,7 +30,9 @@ const createRecommended = (options?: CreateOptions | false): Config[] =>
             },
         );
 
-export default {
+const configs: Configs['configs']['preferArrow'] = {
     recommended: createRecommended(),
     createRecommended,
-} satisfies Configs['configs']['preferArrow'];
+};
+
+export default configs;

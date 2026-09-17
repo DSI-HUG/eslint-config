@@ -6,7 +6,6 @@ import type { Configs, CreateOptions } from './common/configs.model';
 import { Files } from './common/files';
 import { isPackageInstalled } from './common/utils';
 
-
 const getTsRecommendedFromPlugin = (): Config[] => {
     const recommended = angularPlugin.configs.tsRecommended.find(i => i.name === 'angular-eslint/ts-recommended');
     if (!recommended) {
@@ -247,7 +246,7 @@ const createA11yModerate = (options?: CreateOptions | false): Config[] => {
     }
 };
 
-export default {
+const configs: Configs['configs']['angular'] = {
     ts: {
         recommended: createTsRecommended(),
         createRecommended: createTsRecommended,
@@ -264,4 +263,6 @@ export default {
         moderate: createA11yModerate(),
         createModerate: createA11yModerate,
     },
-} satisfies Configs['configs']['angular'];
+};
+
+export default configs;

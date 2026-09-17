@@ -2,7 +2,25 @@ import { copyFileSync, cpSync, readFileSync, writeFileSync } from 'node:fs';
 import { defineConfig, type UserConfig } from 'tsdown';
 
 const config: UserConfig[] = defineConfig([{
-    entry: ['index.ts'],
+    entry: [
+        'configs/common/files',
+        'configs/angular',
+        'configs/base',
+        'configs/cypress',
+        'configs/eslint',
+        'configs/jsdoc',
+        'configs/jsonc',
+        'configs/no-loops',
+        'configs/no-secrets',
+        'configs/prefer-arrow',
+        'configs/rxjs',
+        'configs/rxjsAngular',
+        'configs/simple-import-sort',
+        'configs/stylistic',
+        'configs/typescript',
+        'configs/unused-imports',
+        'index.ts',
+    ],
     format: ['esm'],
     clean: true,
     sourcemap: false,

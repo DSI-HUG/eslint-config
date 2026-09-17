@@ -54,7 +54,7 @@ const createTsRecommended = (options?: CreateOptions | false): Config[] =>
             }] : []),
         );
 
-export default {
+const configs: Configs['configs']['jsdoc'] = {
     js: {
         recommended: createJsRecommended(),
         createRecommended: createJsRecommended,
@@ -63,4 +63,6 @@ export default {
         recommended: createTsRecommended(),
         createRecommended: createTsRecommended,
     },
-} satisfies Configs['configs']['jsdoc'];
+};
+
+export default configs;

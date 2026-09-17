@@ -6,10 +6,10 @@
  * @license GPL-3.0-only
  */
 
-import { type Config, defineConfig, globalIgnores } from 'eslint/config';
-import globals from 'globals';
+import { type Config, defineConfig } from 'eslint/config';
 
 import angular from './configs/angular';
+import base from './configs/base';
 import type { Configs, Options } from './configs/common/configs.model';
 import { Files } from './configs/common/files';
 import cypress from './configs/cypress';
@@ -25,23 +25,6 @@ import simpleImportSort from './configs/simple-import-sort';
 import stylistic from './configs/stylistic';
 import typescript from './configs/typescript';
 import unusedImports from './configs/unused-imports';
-
-const base = defineConfig(
-    {
-        name: '@hug-eslint-config/globals',
-        languageOptions: {
-            globals: {
-                ...globals.browser,
-                ...globals.node,
-                ...globals.jasmine,
-            },
-        },
-        linterOptions: {
-            reportUnusedDisableDirectives: 'error',
-        },
-    },
-    globalIgnores(Files.IGNORE, '@hug-eslint-config/ignores'),
-);
 
 const createConfig = (mode: 'recommended' | 'moderate', options?: Options): Config[] =>
     defineConfig(

@@ -58,7 +58,9 @@ const createRecommended = (options?: CreateOptions | false): Config[] => {
     }
 };
 
-export default {
+const configs: Configs['configs']['rxjs'] = {
     recommended: createRecommended(),
     createRecommended,
-} satisfies Configs['configs']['rxjs'];
+};
+
+export default configs;

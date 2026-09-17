@@ -95,17 +95,19 @@ const createJson5Recommended = (options?: CreateOptions | false): Config[] =>
             }] : []),
         );
 
-export const json = {
+const json: Configs['configs']['json'] = {
     recommended: createJsonRecommended(),
     createRecommended: createJsonRecommended,
-} satisfies Configs['configs']['json'];
+};
 
-export const jsonc = {
+const jsonc: Configs['configs']['jsonc'] = {
     recommended: createJsoncRecommended(),
     createRecommended: createJsoncRecommended,
-} satisfies Configs['configs']['jsonc'];
+};
 
-export const json5 = {
+const json5: Configs['configs']['json5'] = {
     recommended: createJson5Recommended(),
     createRecommended: createJson5Recommended,
-} satisfies Configs['configs']['json5'];
+};
+
+export { json, json5, jsonc };

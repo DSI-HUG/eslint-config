@@ -34,7 +34,9 @@ const createRecommended = (options?: CreateOptions | false): Config[] =>
             },
         );
 
-export default {
+const configs: Configs['configs']['noSecrets'] = {
     recommended: createRecommended(),
     createRecommended,
-} satisfies Configs['configs']['noSecrets'];
+};
+
+export default configs;

@@ -49,7 +49,9 @@ const createRecommended = (options?: CreateOptions | false): Config[] =>
             },
         );
 
-export default {
+const configs: Configs['configs']['simpleImportSort'] = {
     recommended: createRecommended(),
     createRecommended,
-} satisfies Configs['configs']['simpleImportSort'];
+};
+
+export default configs;

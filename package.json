@@ -22,6 +22,70 @@
             "types": "./index.d.mts",
             "default": "./index.mjs"
         },
+        "./common": {
+            "types": "./configs/common/files.d.mts",
+            "default": "./configs/common/files.mjs"
+        },
+        "./angular": {
+            "types": "./configs/angular.d.mts",
+            "default": "./configs/angular.mjs"
+        },
+        "./base": {
+            "types": "./configs/base.d.mts",
+            "default": "./configs/base.mjs"
+        },
+        "./cypress": {
+            "types": "./configs/cypress.d.mts",
+            "default": "./configs/cypress.mjs"
+        },
+        "./eslint": {
+            "types": "./configs/eslint.d.mts",
+            "default": "./configs/eslint.mjs"
+        },
+        "./jsdoc": {
+            "types": "./configs/jsdoc.d.mts",
+            "default": "./configs/jsdoc.mjs"
+        },
+        "./jsonc": {
+            "types": "./configs/jsonc.d.mts",
+            "default": "./configs/jsonc.mjs"
+        },
+        "./no-loops": {
+            "types": "./configs/no-loops.d.mts",
+            "default": "./configs/no-loops.mjs"
+        },
+        "./no-secrets": {
+            "types": "./configs/no-secrets.d.mts",
+            "default": "./configs/no-secrets.mjs"
+        },
+        "./prefer-arrow": {
+            "types": "./configs/prefer-arrow.d.mts",
+            "default": "./configs/prefer-arrow.mjs"
+        },
+        "./rxjs": {
+            "types": "./configs/rxjs.d.mts",
+            "default": "./configs/rxjs.mjs"
+        },
+        "./rxjsAngular": {
+            "types": "./configs/rxjsAngular.d.mts",
+            "default": "./configs/rxjsAngular.mjs"
+        },
+        "./simple-import-sort": {
+            "types": "./configs/simple-import-sort.d.mts",
+            "default": "./configs/simple-import-sort.mjs"
+        },
+        "./stylistic": {
+            "types": "./configs/stylistic.d.mts",
+            "default": "./configs/stylistic.mjs"
+        },
+        "./typescript": {
+            "types": "./configs/typescript.d.mts",
+            "default": "./configs/typescript.mjs"
+        },
+        "./unused-imports": {
+            "types": "./configs/unused-imports.d.mts",
+            "default": "./configs/unused-imports.mjs"
+        },
         "./package.json": "./package.json"
     },
     "keywords": [

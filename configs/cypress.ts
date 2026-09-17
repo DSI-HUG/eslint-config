@@ -63,7 +63,9 @@ const createRecommended = (options?: CreateOptions | false): Config[] => {
     }
 };
 
-export default {
+const configs: Configs['configs']['cypress'] = {
     recommended: createRecommended(),
     createRecommended,
-} satisfies Configs['configs']['cypress'];
+};
+
+export default configs;

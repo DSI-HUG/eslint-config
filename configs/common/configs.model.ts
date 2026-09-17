@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 import type { RulesConfig } from '@eslint/core';
 import type { Config as ConfigObject } from 'eslint/config';
 
@@ -14,8 +15,8 @@ export interface CreateOptions {
     rules?: Partial<RulesConfig>;
 }
 
-export type Config<K extends string, O = CreateOptions>
-    = Record<K, ConfigObject[]> & { [P in K as `create${Capitalize<P>}`]: (options?: O) => ConfigObject[] };
+export type Config<K extends string, O = CreateOptions, F = false>
+    = Record<K, ConfigObject[]> & { [P in K as `create${Capitalize<P>}`]: (options?: O | F) => ConfigObject[] };
 
 export interface AllConfig {
     angular: {
@@ -49,5 +50,5 @@ export interface Options extends Omit<ConvertConfigToOptionalCreateOptions<AllCo
 
 export interface Configs {
     files: typeof Files;
-    configs: Config<'recommended' | 'moderate', Options> & AllConfig;
+    configs: Config<'recommended' | 'moderate', Options, never> & AllConfig;
 }
