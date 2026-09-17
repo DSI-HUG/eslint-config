@@ -116,7 +116,10 @@ const createRecommended = (options?: CreateOptions | false): Config[] => {
                                 'protected-decorated-field',
                                 'private-decorated-field',
 
-                                'public-instance-field',
+                                [
+                                    'private-instance-readonly-field',
+                                    'public-instance-field',
+                                ],
                                 'protected-instance-field',
                                 'private-instance-field',
 
