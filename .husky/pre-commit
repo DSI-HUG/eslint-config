@@ -12,3 +12,7 @@ if [[ $gitUserEmail =~ ^.*@(hcuge|hug).ch$  ]] ; then
 else
     printf "OK\n"
 fi
+
+printf "> Linting files... "
+npx --no -- eslint .
+printf "OK\n"

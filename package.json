@@ -115,10 +115,10 @@
         "release": "npm publish ./dist --access public"
     },
     "peerDependencies": {
-        "eslint": ">= 10",
-        "typescript": ">= 3",
         "@angular/core": ">= 10",
-        "rxjs": ">= 6"
+        "eslint": ">= 10",
+        "rxjs": ">= 6",
+        "typescript": ">= 3"
     },
     "peerDependenciesMeta": {
         "@angular/core": {
@@ -148,6 +148,7 @@
         "typescript-eslint": "8.72.0"
     },
     "devDependencies": {
+        "@types/node": "^26.6.5",
         "@angular/core": "^22.2.3",
         "@commitlint/cli": "^21.2.4",
         "@commitlint/config-conventional": "^21.2.4",
